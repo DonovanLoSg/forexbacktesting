@@ -61,7 +61,11 @@ I uses **Git** for Versioning Control System and **GitHub** for repositories.
 
 **Gitpod**, an online IDE, is my main coding platform. I do sometimes test out codes in **Repl.it**
 
-The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**), taking advantages of **DOM** and **Ajax**.
+The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**, **moment.js**), taking advantages of **DOM**, **Ajax** and **JSON**.
+
+
+For viewing JSON document
+* JSON Path Finder (https://jsonpathfinder.com/)
 
 
 
