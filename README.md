@@ -1,4 +1,4 @@
-<img src="http://currency-exchange.donovanlo.sg/assets/img/logo/donovanlogo150x150.png" style="margin: 0;">
+<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/logo/donovanlogo150x150.png" style="margin: 0;">
 
 <h1>Currency Exchange Project</h1>
 <p>Interactive Frontend Development Milestone Project</p>
@@ -11,9 +11,9 @@
 
 <h2>Demo</h2>
 
-Deployed project: http://currency-exchange.donovanlo.sg/
+Deployed project: http://currency-exchange-backtesting.donovanlo.sg/
 
-Source code: https://github.com/DonovanLoSg/currency-exchange-doonovanlo-sg 
+Source code: https://github.com/DonovanLoSg/currency-exchange-backtesting.donovanlo-sg
 
 // TODO: pic
 
