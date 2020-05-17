@@ -44,11 +44,16 @@ Source code: https://github.com/DonovanLoSg/currency-exchange-backtesting.donova
 
 <h2>Project Objectives</h2>
 
-:
+The objective of this project is to develop a small application that allows the trainer to demonstrate how to do backtesting using moving average strategy to the trainee.
 
-<h2>User Stories</h2>
+The trainer can also allow trainees to have some hands-on using the application.
 
-:
+Both the trainer and trainee are considered as the users of the application.
+
+<h2>User Stories (US)</h2>
+* [US1] As a user, I want to selected time period to view that period's historical currency exchange rates, so that it can relfect realistic market condition. 
+* [US2] As a user, I want to view the short term and long term moving average, so that I can identify the point where I should apply the moving average strategy to buy or sell.
+* [US3] As a user, I want to simulate transactions (buying and selling), so that I know the outcome (profits or losses) after I apply the strategy.
 
 <hr>
 
