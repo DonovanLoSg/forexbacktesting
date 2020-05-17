@@ -87,11 +87,11 @@ Both the trainer and trainee are considered as the users of the application.
 
 <h2>Content Requirements</h2>
 
-Currency exchange rates historical data has to be downloaded by consuming MAS's API.
-Fields to be retrieved are the date and the USD to SGD exchange rates.
-The response data need to be restructure for charting purposes as well as rates look up during transaction entries.
-Short term moving average and long term moving average are calculated from the restructured data.
-A responsive chart with the exchange rates and moving average is to be display to the user.
+1 Currency exchange rates historical data has to be downloaded by consuming MAS's API.
+1 Fields to be retrieved are the date and the USD to SGD exchange rates.
+1 The response data need to be restructure for charting purposes as well as rates look up during transaction entries.
+1 Short term moving average and long term moving average are calculated from the restructured data.
+1 A responsive chart with the exchange rates and moving average is to be display to the user.
 
 <hr>
 
