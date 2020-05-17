@@ -102,17 +102,18 @@ Both the trainer and trainee are considered as the users of the application.
 
 ### Wireframe
 
-<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/wireframe.png" style="margin: 0;">
+<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/wireframe.png" alt="wireframe for this app" style="margin: 0;">
 
+### sitemap
 
-:
+<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" alt="sitemap for this app" target="_blank"><img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a>
+<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" target="_blank">Click to Enlarge</a>
+
 
 
 
 
 ### Content Inventory
-
-:
 
 ### Interaction Deisgn
 
@@ -160,6 +161,12 @@ I uses **Git** for Versioning Control System and **GitHub** for repositories.
 
 The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**, **moment.js**, **Chart.js**), taking advantages of **DOM**, **Ajax** and **JSON**.
 
+
+For wireframe
+* MockFlow (https://www.mockflow.com/)
+
+For sitemap
+* GlooMaps (https://www.gloomaps.com/)
 
 For viewing JSON document
 * JSON Path Finder (https://jsonpathfinder.com/)
