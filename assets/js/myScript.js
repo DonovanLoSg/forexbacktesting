@@ -13,47 +13,97 @@
 
 var datesArray = [];
 var ratesArray = [];
-    
+var movAverageArray = [];
+var calScope = 0;
+
+function calMovingAvg(calScope,calArray) {
+    console.log('000000', calScope,'000000')
+    var jcount = 0;
+    var jsum = 0;
+    var javg = 0;
+    var i;
+    var movAverageArray=[];
+    for (i in calArray) {
+        jcount = 0;
+        jsum = 0;
+        javg = 0;
+        for (var j = i-calScope+1; j<=i; j++) {
+            console.log(j);
+            if (j >= 0) {
+                jcount = jcount + 1;
+                console.log(jcount);
+                jsum = jsum + calArray[j];
+                console.log(jsum);
+            }
+        }
+        javg = jsum / jcount;
+        movAverageArray.push(Math.round(javg*10000)/10000);
+    }
+    return movAverageArray
+}
+
+
 
 function drawChart(ratesTable) {
 
     var record;
     for (record of ratesTable) {
         datesArray.push(record["end_of_day"]);
-        ratesArray.push(record["usd_sgd"]);
+        ratesArray.push(Math.round(parseFloat(record["usd_sgd"])*10000)/10000);
     }
     
+    let MovAvg7 = calMovingAvg(7,ratesArray);
+    console.log(ratesArray);
+
+    let MovAvg14 = calMovingAvg(14,ratesArray);
+    console.log(ratesArray);
 
 
-    
 
     Chart.defaults.global.hover.mode = 'nearest';
-    Chart.defaults.global.legend = false;
+    Chart.defaults.global.legend.display = true;
     Chart.defaults.maintainAspectRatio = 'false';
 
     new Chart(document.getElementById("line-chart"), {
-    type: 'line',
-    data: {
-        labels: datesArray,
-        datasets: [{ 
-            data: ratesArray,
-            label: "USD-SGD",
-            borderColor: "#ff0000",
-            fill: true,
-        }
-        ]
-    },
-    options: {
-        title: {
-        display: true,
-        text: 'Currency Exchange Rates - S$ per unit of US$',
-        position: 'bottom',
-        fontSize: 20
+        type: 'line',
+        data: {
+            labels: datesArray,
+            datasets: [{ 
+                data: ratesArray,
+                label: "USD-SGD",
+                borderColor: "#ff0000",
+                fill: true,
+                pointRadius: 3,
+            },{
+                data: MovAvg7,
+                label: "7 days Moving average",
+                borderColor: "#00ff00",
+                fill: false,
+
+            },{
+                data: MovAvg14,
+                label: "14 days average 10",
+                borderColor: "#0000ff",
+                fill: false,
+                }
+            ]
         },
-        tooltips: {
-            mode: 'nearest'
+        options: {
+            title: {
+                display: true,
+                text: 'Currency Exchange Rates - S$ per unit of US$',
+                position: 'bottom',
+                fontSize: 20
+            },
+            tooltips: {
+                mode: 'nearest'
+            },
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
         }
-    }
     });
 
 
