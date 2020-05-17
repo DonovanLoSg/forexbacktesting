@@ -7,16 +7,16 @@
 
 <h2>Context</h2>
 
-A trainer for a trading company need an interactive simulators to explain to the novice about backtesting and moving average strategy.
+A trainer for a trading company need an interactive simulator to explain to the novice about backtesting and moving average strategy.
 
 ```
 Definition: 
-**Backtesting** is a term used in modeling to refer to testing a predictive model on historical data. 
+**Backtesting** is a term used in modelling to refer to testing a predictive model on historical data. 
 Backtesting is a type of retrodiction, and a special type of cross-validation applied to previous time period(s).
 (Source: Wikipedia)
 ```
 ```
-Explanation::
+Explanation:
 **Moving averages** are the most basic technical strategy. 
 The goal is to identify the trend's direction to capitalize on it. 
 Traders believe when a short term average cross over a long term average, 
@@ -50,10 +50,14 @@ The trainer can also allow trainees to have some hands-on using the application.
 
 Both the trainer and trainee are considered as the users of the application.
 
-<h2>User Stories (US)</h2>
-* [US1] As a user, I want to selected time period to view that period's historical currency exchange rates, so that it can relfect realistic market condition. 
-* [US2] As a user, I want to view the short term and long term moving average, so that I can identify the point where I should apply the moving average strategy to buy or sell.
-* [US3] As a user, I want to simulate transactions (buying and selling), so that I know the outcome (profits or losses) after I apply the strategy.
+<h2>User Stories</h2>
+* As a user, I want to selected time period to view that period's historical currency exchange rates, so that it can relfect realistic market condition. 
+* As a user, I want to view the short term and long term moving average, so that I can identify the point where I should apply the moving average strategy to buy or sell.
+* As a user, I want to simulate transactions (buying and selling), so that I know the outcome (profits or losses) after I apply the strategy.
+
+<h2>Use Case Diagram</h2>
+
+<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/UseCaseDiagram.png" style="margin: 0;">
 
 <hr>
 
@@ -131,6 +135,11 @@ The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**,
 For viewing JSON document
 * JSON Path Finder (https://jsonpathfinder.com/)
 
+For use case Diagram
+* Creately (https://creately.com/)
+
+For grammer and spell check
+* Grammer Checker - Online Editor (https://grammarchecker.io/) 
 
 
 
