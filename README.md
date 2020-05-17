@@ -7,7 +7,7 @@
 
 <h2>Context</h2>
 
-A trainer from a trading company need a interactive simulators to explain to the novice about backtesting and moving average strategy.
+A trainer for a trading company need an interactive simulators to explain to the novice about backtesting and moving average strategy.
 
 ```
 Definition: 
@@ -16,12 +16,12 @@ Backtesting is a type of retrodiction, and a special type of cross-validation ap
 (Source: Wikipedia)
 ```
 ```
-Explaination:
+Explanation::
 **Moving averages** are the most basic technical strategy. 
 The goal is to identify the trend's direction to capitalize on it. 
 Traders believe when a short term average cross over a long term average, 
 it shows the direction of the trend.
-A upward trend is a buy signal and a downward trend is a sell signal.
+An upward trend is a buy signal and a downward trend is a sell signal.
 ```
 
 <h2>Demo</h2>
@@ -42,21 +42,65 @@ Source code: https://github.com/DonovanLoSg/currency-exchange-backtesting.donova
 
 <h1>Defining the Project (Strategy)</h1>
 
+<h2>Project Objectives</h2>
+
 :
+
+<h2>User Stories</h2>
+
+:
+
+<hr>
 
 <h1>Defining the Project (Scope)</h1>
 
+<h2>Functional Requirement</h2>
+
 :
+
+<h2>Content Requirement</h2>
+
+:
+
+<hr>
 
 <h1>Developing the Site Structure and Organize Information (Structure)</h1>
 
+<h2>Information Architecture</h2>
+
+<h3>Content Inventory</h3>
+
 :
+
+<h3>Content Structure</h3>
+
+:
+
+<h3>Interaction Deisgn</h3>
+
+// TODO: User Flow Diagram
+
+<hr>
 
 <h1>Developing Page Structure and Orgaize Interactions (Skeleton)</h1>
 
+<h2>Navigation Deisgn</h2>
+
+// TODO: Site map
+
+<h2>Interface Design</h2>
+
 :
 
+<h2>Information Design</h2>
+
+:
+
+<hr>
+
 <h1>Designing Graphics User Interface (Surface)</h1>
+
+<h2>Visual Design</h2>
 
 :
 
