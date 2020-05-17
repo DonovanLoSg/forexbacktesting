@@ -159,6 +159,8 @@ I uses **Git** for Versioning Control System and **GitHub** for repositories.
 
 **Gitpod**, an online IDE, is my main coding platform. I do sometimes test out codes in **Repl.it**
 
+I use **Bootstrap 4**, including its compoents and utilities for layout. **NavBar** is used for the main navigation.
+
 The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**, **moment.js**, **Chart.js**), taking advantages of **DOM**, **Ajax** and **JSON**.
 
 
