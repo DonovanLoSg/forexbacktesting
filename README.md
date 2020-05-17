@@ -100,11 +100,17 @@ Both the trainer and trainee are considered as the users of the application.
 
 ## Information Architecture
 
-### Content Inventory
+### Wireframe
+
+<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/wireframe.png" style="margin: 0;">
+
 
 :
 
-### Content Structure
+
+
+
+### Content Inventory
 
 :
 
