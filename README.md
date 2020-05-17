@@ -65,7 +65,25 @@ Both the trainer and trainee are considered as the users of the application.
 
 <h2>Functional Requirement</h2>
 
-:
+1 Include a "Start a New Scenario" button
+1 Include a search panel to select starting date and ending date
+1 Include a chart panel to display the currency exchange rates on the selected dates
+1 Include a transaction table to display the transactions made
+1 Include a transaction entry form to allow adding of a transaction
+1 Download Currency Exchange Rates between a set of selected dates (default dates used if none is selected) by consuming MAS's API.
+1 Restructure downloaded Currency Exchange Rates and re-structure them to be used for rates retrieving and drawing charts.
+1 Draw charts with the restructured information.
+1 Reset the chart and empty the transaction table when "Start a New Scenario" button is clicked.
+1 Allow user to select the starting date and ending date of the data to be retrieved and displayed.
+1 Calculate the short term and long term moving average to add to the chart
+1 Move and Adjust the X-axis to allow ease of analyzing the chart
+1 Populate the transaction entry with info from the point clicked on the chart
+1 Retrieve the rates from the re-structured data using an entered date
+1 Allow transaction to be entered with dates, rates and indication of buying/selling.
+1 Calculate the amount increase/decrease in the fund due to buying/selling
+1 Allow transaction to be made with deposit and withdrawal of fund
+1 Allow display of the updated transaction table whenever a transaction is made.
+1 Calculate the grand total of the scenario
 
 <h2>Content Requirement</h2>
 
@@ -140,7 +158,7 @@ For use case Diagram
 
 For grammer and spell check
 * Grammer Checker - Online Editor (https://grammarchecker.io/) 
-
+* Reverso - (https://www.reverso.net/spell-checker/english-spelling-grammar/)
 
 
 <hr>
