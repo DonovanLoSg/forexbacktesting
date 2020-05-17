@@ -63,7 +63,7 @@ Both the trainer and trainee are considered as the users of the application.
 
 <h1>Defining the Project (Scope)</h1>
 
-<h2>Functional Requirement</h2>
+<h2>Functional Requirements</h2>
 
 1 Include a "Start a New Scenario" button
 1 Include a search panel to select starting date and ending date
@@ -85,9 +85,13 @@ Both the trainer and trainee are considered as the users of the application.
 1 Allow display of the updated transaction table whenever a transaction is made.
 1 Calculate the grand total of the scenario
 
-<h2>Content Requirement</h2>
+<h2>Content Requirements</h2>
 
-:
+Currency exchange rates historical data has to be downloaded by consuming MAS's API.
+Fields to be retrieved are the date and the USD to SGD exchange rates.
+The response data need to be restructure for charting purposes as well as rates look up during transaction entries.
+Short term moving average and long term moving average are calculated from the restructured data.
+A responsive chart with the exchange rates and moving average is to be display to the user.
 
 <hr>
 
