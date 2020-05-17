@@ -10,11 +10,66 @@
 // });
 
 // Test Script for axios
+
+var datesArray = [];
+var ratesArray = [];
+    
+
+function drawChart(ratesTable) {
+
+    var record;
+    for (record of ratesTable) {
+        datesArray.push(record["end_of_day"]);
+        ratesArray.push(record["usd_sgd"]);
+    }
+    
+
+
+    
+
+    Chart.defaults.global.hover.mode = 'nearest';
+    Chart.defaults.global.legend = false;
+    Chart.defaults.maintainAspectRatio = 'false';
+
+    new Chart(document.getElementById("line-chart"), {
+    type: 'line',
+    data: {
+        labels: datesArray,
+        datasets: [{ 
+            data: ratesArray,
+            label: "USD-SGD",
+            borderColor: "#ff0000",
+            fill: true,
+        }
+        ]
+    },
+    options: {
+        title: {
+        display: true,
+        text: 'Currency Exchange Rates - S$ per unit of US$',
+        position: 'bottom',
+        fontSize: 20
+        },
+        tooltips: {
+            mode: 'nearest'
+        }
+    }
+    });
+
+
+}
+
+
+
+
+
+
 let apiURL='https://eservices.mas.gov.sg/api/action/datastore/search.json'
 let searchDateStart='2020-01-01'
 let searchDateEnd='2020-03-31'
 
-let rates=[]
+let ratesTable=[]
+
 
 $(function(){
   $('#search-btn').click(function(){
@@ -27,11 +82,9 @@ $(function(){
       }
     }).then(function(response){
         console.log(response.data.result['total']);
-        let ratesTable = response.data.result['records'];
-        $("#result").text(ratesTable);
+        ratesTable = response.data.result['records'];
+        drawChart(ratesTable);
 
     })
   })
 })
-
-
