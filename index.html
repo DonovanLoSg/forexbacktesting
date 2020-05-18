@@ -63,8 +63,10 @@ PAGE HEADER
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                 
                     <!--- Navbar Brand -->
-                    <a class="navbar-brand" href="index.html"><img id="logo" alt="Donovan LoLogo" src="assets/img/logo/donovanlogo150x150.png"><div id="pageTitle">Currency Exchange <span class="d-block d-lg-none"><br></span>Backtesting Application</div></a>
+                    <a class="navbar-brand" href="index.html"><img id="logo" alt="Donovan LoLogo" src="assets/img/logo/donovanlogo150x150.png">
+                    <div id="pageTitle">Currency Exchange <span class="d-block d-lg-none"><br></span>Backtesting Application</div></a>
                     
+                
                     <!-- Toggler/collapsibe Button -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -99,22 +101,21 @@ MAIN
 ========================================================== -->
 
     <main>
-
-        <div id="control-panel" class="panel bg-dark row">
-            <div class="container-fluid">
-                <div class="row align-content=stretch">
-                    <div class="col-xl-3 col-lg-12 ">
-                        <a href="#" class="myButton">Start a new scenerio <i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
+        <div id="control-panel" class="row">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-12 ">
+                        <a href="#" class="myButton text-center">Start a new scenerio <i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
                     </div>
-                    <div id="dataRange" class="col-xl-9 col-lg-12 text-xl-right text-lg-left" >
-                        Historical datasets retrieval from 
-                        <label for="startDate">start date :  </label><input type="date" id="startDate" name="startDate">
-                        <span class="d-block d-xl-none"><br></span> 
-                        <label for="endDate">to end date :  </label><input type="date" id="endDate" name="endDate">
+                    <div id="dateRange" class="col-xl-10 col-lg-12 panel">
+                        Historical datasets retrieval from <span class="d-inline d-lg-none"><br></span>
+                        <label for="startDate">start&nbsp;date&nbsp;:&nbsp;</label><input type="date" id="startDate" name="startDate"><span class="d-inline d-md-none"><br></span>
+                        <label for="endDate">to&nbsp;end&nbsp;date&nbsp;:&nbsp;</label><input type="date" id="endDate" name="endDate">
                     </div>
                 </div>
             </div>
-       </div>
+        </div>
+    
 
             <!-- chart canvas-->
 

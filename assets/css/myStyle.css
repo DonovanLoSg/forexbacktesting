@@ -31,10 +31,10 @@ bg-dark {
 
 #pageTitle {
     display: inline-block;
-    line-height: 1.5rem;
+    line-height: 1.4rem;
     vertical-align: middle;
-    font-size: 1.7rem;
-    padding-left: 2rem;
+    font-size: 1.6rem;
+    padding-left: 1rem;
 }
 
 #control-panel{
@@ -48,42 +48,61 @@ bg-dark {
 
 
 .myButton {
-	box-shadow:inset 0px 1px 0px 0px #97c4fe;
-	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-	background-color:#3d94f6;
-	border-radius:6px;
-	border:1px solid #337fed;
+	box-shadow: 8px 8px 10px 0px #9fb4f2;
+	background:linear-gradient(to bottom, #3873d9 5%, #0537ff 100%);
+	background-color:#3873d9;
+	border-radius:28px;
+	border:1px solid #001554;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Verdana;
-	font-size:1rem;
-	padding:6px 24px;
+	font-family:Arial;
+	font-size:17px;
+	padding:20px 31px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #1570cd;
+	text-shadow:0px 1px 0px #030305;
+    margin-left: -10px;
+    
+}
+.myButton:link {
+    color: #ffffff;
+	text-decoration:none;
+}
+.myButton:visited {
+    color: #ffffff;
+	text-decoration:none;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-	background-color:#1e62d0;
+	background:linear-gradient(to bottom, #0537ff 5%, #3873d9 100%);
+	background-color:#ffffff;
+    color: #ffffff;
+	text-decoration:none;
 }
 .myButton:active {
 	position:relative;
 	top:1px;
-}
-.myButton>i {
-    font-size: 18px;
-    vertical-align: middle;
+    color: #ffffff;
+	text-decoration:none;
 }
 
 
-#dataRange {
-    color: white;
-    vertical-align: middle;
 
 
+#dateRange {
+    margin-top: 5px;
+    display:inline-block;
+    vertical-align: text-bottom;
+    background-color:#FFFFFF;
+    padding: 6px 31px;
+    border: 1px solid black;
+    line-height: 2rem;
+    
 }
 
+input[type="date"] {
+    height: 2rem;
 
+}
 
 #startDate, #endDate {
     width: 200px;
