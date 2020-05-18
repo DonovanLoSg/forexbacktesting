@@ -38,10 +38,11 @@ bg-dark {
 }
 
 #control-panel{
-    line-height: 1rem;
+    line-height: 0.5rem;
     margin: 1%;
     width: 98%;
     font-size:1rem;
+        
 }
 
 
@@ -56,7 +57,7 @@ bg-dark {
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Verdana;
-	font-size:12px;
+	font-size:1rem;
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #1570cd;
@@ -69,9 +70,21 @@ bg-dark {
 	position:relative;
 	top:1px;
 }
+.myButton>i {
+    font-size: 18px;
+    vertical-align: middle;
+}
 
 
-#control-panel label {
+#dataRange {
     color: white;
-    
+    vertical-align: middle;
+
+
+}
+
+
+
+#startDate, #endDate {
+    width: 200px;
 }

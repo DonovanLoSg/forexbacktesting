@@ -101,24 +101,19 @@ MAIN
     <main>
 
         <div id="control-panel" class="panel bg-dark row">
-
-            <div class="container">
-
-                <div class="row">
-        
-                    <div class="col-sm">
-                        <a href="#" class="myButton">Start a new scenerio </a>
+            <div class="container-fluid">
+                <div class="row align-content=stretch">
+                    <div class="col-xl-3 col-lg-12 ">
+                        <a href="#" class="myButton">Start a new scenerio <i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
                     </div>
-                    <div>
-                        <label for="startDate">Start Date</label><input type="date" id="startDate" name="startDate">
-                        <label for="endDate">End Date</label><input type="date" id="endDate" name="endDate">
+                    <div id="dataRange" class="col-xl-9 col-lg-12 text-xl-right text-lg-left" >
+                        Historical datasets retrieval from 
+                        <label for="startDate">start date :  </label><input type="date" id="startDate" name="startDate">
+                        <span class="d-block d-xl-none"><br></span> 
+                        <label for="endDate">to end date :  </label><input type="date" id="endDate" name="endDate">
                     </div>
-
-                
                 </div>
-
             </div>
-
        </div>
 
             <!-- chart canvas-->
