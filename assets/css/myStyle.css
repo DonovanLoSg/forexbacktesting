@@ -6,7 +6,7 @@
 
 #pageTitle {
     display: inline-block;
-    margin-left: 20px;
+    margin: 20px;
     line-height: 1rem;
     vertical-align: middle;
 }
@@ -15,6 +15,17 @@
     border: 1px solid white;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 25px;
-    background: rgb(52,58,64);
     padding: 10px;
+}
+
+bg-white {
+    background: white;
+}
+
+bg-dark {
+    background: rgb(52,58,64);
+}
+
+#control{
+    margin: 20px;
 }
