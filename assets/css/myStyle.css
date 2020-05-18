@@ -6,9 +6,9 @@
 
 #pageTitle {
     display: inline-block;
-    margin: 20px;
     line-height: 1rem;
     vertical-align: middle;
+
 }
 
 .panel {
@@ -26,13 +26,15 @@ bg-dark {
     background: rgb(52,58,64);
 }
 
-#control{
-    margin: 20px;
+#control-panel, #header-panel{
+    display: inline-block;
+    line-height: 1rem;
+    margin-top: 20px;
+    width: 100%;
+
 }
 
 .round-button {
     border-radius: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
     border: 1px solid white;
 }

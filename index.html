@@ -28,19 +28,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
 
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/fonts/font-awesome-4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/gijgo.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/gijgo.min.css">
  	<link rel="stylesheet" type="text/css" href="assets/css/myStyle.css">
 
-    <script src="/assets/js/lib/jquery-3.5.1.min.js"></script>
-    <script src="/assets/js/lib/popper.min.js"></script>
-    <script src="/assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/lib/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/lib/popper.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
     <script src="assets/js/lib/axios.min.js"></script>
     <script src="assets/js/lib/moment.min.js"></script>
     <script src="assets/js/lib/Chart.min.js"></script>
     <script src="assets/js/lib/gijgo.min.js"></script>
-    <script src="assets/js/myScript.js"></script>
+
 
 
 </head>
@@ -55,14 +56,14 @@ PAGE HEADER
 
     <header>
 
-        <div class="container-fluid ">
+        <div class="container-fluid">
             
             <!--- Navbar -->
-            <div class="panel bg-dark">
+            <div id="header-panel" class="panel bg-dark row">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                 
                     <!--- Navbar Brand -->
-                    <a class="navbar-brand img-fluid" href="index.html"><img id="logo" alt="Donovan LoLogo" src="assets/img/logo/donovanlogo150x150.png"><div id="pageTitle">Currency Exchange <span class="d-block d-lg-none"><br></span>Backtesting Application</div></a>
+                    <a class="navbar-brand" href="index.html"><img id="logo" alt="Donovan LoLogo" src="assets/img/logo/donovanlogo150x150.png"><div id="pageTitle">Currency Exchange <span class="d-block d-lg-none"><br></span>Backtesting Application</div></a>
                     
                     <!-- Toggler/collapsibe Button -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -99,14 +100,30 @@ MAIN
 
     <main>
 
-    <div id="control" class="panel bg-dark">
-        <button type="button" class="btn btn-primary btn-xs round-button" data_but="btn-xs"><i class="fa fa-play-circle" aria-hidden="true"></i> Start a new scenerio </button>
-    </div>
+        <div class="container-fluid">
+        
+            <div id="control-panel" class=" panel bg-dark row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary btn-xs round-button" data_but="btn-xs">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i> Start a new scenerio 
+                    </button>
+            
+                </div>
+                <div class="col">
+                    Start Date: <input id="startDate" width="276" />
+                </div>
+                <div class="col">
+                        End Date: <input id="endDate" width="276" />
+                </div>
+    
+            </div>
 
-    <!-- chart canvas-->
+       </div>
 
-    <!-- transactions panel -->
+            <!-- chart canvas-->
 
+           <!-- transactions panel -->
+ 
     </main>
 
 
@@ -139,6 +156,7 @@ PAGE FOOTER
 
 
 
+    <script src="assets/js/myScript.js"></script>
 
 </body>
 
