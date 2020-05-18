@@ -161,7 +161,7 @@ I uses **Git** for Versioning Control System and **GitHub** for repositories.
 
 I use **Bootstrap 4**, including its compoents and utilities for layout. **NavBar** is used for the main navigation, **box-shadow* utilities are also applied.
 
-The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**, **moment.js**, **Chart.js**), taking advantages of **DOM**, **Ajax** and **JSON**.
+The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**, **moment.js**, **Chart.js**, **Gijgo**), taking advantages of **DOM**, **Ajax** and **JSON**.
 
 For codes generating,
 * Bootstrap 4 Button Generator (http://www.codingjugaad.com/boostrap-4-button-code-generator)
