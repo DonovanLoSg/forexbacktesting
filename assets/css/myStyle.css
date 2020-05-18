@@ -29,3 +29,10 @@ bg-dark {
 #control{
     margin: 20px;
 }
+
+.round-button {
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid white;
+}
