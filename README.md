@@ -161,14 +161,17 @@ I uses **Git** for Versioning Control System and **GitHub** for repositories.
 
 I use **Bootstrap 4**, including its compoents and utilities for layout. **NavBar** is used for the main navigation, **box-shadow* utilities are also applied.
 
-The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**, **moment.js**, **Chart.js**, **Gijgo**), taking advantages of **DOM**, **Ajax** and **JSON**.
+The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **axios.js**, **moment.js**, **Chart.js**, **Flatpickr**), taking advantages of **DOM**, **Ajax** and **JSON**.
 
 A CSS Reset style sheet from Killer Collection of CSS Resets (https://perishablepress.com/a-killer-collection-of-global-css-reset-styles/) is used in additional to
 Code Institues templates (https://github.com/Code-Institute-Org/gitpod-full-template) to start the coding. 
 The template used for Readme.md is also from Code Institute (https://github.com/Code-Institute-Solutions/readme-template/blob/master/README.md)
 
 For codes generating,
-* Bootstrap 4 Button Generator (http://www.codingjugaad.com/boostrap-4-button-code-generator)
+* CSS Button Generator (http://www.bestcssbuttongenerator.com/)
+
+
+
 
 For fonts
 * Font Awesome 4 (https://fontawesome.com/v4.7.0/)
