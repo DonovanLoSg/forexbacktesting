@@ -1,15 +1,13 @@
 
-// Gijgo script
 
-        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+// Initialize date picker
 
-        $('#startDate').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
+let today = new Date().toISOString().substr(0, 10);
+document.querySelector("#endDate").value = today;
 
-        $('#endDate').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
+let lastMonth = moment(today);
+let lastMonth1 = lastMonth.subtract(1, 'month');
+let lastMonth2 = lastMonth1.format().substr(0, 10);
 
-
+document.querySelector("#startDate").value = lastMonth2;
 

@@ -90,10 +90,11 @@ bg-dark {
 
 #dateRange {
     margin-top: 5px;
+    margin-left: 10px;
     display:inline-block;
     vertical-align: text-bottom;
     background-color:#FFFFFF;
-    padding: 6px 31px;
+    padding: 8px 25px;
     border: 1px solid black;
     line-height: 2rem;
     
