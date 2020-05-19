@@ -59,13 +59,15 @@ function  drawChart(ratesTable)  { 
 				data:  MovAvg7,
 				                label:   "7 days Moving average",
 				                borderColor:   "#00ff00",
-				                fill:  false,
+                                fill:  false,
+                                pointDot: false,
 				            
 			}, {                
 				data:  MovAvg14,
 				                label:   "14 days average 10",
 				                borderColor:   "#0000ff",
-				                fill:  false,
+                                fill:  false,
+                                pointDot: false,
 				            
 			}],
 			        
