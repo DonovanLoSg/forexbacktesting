@@ -106,8 +106,8 @@ Both the trainer and trainee are considered as the users of the application.
 
 ### Sitemap
 
-<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" alt="sitemap for this app" target="_blank"><img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a>
-<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" target="_blank">Click to Enlarge</a>
+<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap.png" alt="sitemap for this app" target="_blank"><img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a>
+<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap.png" target="_blank">Click to Enlarge</a>
 
 
 
