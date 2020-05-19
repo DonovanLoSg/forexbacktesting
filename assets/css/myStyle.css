@@ -116,7 +116,7 @@ input[type="date"] {
     font-size:1rem;
     height: 100%;
     border: 1px solid grey;
-    background: #eeeeee;
+    background: #dddddd;
         
 }
 
@@ -133,3 +133,27 @@ input[type="date"] {
     height:300px;
 }
 
+#transaction-panel{
+    width: 98%;
+    margin: 20px;
+
+}
+
+#transaction-form .panel{
+
+
+    border: 1px solid grey;
+    padding-right: 10px;
+    margin-top:20px;
+        
+}
+
+#transaction-table .panel{
+
+    border: 1px solid grey;
+    background: #dddddd;
+    margin-top:20px;
+
+
+        
+}
