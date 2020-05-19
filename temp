@@ -1,0 +1,40 @@
+   <header>
+
+        <div id="header-panel" class="panel bg-dark row">
+
+            <div class="container-fluid">
+            
+                <!--- Navbar -->
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                
+                    <!--- Navbar Brand -->
+                    <a class="navbar-brand" href="index.html"><img id="logo" alt="Donovan LoLogo" src="assets/img/logo/donovanlogo150x150.png">
+                    <div id="pageTitle">Currency Exchange <span class="d-block d-lg-none"><br></span>Backtesting Application</div></a>
+                    
+                
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <!--Collapsibe content -->
+                    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+                        <!-- Navbar links -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="howto.html">How-Tos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </header>
