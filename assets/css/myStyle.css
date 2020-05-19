@@ -58,7 +58,7 @@ bg-dark {
 	color:#ffffff;
 	font-family:Arial;
 	font-size:17px;
-	padding:20px 31px;
+	padding:20px 40px 20px 30px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #030305;
     margin-left: -10px;
@@ -90,7 +90,6 @@ bg-dark {
 
 #dateRange {
     margin-top: 5px;
-    margin-left: 10px;
     display:inline-block;
     vertical-align: text-bottom;
     background-color:#FFFFFF;
@@ -107,4 +106,20 @@ input[type="date"] {
 
 #startDate, #endDate {
     width: 200px;
+}
+
+.chart-container{
+ 
+    height:50vh; 
+    width:98vw;
+}
+
+#canvas-panel{
+    line-height: 0.5rem;
+    margin: 1%;
+    width: 98%;
+    font-size:1rem;
+    height: 50vh;
+    border: 1px solid black;
+        
 }
