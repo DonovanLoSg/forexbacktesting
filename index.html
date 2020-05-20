@@ -130,14 +130,50 @@ MAIN
         <div id="transaction-panel" class="row">
             <div class="container-fluid ">
                 <div class="row">
-                    <div id="transaction-form" class="col-xl-5 col-md-12">
+                    <div id="transaction-form-panel" class="col-xl-5 col-md-12">
                         <div class="panel ">
-                            a
+                            <form action="" id="transaction-form" name="transaction-form">
+                                <b>Transaction Entry Form</b>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label for="txDate">Date:</label>
+                                        </td>
+                                        <td>
+		                                    <input type="date" id="txDate" name="txDate"  value="" min="1988-01-08" max="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="txRate">Rate (SGD per 1 USD):</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="txRate" name="txRate" readonly disabled />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="tAmount">Amount (USD):</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="tAmount" name="tAmount" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input type = "button" name = "buyBtn" value = "Buy" />
+                                            <input type = "button" name = "sellBtn" value = "Sell" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
                         </div>
                     </div>
                     <div id="transaction-table-panel" class="col-xl-7 col-md-12">
                         <div class="panel ">
-                            <b>Transactions</b>
+                            <b>Transactions Records</b>
                             <table id="transaction-table" class="table" style="background-color: white">
                                 <thead>
                                     <tr>

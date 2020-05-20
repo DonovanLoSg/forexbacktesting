@@ -1,4 +1,32 @@
 // Initialize date picker
+function fetchRate(selectedDate) {
+	let  apiURL = 'https://eservices.mas.gov.sg/api/action/datastore/search.json';
+	axios.get(apiURL,   {      
+		params:  {        
+			'resource_id': '95932927-c8bc-4e7a-b484-68a66a24edfe',
+			        'limit': '1',
+			'fields': 'end_of_day,usd_sgd',
+			        'filters[end_of_day]': selectedDate,
+		}    
+	}).then(function(response) {  
+        document.querySelector("#txRate").value = response.data.result.records[0].usd_sgd;
+	})
+}
+
+function fetchLastRate() {
+	let  apiURL = 'https://eservices.mas.gov.sg/api/action/datastore/search.json';
+	axios.get(apiURL,   {      
+		params:  {        
+			'resource_id': '95932927-c8bc-4e7a-b484-68a66a24edfe',
+			 'limit': '1',
+			'fields': 'end_of_day,usd_sgd',
+			 'sort': 'end_of_day desc',
+		}    
+	}).then(function(response) {  
+        document.querySelector("#txDate").value = response.data.result.records[0].end_of_day;
+        document.querySelector("#txRate").value = response.data.result.records[0].usd_sgd;
+	})
+}
 function resetDatePicker() {
 	let today = new Date().toISOString().substr(0, 10);
 	document.querySelector("#endDate").value = today;
@@ -59,15 +87,15 @@ function  drawChart(ratesTable)  { 
 				data:  movAvg7,
 				                label:   "7 days Moving average",
 				                borderColor:   "#00ff00",
-                                fill:  false,
-                                pointDot: false,
+				                fill:  false,
+				pointDot: false,
 				            
 			}, {                
 				data:  movAvg14,
 				                label:   "14 days average 10",
 				                borderColor:   "#0000ff",
-                                fill:  false,
-                                pointDot: false,
+				                fill:  false,
+				pointDot: false,
 				            
 			}],
 			        
@@ -112,24 +140,17 @@ function downloadFromAPI(startDate, endDate) {
 	})
 }
 
-function populateTable(transactionTable){
-
-    console.table(transactionTable);
-
-
+function populateTable(transactionTable) {
+	console.table(transactionTable);
 }
-
-
-
-
 
 var  datesArray  =   [];
 var  ratesArray  =   [];
 var  calScope  =  0;
 var movAvg7 = [];
 var movAvg14 = [];
-var transactionTable = []
-
+var transactionTable = [];
+var returnRate = 0;
 //------------------
 // placeholder data
 var transDate = "YYYY-MM-DD";
@@ -140,16 +161,22 @@ var balanceSGD = "9,999,999.9999"
 var transactionRecord = [transDate, transRate, transMethod, balanceUSD, balanceSGD]
 var i;
 for (i = 0; i < 50; i++) {
-   transactionTable.push(transactionRecord);
+	transactionTable.push(transactionRecord);
 }
-
 //-------------------
-
-
 $(document).ready(function() {
 	resetDatePicker();
 	downloadFromAPI($("#startDate").val(), $("#endDate").val());
-	addEventListener("change", function() {
+	document.querySelector("#startDate").addEventListener("change", function() {
+		downloadFromAPI($("#startDate").val(), $("#endDate").val());
+    })
+    document.querySelector("#endDate").addEventListener("change", function() {
 		downloadFromAPI($("#startDate").val(), $("#endDate").val());
 	})
+    fetchLastRate();
+    document.querySelector("#txDate").addEventListener("change", function() {
+		fetchRate(document.querySelector("#txDate").value);
+	})
+        
+
 })
