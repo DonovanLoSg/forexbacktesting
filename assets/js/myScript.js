@@ -38,8 +38,8 @@ function  drawChart(ratesTable)  { 
 		datesArray.push(record["end_of_day"]);        
 		ratesArray.push(Math.round(parseFloat(record["usd_sgd"]) * 10000) / 10000);    
 	}        
-	let  MovAvg7  =  calMovingAvg(7, ratesArray);
-	let  MovAvg14  =  calMovingAvg(14, ratesArray);    
+	let  movAvg7  =  calMovingAvg(7, ratesArray);
+	let  movAvg14  =  calMovingAvg(14, ratesArray);    
 	Chart.defaults.global.hover.mode  =  'nearest';    
 	Chart.defaults.global.legend.display  =  true;    
 	Chart.defaults.maintainAspectRatio  =  'false';
@@ -56,14 +56,14 @@ function  drawChart(ratesTable)  { 
 				                pointRadius:  3,
 				            
 			}, {                
-				data:  MovAvg7,
+				data:  movAvg7,
 				                label:   "7 days Moving average",
 				                borderColor:   "#00ff00",
                                 fill:  false,
                                 pointDot: false,
 				            
 			}, {                
-				data:  MovAvg14,
+				data:  movAvg14,
 				                label:   "14 days average 10",
 				                borderColor:   "#0000ff",
                                 fill:  false,
@@ -111,11 +111,41 @@ function downloadFromAPI(startDate, endDate) {
 		// ----------------------------------------------------------------- **
 	})
 }
+
+function populateTable(transactionTable){
+
+    console.table(transactionTable);
+
+
+}
+
+
+
+
+
 var  datesArray  =   [];
 var  ratesArray  =   [];
 var  calScope  =  0;
-var MovAvg7 = [];
-var MovAvg14 = [];
+var movAvg7 = [];
+var movAvg14 = [];
+var transactionTable = []
+
+//------------------
+// placeholder data
+var transDate = "YYYY-MM-DD";
+var transRate = "9.9999"
+var transMethod = "Buy/Sell"
+var balanceUSD = "9,999,999.9999"
+var balanceSGD = "9,999,999.9999"
+var transactionRecord = [transDate, transRate, transMethod, balanceUSD, balanceSGD]
+var i;
+for (i = 0; i < 50; i++) {
+   transactionTable.push(transactionRecord);
+}
+
+//-------------------
+
+
 $(document).ready(function() {
 	resetDatePicker();
 	downloadFromAPI($("#startDate").val(), $("#endDate").val());
