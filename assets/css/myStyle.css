@@ -1,3 +1,5 @@
+
+
 .panel {
     border: 1px solid white;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -5,13 +7,10 @@
     padding: 10px;
 }
 
-bg-white {
-    background: white;
+.bg-green {
+    background: #008080;
 }
 
-bg-dark {
-    background: rgb(52,58,64);
-}
 
 
 
@@ -52,12 +51,12 @@ bg-dark {
 	background:linear-gradient(to bottom, #3873d9 5%, #0537ff 100%);
 	background-color:#3873d9;
 	border-radius:28px;
-	border:1px solid #001554;
+	border:3px solid darkblue;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:17px;
+	font-size:20px;
 	padding:20px 40px 20px 30px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #030305;
@@ -92,10 +91,12 @@ bg-dark {
     margin-top: 5px;
     display:inline-block;
     vertical-align: text-bottom;
-    background-color:#FFFFFF;
+
     padding: 8px 25px;
-    border: 1px solid black;
+    border: 3px solid #008040;
     line-height: 2rem;
+    text-align: center;
+    background-color: #dff2bd;
     
 }
 
@@ -115,8 +116,8 @@ input[type="date"] {
     width: 98%;
     font-size:1rem;
     height: 100%;
-    border: 1px solid grey;
-    background: #dddddd;
+    border: 3px solid #008040;
+    background: #white;
         
 }
 
@@ -130,7 +131,9 @@ input[type="date"] {
 
 #chart{
     width:100%;
-    height:300px;
+    height:400px;
+    background: white;
+     border-radius: 20px;
 }
 
 #transaction-panel{
@@ -142,16 +145,16 @@ input[type="date"] {
 #transaction-form .panel{
 
 
-    border: 1px solid grey;
+    border: 3px solid #008040;
     padding-right: 10px;
     margin-top:20px;
-        
+    background-color: #dff2bd;    
 }
 
 #transaction-table .panel{
 
-    border: 1px solid grey;
-    background: #dddddd;
+    border: 3px solid #008040;
+    background-color: #dff2bd;
     margin-top:20px;
 
 
