@@ -218,18 +218,7 @@ form .error {
   color: #ff0000;
 }
 
-table{
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: collapse;
-}
-table, th, td{
-    border: 1px solid #cdcdcd;
-}
-table th, table td{
-    padding: 5px;
-    text-align: left;
-}
+
 
 #txRate {
     background:#eeeeee;
@@ -247,4 +236,14 @@ table th, table td{
    margin-top: 100px;
     
 
+}
+
+#balanceUSD {
+        color: white;
+        margin: 20px 0px 10px 20px;;
+}
+
+#balanceSGD {
+        color: white;
+        margin: 20px 0px 10px 20px;
 }
