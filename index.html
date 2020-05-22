@@ -159,14 +159,14 @@ MAIN
                 <div class="row">
                     <div  class="col-xl-3 col-lg-6 col-md-12">
                         <div class="panel" id="transaction-form-panel">
-                            <form action="" id="transaction-form" name="transaction-form" method="post" action="">
+                            <form action="" id="transaction-form" name="transaction-form" method="post" >
                                 <span class="panelHeader">Transaction Entry Form</span><br><br>
                                 <label for="txDate">Date:</label>
                                 <input type="date" id="txDate" name="txDate"  value="" min="1988-01-08" max="">
                                 <label for="txRate">Rate (SGD per 1 USD):</label>
                                 <input type="text" id="txRate" name="txRate" readonly  />
                                 <label for="txAmount">Amount (USD):</label>
-                                <input type="text" id="tAmount" name="tAmount" /><br><br>
+                                <input type="text" id="txAmount" name="txAmount" /><br><br>
                                 <input type = "submit" name = "buyBtn" value = "Buy" />
                                 <input type = "submit" name = "sellBtn" value = "Sell" />
                             </form>
@@ -174,15 +174,14 @@ MAIN
                     </div>
                     <div  class="col-xl-3 col-lg-6 col-md-12">
                         <div class="panel" id="adjustment-form-panel">
-                            <form action="" id="adjustment-form" name="adjustment-form" method="post" action="">
+                            <form action="" id="adjustment-form" name="adjustment-form" method="post" >
                                 <span class="panelHeader">Fund Adjustment Form</span><br><br>
                                 <label for="fdDate">Date:</label>
                                 <input type="date" id="fdDate" name="fdDate"  value="" min="1988-01-08" max="">
-                                <br><br><br><br>
                                 <label for="fdAmount">Amount (USD):</label>
                                 <input type="text" id="fdAmount" name="fdAmount" /><br><br>
-                                <input type = "submit" name = "buyBtn" value = "Buy" />
-                                <input type = "submit" name = "sellBtn" value = "Sell" />
+                                <input type = "submit" name = "depositBtn" value = "Deposit" />
+                                <input type = "submit" name = "withdrawlBtn" value = "Withdrawal" />
                             </form>
                         </div>
                     </div>

@@ -40,16 +40,16 @@ function resetDatePicker() {
 	let lastMonth = moment(today);
 	let lastMonth1 = lastMonth.subtract(1, 'month');
 	let lastMonth2 = lastMonth1.format().substr(0, 10);
-	document.querySelector("#startDate").value = lastMonth2;
-}
-
-function setMaxDate() {
-	let today = new Date().toISOString().substr(0, 10);
+    document.querySelector("#startDate").value = lastMonth2;
     document.querySelector("#txDate").value = today;
     document.querySelector("#fdDate").value = today;
-    document.querySelector("#startDate").value = today;
-    document.querySelector("#endDate").value = today;
+
 }
+
+// function setMaxDate() {
+// 	let today = new Date().toISOString().substr(0, 10);
+
+// }
 
 function  calMovingAvg(calScope, calArray)  {
 	var  jcount  =  0;    
@@ -243,17 +243,52 @@ $(document).ready(function() {
     });
     $("#transaction-form").validate({
         rules: {
-            txDate: 'required',
-            txRate: 'required',
-            txAmount: 'required'
+          txAmount: {
+                required: true,
+                number: true,
+            },
+            txDate: {
+                required: true,
+            },
+            txRate: {
+                required:true,
+
+            }
         },
         messages: {
-            txDate: 'This field is required',
-            txRate: 'Select a date with recorded rates',
-            txAmount: 'Enter the transaction amount.'
+          txAmount: {
+                required: "Enter transaction amount.",
+                number: "Enter a valid number.",
+            },
+            txDate: {
+                required: "Select a transaction date.",
+            },
+            txRate: {
+                required: "Select a date with Rates record.",
+
+            }
+            
         },
         submitHandler: function(form){
-            form.submit()
+            $("#transaction-form").form.submit()
+        }
+
+    });
+
+    $("#adjustment-form").validate({
+        rules: {
+            fdDate: 'required',
+            fdAmount: {
+                required: true,
+                number: true,
+            }
+        },
+        messages: {
+            fdDate: 'This field is required',
+            fdAmount: 'Enter the transaction amount.'
+        },
+        submitHandler: function(form){
+            $("#adjustment-form").submit()
         }
 
     });
