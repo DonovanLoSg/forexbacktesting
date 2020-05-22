@@ -41,7 +41,7 @@ body {
 }
 
 #control-panel{
-    line-height: 0.5rem;
+    line-height: 0.7rem;
     margin: 20px;
     width: 98%;
     font-size:1rem;
@@ -112,11 +112,10 @@ input[type="date"] {
 #startDate, #endDate {
     width: 200px;
 }
-
+        
 #canvas-panel{
     line-height: 0.5rem;
-    margin: 20px;
-    margin-top:30px;
+    margin: 20px 10px 0px 20px;
     width: 98%;
     font-size:1rem;
     height: 100%;
@@ -138,12 +137,6 @@ input[type="date"] {
     height:400px;
     background: white;
      border-radius: 20px;
-}
-
-#transaction-panel{
-    
-
-    
 }
 
 #transaction-form-panel{
@@ -216,7 +209,7 @@ table th, table td{
 }
 
 #txRate {
-    background: silver;
+    background:#eeeeee;
     font-weight: bold;
 }
 

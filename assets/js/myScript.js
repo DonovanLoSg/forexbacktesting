@@ -97,13 +97,15 @@ function  drawChart(ratesTable)  { 
 					data: movAvg7,
 					label: "7 days moving average",
 					borderColor: "#00ff00",
-					fill: false,
+                    fill: false,
+                    pointRadius: 0,
 					pointDot: false,
 				}, {
 					data: movAvg14,
 					label: "14 days moving average",
 					borderColor: "#0000ff",
-					fill: false,
+                    fill: false,
+                    pointRadius: 0,
 					pointDot: false,
 				}],
 			},
@@ -119,8 +121,17 @@ function  drawChart(ratesTable)  { 
 				// Tooltip Element
 				tooltips: {
 					enabled: true,
-					mode: 'label',
-					position: 'nearest',
+					mode: 'index',
+                    intersect: true,
+
+                    callbacks: {
+
+                        footer: function(tooltipItem) {
+                            document.querySelector("#txDate").value = tooltipItem[0].xLabel;
+                            fetchRate(tooltipItem[0].xLabel);
+                        }
+
+                    },
 				},
 				elements: {
 					point: {
@@ -214,7 +225,7 @@ $(document).ready(function() {
     });
     document.querySelector("#chart").addEventListener("click", function(evt) {
           var activePoints = myLineChart.getElementsAtEvent(evt);
-         console.log(activePoints);
+
     });
 
 
