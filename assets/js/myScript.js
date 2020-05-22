@@ -178,14 +178,12 @@ function downloadFromAPI(startDate, endDate) {
 
     // consuming API
     let apiURL = 'https://eservices.mas.gov.sg/api/action/datastore/search.json';
-    let searchDateStart = startDate;
-    let searchDateEnd = endDate;
     axios.get(apiURL, {
         params: {
             'resource_id': '95932927-c8bc-4e7a-b484-68a66a24edfe',
             'limit': '10000',
             'fields': 'end_of_day,usd_sgd',
-            'between[end_of_day]': startDate + ',' + searchDateEnd,
+            'between[end_of_day]': startDate + ',' + endDate,
             'sort': 'end_of_day asc'
         }
     }).then(function (response) {
@@ -280,10 +278,10 @@ $(document).ready(function () {
     $("#txDate").change(function(){
         fetchRate($("#txDate").val());
 
-    })
+    });
 
     // event handlers for handling Buy button
-    $("input[name='buyBtn']").click(function () {
+    document.querySelector("input[name='buyBtn']").addEventListener("click", function() {
         ttAction = 'buy';
         ttDate = $("txDate").val();
         ttRate = parseFloat($("#txRate").val());
@@ -296,15 +294,34 @@ $(document).ready(function () {
             //     $("#txAmount").val("");
         };
         return false;
-    })
+    });
+
+    // event handlers for handling Sell button
+    document.querySelector("input[name='sellBtn']").addEventListener("click", function() {
+        ttAction = 'sell';
+        ttDate = $("txDate").val();
+        ttRate = parseFloat($("#txRate").val());
+        ttAmount = parseFloat($("txAmount").val());
+
+        var isValid = $("#transaction-form").validate();
+        if (isValid) {
+            console.log('clicked sell button');
+            //     transact(ttDate, ttRate, ttAction, ttAmount);
+            //     $("#txAmount").val("");
+        };
+        return false;
+    });
+
+
+
         
     // event handlers for handling Deposit button   
-    $("input[name='depositBtn']").click()(function () {
+    document.querySelector("input[name='depositBtn']").addEventListener("click", function() {
         ttAction = 'deposit';
         ttDate = $("fdDate").val();
         ttRate = 0;
         ttAmount = parseFloat($("fdAmount").val());
-        
+
         var isValid = $("#adjustment-form").validate();
         if (isValid) {
             console.log('clicked deposit button');
@@ -312,9 +329,15 @@ $(document).ready(function () {
             //     $("#txAmount").val("");
         };
         return false;
-    })
+
+    });
+    
+    
+    
+    
+        
     // event handlers for handling Withdraw button   
-    $("input[name='withdrawBtn']").click()(function () {
+     document.querySelector("input[name='withdrawBtn']").addEventListener("click", function() {
         ttAction = 'withdraw';
         ttDate = $("fdDate").val();
         ttRate = 0;
@@ -337,17 +360,17 @@ $(document).ready(function () {
                 required: true,
                 number: true,
                 positiveNumber: true,
-                sufficientSGD: {
-                    required: true,
-                    rates: ttRate,
-                    action: ttAction,
-                    amount: ttAmount
-                },
-                sufficientUSD: {
-                    required: true,
-                    action: ttAction,
-                    amount: ttAmount
-                }
+                // sufficientSGD: {
+                //     required: true,
+                //     rates: ttRate,
+                //     action: ttAction,
+                //     amount: ttAmount
+                // },
+                // sufficientUSD: {
+                //     required: true,
+                //     action: ttAction,
+                //     amount: ttAmount
+                // }
             },
             txDate: {
                 required: true,
@@ -361,8 +384,8 @@ $(document).ready(function () {
                 required: "Enter transaction amount.",
                 number: "Enter a valid number.",
                 positiveNumber: "Enter a positive value.",
-                sufficientSGD: "Insufficient SGD fund balance.",
-                sufficientUSD: "Insufficient USD fund balance."
+                // sufficientSGD: "Insufficient SGD fund balance.",
+                // sufficientUSD: "Insufficient USD fund balance."
             },
             txDate: {
                 required: "Select a transaction date.",
@@ -384,11 +407,11 @@ $(document).ready(function () {
                 required: true,
                 number: true,
                 positiveNumber: true,
-                sufficientToWithdraw: {
-                    required: true,
-                    action: ttAction,
-                    amount: ttAmount
-                },
+                // sufficientToWithdraw: {
+                //     required: true,
+                //     action: ttAction,
+                //     amount: ttAmount
+                // },
             }
         },
         messages: {
@@ -397,7 +420,7 @@ $(document).ready(function () {
                 required: 'Enter the transaction amount.',
                 number: 'Enter a valid transaction amount.',
                 positiveNumber: 'Enter a positive value.',
-                sufficientToWithdraw: 'Insufficient SGD fund.'
+                // sufficientToWithdraw: 'Insufficient SGD fund.'
             },
         },
         submitHandler: function () {
@@ -405,20 +428,22 @@ $(document).ready(function () {
         }
     });
 
-    
+    // jQuery validator's methods
     $.validator.addMethod('positiveNumber', function (value) {
         return Number(value) > 0;
     }, 'Enter a positive number.');
-    $.validator.addMethod('sufficientToWithdraw', function (value) {
+
+    $.validator.addMethod('sufficientToWithdraw', function (value, action) {
+        console.log(value, action);
         if (action == 'withdraw') {
             return Number(value) < balanceSGD;
         }
     }, 'Insufficient SGD fund balance.');
+
     $.validator.addMethod('sufficientSGD', function (value, rates, action) {
         console.log(action);
         if (action == "buy") {
-            console.log(value * rates, balanceSGD);
-            if (value * rates <= balanceSGD) {
+            if (Number(value) * Number(rates) <= balanceSGD) {
                 return true
             } else {
                 return false;
@@ -430,11 +455,8 @@ $(document).ready(function () {
 
     $.validator.addMethod('sufficientUSD', function (value, action) {
         if (action == "sell") {
-            return (value < balanceUSD)
+            return (Number(value) < balanceUSD)
         } else return true;
     }, 'Insufficient USD fund balance.');
-
-
-
 
 });
