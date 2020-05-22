@@ -197,11 +197,39 @@ function populateTable(transactionTable) {
 function clickHandler(evt) {
     var firstPoint = myChart.getElementAtEvent(evt)[0];
 
-    if (firstPoint) {
-        var label = myChart.data.labels[firstPoint._index];
-        var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
-    }
-    console.log(firstPoint);
+    // if (firstPoint) {
+    //     var label = myChart.data.labels[firstPoint._index];
+    //     var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
+    // }
+    
+}
+
+ 
+
+
+function transact(transactDate, transactRate, transactAction, transactAmount){
+    console.log(transactDate);
+
+    switch(transactAction) {
+        case 'deposit':
+            console.log("You have deposited SGD");
+            console.log(transactAmount);
+            break;
+        case 'withdraw':
+            console.log("You have withdrawn SGD");
+            console.log(transactAmount);
+            break;
+        case 'buy':
+            console.log("You buy x USD with x SGD");
+            break;
+        case 'sell':
+            console.log("You sell x USD for  x SGD");
+            break;
+        default:
+            break;
+        }
+    console.log('------');
+
 }
 
 
@@ -212,6 +240,7 @@ var movAvg7 = [];
 var movAvg14 = [];
 var transactionTable = [];
 var returnRate = 0;
+var transactonSpreadsheet = []
 //------------------
 // placeholder data
 var transDate = "YYYY-MM-DD";
@@ -241,64 +270,115 @@ $(document).ready(function() {
     document.querySelector("#chart").addEventListener("click", function(evt) {
           var activePoints = myLineChart.getElementsAtEvent(evt);
     });
-    $("#transaction-form").validate({
-        rules: {
-          txAmount: {
-                required: true,
-                number: true,
-            },
-            txDate: {
-                required: true,
-            },
-            txRate: {
-                required:true,
+    document.querySelector("input[name='depositBtn']").addEventListener("click", function() {
+         var isValid = $("#adjustment-form").validate();
+          if (isValid) {
+              var ttDate = document.getElementById("fdDate").value;
 
-            }
-        },
-        messages: {
-          txAmount: {
-                required: "Enter transaction amount.",
-                number: "Enter a valid number.",
-            },
-            txDate: {
-                required: "Select a transaction date.",
-            },
-            txRate: {
-                required: "Select a date with Rates record.",
+              var ttRate = 0;
+              var ttAction = 'deposit';
+              var ttAmount = document.getElementById("fdAmount").value;
+              transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#fdAmount").val("");
 
-            }
-            
-        },
-        submitHandler: function(form){
-            $("#transaction-form").form.submit()
-        }
+          };
+    });
+    document.querySelector("input[name='buyBtn']").addEventListener("click", function() {
+         var isValid = $("#transaction-form").validate();
+          if (isValid) {
+              var ttDate = document.getElementById("txDate").value;
+              var ttRate = document.getElementById("txRate").value;
+              var ttAction = 'buy';
+              var ttAmount = document.getElementById("txAmount").value;
+              transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#txAmount").val("");
+                
 
+          };
+    });
+    document.querySelector("input[name='sellBtn']").addEventListener("click", function() {
+         var isValid = $("#transaction-form").validate();
+          if (isValid) {
+              var ttDate = document.getElementById("txDate").value;
+              var ttRate = document.getElementById("txRate").value;
+              var ttAction = 'sell';
+              var ttAmount = document.getElementById("txAmount").value;
+              transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#txAmount").val("");
+                
+
+          };
     });
 
-    $("#adjustment-form").validate({
-        rules: {
-            fdDate: 'required',
-            fdAmount: {
-                required: true,
-                number: true,
-            }
-        },
-        messages: {
-            fdDate: 'This field is required',
-            fdAmount: 'Enter the transaction amount.'
-        },
-        submitHandler: function(form){
-            $("#adjustment-form").submit()
-        }
+    document.querySelector("input[name='withdrawlBtn']").addEventListener("click", function() {
+         var isValid = $("#adjustment-form").validate();
+          if (isValid) {
+              var ttDate = document.getElementById("fdDate").value;
 
+              var ttRate = 0;
+              var ttAction = 'withdraw';
+               var ttAmount = document.getElementById("fdAmount").value;
+              transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#fdAmount").val("");
+
+          };
     });
+           
+                
+$("#transaction-form").validate({
+	rules: {
+		txAmount: {
+			required: true,
+			number: true,
+		},
+		txDate: {
+			required: true,
+		},
+		txRate: {
+			required: true,
+		}
+	},
+	messages: {
+		txAmount: {
+			required: "Enter transaction amount.",
+			number: "Enter a valid number.",
+		},
+		txDate: {
+			required: "Select a transaction date.",
+		},
+		txRate: {
+			required: "Select a date with Rates record.",
+		}
+	},
+	submitHandler: function() {
+		return false;
+	}
+});
+$("#adjustment-form").validate({
+			rules: {
+				fdDate: 'required',
+				fdAmount: {
+					required: true,
+					number: true,
+				}
+			},
+			messages: {
+				fdDate: 'This field is required',
+				fdAmount: {
+					required: 'Enter the transaction amount.',
+					number: 'Enter a valid transaction amount.'
+                },
+            },
+			submitHandler: function() {
+				return false;
+			}
+		});
+
+ 
 
 
 
 
-   
-
-    // => activePoints is an array of points on the canvas that are at the same position as the click event.
 
 
 
