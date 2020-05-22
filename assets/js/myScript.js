@@ -8,8 +8,12 @@ function fetchRate(selectedDate) {
             'fields': 'end_of_day,usd_sgd',
                     'filters[end_of_day]': selectedDate,
         }    
-    }).then(function(response) {  
-        document.querySelector("#txRate").value = response.data.result.records[0].usd_sgd;
+    }).then(function(response) { 
+        if (response.data.result.records.length == 0) {
+            document.querySelector("#txRate").value = "";
+        } else {
+            document.querySelector("#txRate").value = response.data.result.records[0].usd_sgd;
+        }
     })
 }
 function fetchLastRate() {
@@ -112,6 +116,7 @@ function  drawChart(ratesTable)  { 
                     radius:  0                
                 }            
             },
+            
             maintainAspectRatio: false        
         }    
     })
