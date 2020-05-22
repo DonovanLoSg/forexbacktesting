@@ -1,146 +1,139 @@
-body {
-    font-family: "Open Sans", Verdana, san-serif;
+body {
+    font-family: "Open Sans", Verdana, san-serif;
 }
 
 
+<<<<<<< HEAD
 
 .panel {
      border: 3px solid #008040;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 25px;
     padding: 10px;
+=======
+.panel {
+     border: 3px solid #008040;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 25px;
+    padding: 10px;
+>>>>>>> 031514c7975d9528d5d654419e43539f4ea956fa
 }
-
-.bg-green {
-    background: #008080;
+.bg-green {
+    background: #008080;
 }
-
 
 
 
 #header-panel{
-    line-height: 1rem;
-    margin: 20px;
-    width: 98%;
-    font-size:1.2rem;
-    overflow: hidden;
+    line-height: 1rem;
+    margin: 20px;
+    width: 98%;
+    font-size:1.2rem;
+    overflow: hidden;
 }
-
-#logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+#logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
 }
-
-#pageTitle {
-    display: inline-block;
-    line-height: 1.4rem;
-    vertical-align: middle;
-    font-size: 1.6rem;
-    padding-left: 1rem;
+#pageTitle {
+    display: inline-block;
+    line-height: 1.4rem;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    padding-left: 1rem;
 }
-
 #control-panel{
-    line-height: 0.5rem;
-    margin: 20px;
-    width: 98%;
-    font-size:1rem;
-        
+    line-height: 0.5rem;
+    margin: 20px;
+    width: 98%;
+    font-size:1rem;
+        
+}
+
+
+.myButton {
+    box-shadow: 8px 8px 10px 0px #9fb4f2;
+    background:linear-gradient(to bottom, #3873d9 5%, #0537ff 100%);
+    background-color:#3873d9;
+    border-radius:28px;
+    border:3px solid darkblue;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    padding:20px 40px 20px 30px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #030305;
+    margin-left: -10px;
+    
+}
+.myButton:link {
+    color: #ffffff;
+    text-decoration:none;
+}
+.myButton:visited {
+    color: #ffffff;
+    text-decoration:none;
+}
+.myButton:hover {
+    background:linear-gradient(to bottom, #0537ff 5%, #3873d9 100%);
+    background-color:#ffffff;
+    color: #ffffff;
+    text-decoration:none;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+    color: #ffffff;
+    text-decoration:none;
 }
 
 
 
-.myButton {
-	box-shadow: 8px 8px 10px 0px #9fb4f2;
-	background:linear-gradient(to bottom, #3873d9 5%, #0537ff 100%);
-	background-color:#3873d9;
-	border-radius:28px;
-	border:3px solid darkblue;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	padding:20px 40px 20px 30px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #030305;
-    margin-left: -10px;
-    
+#dateRange {
+    margin-top: 5px;
+    display:inline-block;
+    vertical-align: text-bottom;
+    padding: 8px 25px;
+    border: 3px solid #008040;
+    line-height: 2rem;
+    text-align: center;
+    background-color: #dff2bd;
+    
 }
-.myButton:link {
-    color: #ffffff;
-	text-decoration:none;
+input[type="date"] {
+    height: 2rem;
 }
-.myButton:visited {
-    color: #ffffff;
-	text-decoration:none;
+#startDate, #endDate {
+    width: 200px;
 }
-.myButton:hover {
-	background:linear-gradient(to bottom, #0537ff 5%, #3873d9 100%);
-	background-color:#ffffff;
-    color: #ffffff;
-	text-decoration:none;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-    color: #ffffff;
-	text-decoration:none;
-}
-
-
-
-
-#dateRange {
-    margin-top: 5px;
-    display:inline-block;
-    vertical-align: text-bottom;
-
-    padding: 8px 25px;
-    border: 3px solid #008040;
-    line-height: 2rem;
-    text-align: center;
-    background-color: #dff2bd;
-    
-}
-
-input[type="date"] {
-    height: 2rem;
-
-}
-
-#startDate, #endDate {
-    width: 200px;
-}
-
 #canvas-panel{
-    line-height: 0.5rem;
-    margin: 20px;
-    margin-top:30px;
-    width: 98%;
-    font-size:1rem;
-    height: 100%;
-    border: 3px solid #008040;
-    background: #white;
-        
+    line-height: 0.5rem;
+    margin: 20px;
+    margin-top:30px;
+    width: 98%;
+    font-size:1rem;
+    height: 100%;
+    border: 3px solid #008040;
+    background: #white;
+        
 }
-
 .chart-container{
-    position: relative; 
-    height:50vh; 
-    width:98%;
-
+    position: relative; 
+    height:50vh; 
+    width:98%;
 }
-
 
 #chart{
-    width:100%;
-    height:400px;
-    background: white;
-     border-radius: 20px;
+    width:100%;
+    height:400px;
+    background: white;
+     border-radius: 20px;
 }
-
 #transaction-panel{
+<<<<<<< HEAD
     width: 98%;
     margin: 20px;
     
@@ -156,17 +149,37 @@ input[type="date"] {
     padding-right: 10px;
     margin-top:20px;
         
+=======
+    width: 98%;
+    margin: 20px;
+    
 }
+#transaction-form-panel{
+    background-color: #dff2bd;
+>>>>>>> 031514c7975d9528d5d654419e43539f4ea956fa
+}
+#transaction-form{
 
+<<<<<<< HEAD
 #transaction-table{
 
 
     background-color: #dff2bd;
     margin-top:20px;
-
-
-        
+=======
+    padding-right: 10px;
+    margin-top:20px;
+        
 }
+#transaction-table{
+>>>>>>> 031514c7975d9528d5d654419e43539f4ea956fa
+
+    background-color: #dff2bd;
+    margin-top:20px;
+
+        
+}
+<<<<<<< HEAD
 
 form label, 
 form input,
@@ -194,18 +207,52 @@ form button {
 }
 form .error {
   color: #ff0000;
+=======
+form label, 
+form input,
+form button {
+    margin-bottom: 3px;
+    width: 100%
 }
-
+form input {
+  height: 25px;
+  line-height: 25px;
+  background: #fff;
+  color: #000;
+  padding: 0 6px;
+>>>>>>> 031514c7975d9528d5d654419e43539f4ea956fa
+}
+form button {
+  height: 30px;
+  line-height: 30px;
+  background: #e67e22;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+form .error {
+  color: #ff0000;
+}
 table{
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
 }
-table, th, td{
-    border: 1px solid #cdcdcd;
+table, th, td{
+    border: 1px solid #cdcdcd;
 }
-table th, table td{
-    padding: 5px;
-    text-align: left;
+table th, table td{
+    padding: 5px;
+    text-align: left;
 }
-
+#loadingMessage {
+   
+    width:100%;
+    height:400px;
+   text-align:center;
+   
+   display: relative;
+   position: absolute;
+   margin-top: 100px;
+    
+}
