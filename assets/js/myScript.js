@@ -75,67 +75,73 @@ function  drawChart(ratesTable)  { 
 	let  movAvg14  =  calMovingAvg(14, ratesArray);    
 	Chart.defaults.global.hover.mode  =  'nearest';    
 	Chart.defaults.global.legend.display  =  true;    
-	Chart.defaults.maintainAspectRatio  =  'false';
+    Chart.defaults.maintainAspectRatio  =  'false';
+
+
+        
 	var ctx = document.getElementById('chart');
 	myLineChart = new Chart(ctx, {
-	            type: 'line',
-	            data: {
-	                labels: datesArray,
-	                datasets: [{
-	                    data: ratesArray,
-	                    label: "US$1 = S$",
-	                    borderColor: "#ff0000",
-	                    fill: true,
-	                    pointRadius: 3,
-
-	                }, {
-	                    data: movAvg7,
-	                    label: "7 days Moving average",
-	                    borderColor: "#00ff00",
-	                    fill: false,
-	                    pointDot: false,
-
-	                }, {
-	                    data: movAvg14,
-	                    label: "14 days average 10",
-	                    borderColor: "#0000ff",
-	                    fill: false,
-	                    pointDot: false,
-
-	                }],
-
-	            },
-	            options: {
-	                maintainAspectRatio: false,
-	                title: {
-	                    display: true,
-	                    text: 'Currency Exchange Rates - S$ per unit of US$',
-	                    position: 'bottom',
-	                    fontSize: 20
-	                },
-	                tooltips: {
-	                    mode: 'nearest'
-	                },
-	                elements: {
-	                    point: {
-	                        radius: 0
-	                    }
-	                },
-	                scales: {
-	                    xAxes: [{
-	                        type: 'time',
-	                        time: {
-	                            unit: 'day'
-	                        },
-	                    }]
-	                }
-	            }
-
-
-	})
-}
+			type: 'line',
+			data: {
+				labels: datesArray,
+				datasets: [{
+					data: ratesArray,
+					label: "US$1 = S$",
+					borderColor: "#ff0000",
+					fill: true,
+					pointRadius: 3,
+					backgroundColor: 'rgba(75, 192, 192, 0.2)',
+				}, {
+					data: movAvg7,
+					label: "7 days moving average",
+					borderColor: "#00ff00",
+					fill: false,
+					pointDot: false,
+				}, {
+					data: movAvg14,
+					label: "14 days moving average",
+					borderColor: "#0000ff",
+					fill: false,
+					pointDot: false,
+				}],
+			},
+			options: {
+				events: ['click'],
+				maintainAspectRatio: false,
+				title: {
+					display: true,
+					text: 'Currency Exchange Rates - S$ per unit of US$',
+					position: 'bottom',
+					fontSize: 20
+				},
+				// Tooltip Element
+				tooltips: {
+					enabled: true,
+					mode: 'index',
+					position: 'nearest',
+				},
+				elements: {
+					point: {
+						radius: 3
+					}
+				},
+				scales: {
+					xAxes: [{
+						type: 'time',
+							time: {
+								unit: 'day'
+							}
+						}]
+					}
+				}
+            }
+        )
+	};
+	
 
 function downloadFromAPI(startDate, endDate) {
+     $("#loadingMessage").show();
+     
 	let  apiURL = 'https://eservices.mas.gov.sg/api/action/datastore/search.json';
 	let  searchDateStart = startDate;
 	let  searchDateEnd = endDate;
@@ -149,7 +155,8 @@ function downloadFromAPI(startDate, endDate) {
 		}    
 	}).then(function(response) {        
 		var ratesTable = {};
-		ratesTable  =  response.data.result['records'];        
+        ratesTable  =  response.data.result['records'];        
+         $("#loadingMessage").hide();
 		drawChart(ratesTable);
 		// ----------------------------------------------------------------- **
 	})
@@ -184,14 +191,24 @@ $(document).ready(function() {
 	downloadFromAPI($("#startDate").val(), $("#endDate").val());
 	document.querySelector("#startDate").addEventListener("change", function() {
 		downloadFromAPI($("#startDate").val(), $("#endDate").val());
-    })
+    });
     document.querySelector("#endDate").addEventListener("change", function() {
 		downloadFromAPI($("#startDate").val(), $("#endDate").val());
-	})
+	});
     fetchLastRate();
     document.querySelector("#txDate").addEventListener("change", function() {
 		fetchRate(document.querySelector("#txDate").value);
-	})
+    });
+    document.querySelector("#chart").addEventListener("click", function() {
+        console.log('');
+    });
+    
+    
+
+    // => activePoints is an array of points on the canvas that are at the same position as the click event.
+
+
+
+});
         
 
-})

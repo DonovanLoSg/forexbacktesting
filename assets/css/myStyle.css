@@ -209,3 +209,15 @@ table th, table td{
     text-align: left;
 }
 
+#loadingMessage {
+   
+    width:100%;
+    height:400px;
+   text-align:center;
+   
+   display: relative;
+   position: absolute;
+   margin-top: 100px;
+    
+
+}
