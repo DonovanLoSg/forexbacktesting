@@ -141,20 +141,26 @@ input[type="date"] {
 }
 
 #transaction-panel{
-    width: 98%;
-    margin: 20px;
+    
+
     
 }
 
 #transaction-form-panel{
     background-color: #dff2bd;
+        margin: 20px 0px 10px 20px;
 }
 
 #transaction-form{
 
 
-    padding-right: 10px;
+    margin-right: 10px;
     margin-top:20px;
+        
+}
+
+#transaction-table-panel {
+        margin: 20px 10px 10px 20px;
         
 }
 
@@ -207,6 +213,11 @@ table, th, td{
 table th, table td{
     padding: 5px;
     text-align: left;
+}
+
+#txRate {
+    background: silver;
+    font-weight: bold;
 }
 
 #loadingMessage {

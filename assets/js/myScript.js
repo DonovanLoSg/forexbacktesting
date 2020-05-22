@@ -1,3 +1,5 @@
+
+
 // Initialize date picker
 function fetchRate(selectedDate) {
 	let  apiURL = 'https://eservices.mas.gov.sg/api/action/datastore/search.json';
@@ -117,7 +119,7 @@ function  drawChart(ratesTable)  { 
 				// Tooltip Element
 				tooltips: {
 					enabled: true,
-					mode: 'index',
+					mode: 'label',
 					position: 'nearest',
 				},
 				elements: {
@@ -166,6 +168,17 @@ function populateTable(transactionTable) {
 	console.table(transactionTable);
 }
 
+function clickHandler(evt) {
+    var firstPoint = myChart.getElementAtEvent(evt)[0];
+
+    if (firstPoint) {
+        var label = myChart.data.labels[firstPoint._index];
+        var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
+    }
+    console.log(firstPoint);
+}
+
+
 var  datesArray  =   [];
 var  ratesArray  =   [];
 var  calScope  =  0;
@@ -199,11 +212,14 @@ $(document).ready(function() {
     document.querySelector("#txDate").addEventListener("change", function() {
 		fetchRate(document.querySelector("#txDate").value);
     });
-    document.querySelector("#chart").addEventListener("click", function() {
-        console.log('');
+    document.querySelector("#chart").addEventListener("click", function(evt) {
+          var activePoints = myLineChart.getElementsAtEvent(evt);
+         console.log(activePoints);
     });
-    
-    
+
+
+
+   
 
     // => activePoints is an array of points on the canvas that are at the same position as the click event.
 
@@ -211,4 +227,3 @@ $(document).ready(function() {
 
 });
         
-
