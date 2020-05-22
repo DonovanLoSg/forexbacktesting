@@ -212,18 +212,20 @@ function transact(transactDate, transactRate, transactAction, transactAmount){
 
     switch(transactAction) {
         case 'deposit':
-            console.log("You have deposited SGD");
-            console.log(transactAmount);
+            console.log("You have deposited SGD "+transactAmount.toFix(4));
+            transactionRecord.push(transactDate, 'deposit', transactAmount, 0, 0, transactAmount);
             break;
         case 'withdraw':
-            console.log("You have withdrawn SGD");
-            console.log(transactAmount);
+            console.log("You have withdrawn SGD "+transactAmount.toFix(4));
+            transactionRecord.push(transactDate, 'withdraw', transactAmount, 0, 0, -transactAmount);
             break;
         case 'buy':
-            console.log("You buy x USD with x SGD");
+            console.log("You buy USD "+transactAmount.toFixed(4)+"with SGD "+(transactAmount*transactRate).toFixed(4));
+            transactionRecord.push(transactDate, 'buy', transactAmount, transactRate, +transactAmount, -transactAmount*transactRate);
             break;
         case 'sell':
-            console.log("You sell x USD for  x SGD");
+            console.log("You sell USD "+transactAmount.toFixed(4)+"for SGD "+(transactAmount*transactRate).toFixed(4));
+            transactionRecord.push(transactDate, 'sell', transactAmount, transactRate, -transactAmount, +transactAmount*transactRate);
             break;
         default:
             break;
@@ -240,7 +242,7 @@ var movAvg7 = [];
 var movAvg14 = [];
 var transactionTable = [];
 var returnRate = 0;
-var transactonSpreadsheet = []
+var transactionRecord = []
 //------------------
 // placeholder data
 var transDate = "YYYY-MM-DD";
@@ -248,11 +250,10 @@ var transRate = "9.9999"
 var transMethod = "Buy/Sell"
 var balanceUSD = "9,999,999.9999"
 var balanceSGD = "9,999,999.9999"
-var transactionRecord = [transDate, transRate, transMethod, balanceUSD, balanceSGD]
-var i;
-for (i = 0; i < 50; i++) {
-	transactionTable.push(transactionRecord);
-}
+var transactionRecord = [];
+var balanceUSD = 0;
+var balanceSGD = 0;
+
 //-------------------
 $(document).ready(function() {
 	resetDatePicker();
@@ -323,13 +324,17 @@ $(document).ready(function() {
 
           };
     });
-           
+$.validator.addMethod('positiveNumber',
+    function (value) { 
+        return Number(value) > 0;
+    }, 'Enter a positive number.');           
                 
 $("#transaction-form").validate({
 	rules: {
 		txAmount: {
 			required: true,
-			number: true,
+            number: true,
+            positiveNumber: true,
 		},
 		txDate: {
 			required: true,
@@ -341,7 +346,8 @@ $("#transaction-form").validate({
 	messages: {
 		txAmount: {
 			required: "Enter transaction amount.",
-			number: "Enter a valid number.",
+            number: "Enter a valid number.",
+            positiveNumber: "Enter a positive value.",
 		},
 		txDate: {
 			required: "Select a transaction date.",
@@ -359,14 +365,16 @@ $("#adjustment-form").validate({
 				fdDate: 'required',
 				fdAmount: {
 					required: true,
-					number: true,
+                    number: true,
+                    positiveNumber: true,
 				}
 			},
 			messages: {
 				fdDate: 'This field is required',
 				fdAmount: {
 					required: 'Enter the transaction amount.',
-					number: 'Enter a valid transaction amount.'
+                    number: 'Enter a valid transaction amount.',
+                    positiveNumber: "Enter a positive value.",
                 },
             },
 			submitHandler: function() {

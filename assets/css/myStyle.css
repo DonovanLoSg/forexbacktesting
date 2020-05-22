@@ -171,6 +171,7 @@ input[type="date"] {
 
 #transaction-table-panel {
         margin: 20px 10px 10px 20px;
+        background-color: #dff2bd;
 
 
         
@@ -179,8 +180,11 @@ input[type="date"] {
 #transaction-table{
 
 
-    background-color: #dff2bd;
+    background-color: white;
     margin-top:20px;
+    width: 100%;
+    height: 50vh;
+    overflow-y: scroll;
 
 
         
