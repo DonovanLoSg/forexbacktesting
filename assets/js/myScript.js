@@ -75,14 +75,18 @@ function  drawChart(ratesTable)  { 
 	}        
 	let  movAvg7  =  calMovingAvg(7, ratesArray);
 	let  movAvg14  =  calMovingAvg(14, ratesArray);    
-	Chart.defaults.global.hover.mode  =  'nearest';    
-	Chart.defaults.global.legend.display  =  true;    
+	
+	
     Chart.defaults.maintainAspectRatio  =  'false';
-
+    Chart.defaults.global.hover.mode = 'index';
+    Chart.defaults.global.hover.intersect = 'true';
 
         
 	var ctx = document.getElementById('chart');
-	myLineChart = new Chart(ctx, {
+	// myLineChart = new Chart(ctx, {
+    if(window.myLineChart != undefined)
+    window.myLineChart.destroy();
+    window.myLineChart = new Chart(ctx, {
 			type: 'line',
 			data: {
 				labels: datesArray,
@@ -110,7 +114,7 @@ function  drawChart(ratesTable)  { 
 				}],
 			},
 			options: {
-				events: ['click'],
+
 				maintainAspectRatio: false,
 				title: {
 					display: true,
@@ -123,7 +127,7 @@ function  drawChart(ratesTable)  { 
 					enabled: true,
 					mode: 'index',
                     intersect: true,
-
+                    position: 'nearest',
                     callbacks: {
 
                         footer: function(tooltipItem) {
@@ -137,7 +141,10 @@ function  drawChart(ratesTable)  { 
 					point: {
 						radius: 3
 					}
-				},
+                },
+                // onHover: function(event,elements) {
+                //     $("#chart").css("cursor", elements[0] ? "pointer" : "default");
+                // },
 				scales: {
 					xAxes: [{
 						type: 'time',
