@@ -5,7 +5,7 @@ body {
 
 
 .panel {
-    border: 1px solid white;
+     border: 3px solid #008040;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 25px;
     padding: 10px;
@@ -143,21 +143,24 @@ input[type="date"] {
 #transaction-panel{
     width: 98%;
     margin: 20px;
-
+    
 }
 
-#transaction-form .panel{
+#transaction-form-panel{
+    background-color: #dff2bd;
+}
+
+#transaction-form{
 
 
-    border: 3px solid #008040;
     padding-right: 10px;
     margin-top:20px;
-    background-color: #dff2bd;    
+        
 }
 
-#transaction-table .panel{
+#transaction-table{
 
-    border: 3px solid #008040;
+
     background-color: #dff2bd;
     margin-top:20px;
 
@@ -168,7 +171,7 @@ input[type="date"] {
 form label, 
 form input,
 form button {
-    border: 0;
+
     margin-bottom: 3px;
     width: 100%
 }
@@ -179,9 +182,7 @@ form input {
   background: #fff;
   color: #000;
   padding: 0 6px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+
 }
 form button {
   height: 30px;
