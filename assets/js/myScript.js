@@ -35,8 +35,7 @@ function fetchRate(selectedDate) {
 // function to retrieve the last transaction's exchange rate available.
 // the info is used to populate the transaction entry form when intially loaded.
 // this is to avoid situation here there is no exchange rates for today or when the info is not computed.
-
-function fetchLastRate() {
+function fetchLastRates() {
     let apiURL = 'https://eservices.mas.gov.sg/api/action/datastore/search.json';
     axios.get(apiURL, {
         params: {
@@ -53,7 +52,6 @@ function fetchLastRate() {
 
 // a function that returns an array of the moving average of an Array provided between the number of days selected.
 // The moving average is calculated by summing the number for today and past few days divided by the number of days to average.
-// e.g. Average 
 function calMovingAvg(avgNumber, numArray) {
     let numCount = 0;
     let sumOfNum = 0;
@@ -75,15 +73,18 @@ function calMovingAvg(avgNumber, numArray) {
     return movAverageArray
 }
 
+
 // a function that draw teh chart with exchange rates information provided by MAS API.
 // this function is called when the page is loaded or the selected date range changes.
+let datesArray = [];
+let ratesArray = [];
 function drawChart(ratesTable) {
     
     // breaking the 2D array augument into different Arrays.
-    shortTerm = 7;
-    longTerm = 14;
-    shortTermMovAvgLabel = "7 days moving average";
-    longTermMovAvgLabel = "14 days moving average";
+    let shortTerm = 7;
+    let longTerm = 14;
+    let shortTermMovAvgLabel = "7 days moving average";
+    let longTermMovAvgLabel = "14 days moving average";
     datesArray.length = 0; // empty datesArray
     ratesArray.length = 0; // empty ratesArray
     var record;
@@ -91,7 +92,7 @@ function drawChart(ratesTable) {
         datesArray.push(record["end_of_day"]);
         ratesArray.push(Math.round(parseFloat(record["usd_sgd"]) * 10000) / 10000);
     }
-    let shortTermMovAvg = calMovingAvg(shortTem, ratesArray);
+    let shortTermMovAvg = calMovingAvg(shortTerm, ratesArray);
     let longTermMovAvg = calMovingAvg(longTerm, ratesArray);
 
     // intializing the variables of the charts
@@ -108,21 +109,21 @@ function drawChart(ratesTable) {
             datasets: [{
                 data: ratesArray,
                 label: "US$1 = S$",
-                borderColor: "#ff0000",
+                borderColor: 'rgb(255, 0, 0)',
                 fill: true,
                 pointRadius: 3,
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
             }, {
                 data: shortTermMovAvg,
                 label: shortTermMovAvgLabel,
-                borderColor: "#00ff00",
+                borderColor: 'rgb(0, 255, 0)',
                 fill: false,
                 pointRadius: 0,
                 pointDot: false,
             }, {
                 data: longTermMovAvg,
                 label: longTermMovAvgLabel,
-                borderColor: "#0000ff",
+                borderColor: "#rgb(0, 0, 255)",
                 fill: false,
                 pointRadius: 0,
                 pointDot: false,
@@ -156,9 +157,6 @@ function drawChart(ratesTable) {
                     radius: 3
                 }
             },
-            // onHover: function(event,elements) {
-            //     $("#chart").css("cursor", elements[0] ? "pointer" : "default");
-            // },
             scales: {
                 xAxes: [{
                     type: 'time',
@@ -172,6 +170,7 @@ function drawChart(ratesTable) {
 };
 
 // retreive exchange rates between the stat date and end date.
+// After retrieval, it will call teh draw chart function
 function downloadFromAPI(startDate, endDate) {
     
     // using loading image
@@ -243,11 +242,7 @@ function transact(transactDate, transactRate, transactAction, transactAmount) {
 }
 
 
-var calScope = 0;
-var numArray = [];
-var ratesArray = [];
-var movAvg7 = [];
-var movAvg14 = [];
+
 var transactionTable = [];
 var returnRate = 0;
 var transactionRecord = []
@@ -255,86 +250,87 @@ var transactionRecord = []
 var transactionRecord = [];
 var balanceUSD = 0;
 var balanceSGD = 0;
+
+
 var ttAction = '';
 var ttAmount = 0.0;
 var ttRate = 0;
 var ttDate = '';
-var ttRate = 0;
 
-//-------------------
+
 $(document).ready(function () {
+
+    // Initializing
+    
     resetDatePicker();
     downloadFromAPI($("#startDate").val(), $("#endDate").val());
-    document.querySelector("#startDate").addEventListener("change", function () {
-        downloadFromAPI($("#startDate").val(), $("#endDate").val());
-    });
-    document.querySelector("#endDate").addEventListener("change", function () {
-        downloadFromAPI($("#startDate").val(), $("#endDate").val());
-    });
-    fetchLastRate();
-    document.querySelector("#txDate").addEventListener("change", function () {
-        fetchRate(document.querySelector("#txDate").value);
-    });
-    document.querySelector("#chart").addEventListener("click", function (evt) {
-        var activePoints = myLineChart.getElementsAtEvent(evt);
-    });
 
-    document.querySelector("input[name='buyBtn']").addEventListener("click", function () {
+    // event handler for two date pickers controlling the chart
+    $("#startDate").change(function(){
+        downloadFromAPI($("#startDate").val(), $("#endDate").val());
+    });
+    $("#endDAte").change(function(){
+        downloadFromAPI($("#startDate").val(), $("#endDate").val());
+    })
+
+    // populating the date picker in the transaction entry form
+    fetchLastRates();
+
+    // event handlers for tansaction entry form
+    $("#txDate").change(function(){
+        fetchRate($("#txDate").val());
+
+    })
+
+    // event handlers for handling Buy button
+    $("input[name='buyBtn']").click(function () {
         ttAction = 'buy';
-        ttDate = document.getElementById("txDate").value;
-        ttRate = parseFloat(document.getElementById("txRate").value);
-        ttAmount = parseFloat(document.getElementById("txAmount").value);
+        ttDate = $("txDate").val();
+        ttRate = parseFloat($("#txRate").val());
+        ttAmount = parseFloat($("txAmount").val());
+
         var isValid = $("#transaction-form").validate();
         if (isValid) {
-            console.log('clicked buy button')
+            console.log('clicked buy button');
             //     transact(ttDate, ttRate, ttAction, ttAmount);
             //     $("#txAmount").val("");
         };
         return false;
-    });
-    document.querySelector("input[name='sellBtn']").addEventListener("click", function () {
-        console.log('clicked sell button');
-        ttAction = 'sell';
-        // var ttDate = document.getElementById("txDate").value;
-        // var ttRate = 0;
-        // var ttAmount = document.getElementById("txAmount").value;
-
-        // var isValid = $("#transaction-form").validate();
-        // if (isValid) {
-        //     transact(ttDate, ttRate, ttAction, ttAmount);
-        //     $("#txAmount").val("");
-        return false;
-    });
-    document.querySelector("input[name='depositBtn']").addEventListener("click", function () {
-        console.log('clicked deposit button')
+    })
+        
+    // event handlers for handling Deposit button   
+    $("input[name='depositBtn']").click()(function () {
         ttAction = 'deposit';
-        // var ttDate = document.getElementById("fdDate").value;
-
-        // var ttRate = 0;
-        // var ttAmount = document.getElementById("fdAmount").value;
-        // var isValid = $("#adjustment-form").validate();
-        // if (isValid) {
-        //     transact(ttDate, ttRate, ttAction, ttAmount);
-        //     $("#fdAmount").val("");
-        // };
+        ttDate = $("fdDate").val();
+        ttRate = 0;
+        ttAmount = parseFloat($("fdAmount").val());
+        
+        var isValid = $("#adjustment-form").validate();
+        if (isValid) {
+            console.log('clicked deposit button');
+            //     transact(ttDate, ttRate, ttAction, ttAmount);
+            //     $("#txAmount").val("");
+        };
         return false;
-    });
-    document.querySelector("input[name='withdrawBtn']").addEventListener("click", function () {
-        console.log('clicked withdraw button')
+    })
+    // event handlers for handling Withdraw button   
+    $("input[name='withdrawBtn']").click()(function () {
         ttAction = 'withdraw';
-        // var ttDate = document.getElementById("fdDate").value;
-        // var ttRate = 0;
-        // var ttAmount = document.getElementById("fdAmount").value;
-
-        // var isValid = $("#adjustment-form").validate();
-        // if (isValid) {
-        //     transact(ttDate, ttRate, ttAction, ttAmount);
-        //     $("#fdAmount").val("");
-        // };
+        ttDate = $("fdDate").val();
+        ttRate = 0;
+        ttAmount = parseFloat($("fdAmount").val());
+        
+        var isValid = $("#adjustment-form").validate();
+        if (isValid) {
+            console.log('clicked withdraw button');
+            //     transact(ttDate, ttRate, ttAction, ttAmount);
+            //     $("#txAmount").val("");
+        };
         return false;
-    });
+    })
 
-    var ttRate = document.getElementById("txRate").value;
+    // jQuery validator for transaction entry form
+    ttRate = $("txRate").val();
     $("#transaction-form").validate({
         rules: {
             txAmount: {
@@ -379,6 +375,8 @@ $(document).ready(function () {
             return false;
         }
     });
+
+    // jQuery validator for fund adjustment form
     $("#adjustment-form").validate({
         rules: {
             fdDate: 'required',
@@ -406,6 +404,8 @@ $(document).ready(function () {
             return false;
         }
     });
+
+    
     $.validator.addMethod('positiveNumber', function (value) {
         return Number(value) > 0;
     }, 'Enter a positive number.');
