@@ -159,7 +159,7 @@ MAIN
                 <div class="row">
                     <div  class="col-xl-5 col-md-12">
                         <div class="panel" id="transaction-form-panel">
-                            <form action="" id="transaction-form" name="transaction-form">
+                            <form action="" id="transaction-form" name="transaction-form" method="post" action="">
                                 <b>Transaction Entry Form</b>
                                 <table>
                                     <tr>
@@ -175,7 +175,7 @@ MAIN
                                             <label for="txRate">Rate (SGD per 1 USD):</label>
                                         </td>
                                         <td>
-                                            <input type="text" id="txRate" name="txRate" readonly disabled />
+                                            <input type="text" id="txRate" name="txRate" readonly  />
                                         </td>
                                     </tr>
                                     <tr>
@@ -190,8 +190,8 @@ MAIN
                                 <table>
                                     <tr>
                                         <td>
-                                            <input type = "button" name = "buyBtn" value = "Buy" />
-                                            <input type = "button" name = "sellBtn" value = "Sell" />
+                                            <input type = "submit" name = "buyBtn" value = "Buy" />
+                                            <input type = "submit" name = "sellBtn" value = "Sell" />
                                         </td>
                                     </tr>
                                 </table>

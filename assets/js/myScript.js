@@ -232,8 +232,24 @@ $(document).ready(function() {
     });
     document.querySelector("#chart").addEventListener("click", function(evt) {
           var activePoints = myLineChart.getElementsAtEvent(evt);
+    });
+    $("#transaction-form").validate({
+        rules: {
+            txDate: 'required',
+            txRate: 'required',
+            tAmount: 'required'
+        },
+        messages: {
+            txDate: 'This field is required',
+            txRate: 'Select a date with recorded rates',
+            tAmount: 'Enter the transaction amount.'
+        },
+        submitHandler: function(form){
+            form.submit()
+        }
 
     });
+
 
 
 
