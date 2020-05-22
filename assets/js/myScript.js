@@ -43,6 +43,14 @@ function resetDatePicker() {
 	document.querySelector("#startDate").value = lastMonth2;
 }
 
+function setMaxDate() {
+	let today = new Date().toISOString().substr(0, 10);
+    document.querySelector("#txDate").value = today;
+    document.querySelector("#fdDate").value = today;
+    document.querySelector("#startDate").value = today;
+    document.querySelector("#endDate").value = today;
+}
+
 function  calMovingAvg(calScope, calArray)  {
 	var  jcount  =  0;    
 	var  jsum  =  0;    
@@ -237,12 +245,12 @@ $(document).ready(function() {
         rules: {
             txDate: 'required',
             txRate: 'required',
-            tAmount: 'required'
+            txAmount: 'required'
         },
         messages: {
             txDate: 'This field is required',
             txRate: 'Select a date with recorded rates',
-            tAmount: 'Enter the transaction amount.'
+            txAmount: 'Enter the transaction amount.'
         },
         submitHandler: function(form){
             form.submit()

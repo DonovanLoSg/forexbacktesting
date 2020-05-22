@@ -157,50 +157,38 @@ MAIN
         <div id="transaction-panel" class="row">
             <div class="container-fluid ">
                 <div class="row">
-                    <div  class="col-xl-5 col-md-12">
+                    <div  class="col-xl-3 col-lg-6 col-md-12">
                         <div class="panel" id="transaction-form-panel">
                             <form action="" id="transaction-form" name="transaction-form" method="post" action="">
-                                <b>Transaction Entry Form</b>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <label for="txDate">Date:</label>
-                                        </td>
-                                        <td>
-		                                    <input type="date" id="txDate" name="txDate"  value="" min="1988-01-08" max="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label for="txRate">Rate (SGD per 1 USD):</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="txRate" name="txRate" readonly  />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label for="tAmount">Amount (USD):</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="tAmount" name="tAmount" />
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <input type = "submit" name = "buyBtn" value = "Buy" />
-                                            <input type = "submit" name = "sellBtn" value = "Sell" />
-                                        </td>
-                                    </tr>
-                                </table>
+                                <span class="panelHeader">Transaction Entry Form</span><br><br>
+                                <label for="txDate">Date:</label>
+                                <input type="date" id="txDate" name="txDate"  value="" min="1988-01-08" max="">
+                                <label for="txRate">Rate (SGD per 1 USD):</label>
+                                <input type="text" id="txRate" name="txRate" readonly  />
+                                <label for="txAmount">Amount (USD):</label>
+                                <input type="text" id="tAmount" name="tAmount" /><br><br>
+                                <input type = "submit" name = "buyBtn" value = "Buy" />
+                                <input type = "submit" name = "sellBtn" value = "Sell" />
                             </form>
                         </div>
                     </div>
-                    <div  class="col-xl-7 col-md-12">
-                        <div class="panel" id="transaction-table-panel">
-                            <b>Transactions Records</b>
+                    <div  class="col-xl-3 col-lg-6 col-md-12">
+                        <div class="panel" id="adjustment-form-panel">
+                            <form action="" id="adjustment-form" name="adjustment-form" method="post" action="">
+                                <span class="panelHeader">Fund Adjustment Form</span><br><br>
+                                <label for="fdDate">Date:</label>
+                                <input type="date" id="fdDate" name="fdDate"  value="" min="1988-01-08" max="">
+                                <br><br><br><br>
+                                <label for="fdAmount">Amount (USD):</label>
+                                <input type="text" id="fdAmount" name="fdAmount" /><br><br>
+                                <input type = "submit" name = "buyBtn" value = "Buy" />
+                                <input type = "submit" name = "sellBtn" value = "Sell" />
+                            </form>
+                        </div>
+                    </div>
+                    <div  class="col-xl-6 col-lg=12 col-md-12">
+                        <div class="panel" id="transaction-table-panel"><br>
+                            <span class="panelHeader">Transactions Records</span><br><br>
                             <table id="transaction-table" class="table" style="background-color: white">
                                 <thead>
                                     <tr>
@@ -278,7 +266,7 @@ PAGE FOOTER
 
 
     <script src="assets/js/myScript.js"></script>
-
+<br><br><br><br><br><br><br><br>
 </body>
 
 </html>

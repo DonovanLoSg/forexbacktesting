@@ -148,6 +148,7 @@ input[type="date"] {
 #transaction-form-panel {
     background-color: #dff2bd;
     margin: 20px 0px 10px 20px;
+    height: 380px;
 
 }
 
@@ -159,7 +160,7 @@ input[type="date"] {
 #adjustment-form-panel{
     background-color: #dff2bd;
         margin: 20px 0px 10px 20px;
-
+        height: 380px;
 }
 
 
@@ -171,8 +172,7 @@ input[type="date"] {
 
 #transaction-table-panel {
         margin: 20px 10px 10px 20px;
-        background-color: #dff2bd;
-
+        height: 380px;
 
         
 }
@@ -180,11 +180,8 @@ input[type="date"] {
 #transaction-table{
 
 
-    background-color: white;
+    background-color: #dff2bd;
     margin-top:20px;
-    width: 100%;
-    height: 50vh;
-    overflow-y: scroll;
 
 
         
