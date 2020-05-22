@@ -76,53 +76,62 @@ function  drawChart(ratesTable)  { 
 	Chart.defaults.global.hover.mode  =  'nearest';    
 	Chart.defaults.global.legend.display  =  true;    
 	Chart.defaults.maintainAspectRatio  =  'false';
-	var ctx = document.getElementById('chart');    
-	myLineChart = new  Chart(ctx,   {        
-		type:   'line',
-		        data:  {            
-			labels:  datesArray,
-			            datasets:  [{                 
-				data:  ratesArray,
-				                label:   "US$1 = S$",
-				                borderColor:   "#ff0000",
-				                fill:  true,
-				                pointRadius:  3,
-				            
-			}, {                
-				data:  movAvg7,
-				                label:   "7 days Moving average",
-				                borderColor:   "#00ff00",
-				                fill:  false,
-				pointDot: false,
-				            
-			}, {                
-				data:  movAvg14,
-				                label:   "14 days average 10",
-				                borderColor:   "#0000ff",
-				                fill:  false,
-				pointDot: false,
-				            
-			}],
-			        
-		},
-		        options:  {            
-			title:  {                
-				display:  true,
-				                text:   'Currency Exchange Rates - S$ per unit of US$',
-				                position:   'bottom',
-				                fontSize:  20            
-			},
-			            tooltips:  {                
-				mode:   'nearest'            
-			},
-			            elements:  {                
-				point:  {                    
-					radius:  0                
-				}            
-            },
-            
-			maintainAspectRatio: false        
-		}    
+	var ctx = document.getElementById('chart');
+	myLineChart = new Chart(ctx, {
+	            type: 'line',
+	            data: {
+	                labels: datesArray,
+	                datasets: [{
+	                    data: ratesArray,
+	                    label: "US$1 = S$",
+	                    borderColor: "#ff0000",
+	                    fill: true,
+	                    pointRadius: 3,
+
+	                }, {
+	                    data: movAvg7,
+	                    label: "7 days Moving average",
+	                    borderColor: "#00ff00",
+	                    fill: false,
+	                    pointDot: false,
+
+	                }, {
+	                    data: movAvg14,
+	                    label: "14 days average 10",
+	                    borderColor: "#0000ff",
+	                    fill: false,
+	                    pointDot: false,
+
+	                }],
+
+	            },
+	            options: {
+	                maintainAspectRatio: false,
+	                title: {
+	                    display: true,
+	                    text: 'Currency Exchange Rates - S$ per unit of US$',
+	                    position: 'bottom',
+	                    fontSize: 20
+	                },
+	                tooltips: {
+	                    mode: 'nearest'
+	                },
+	                elements: {
+	                    point: {
+	                        radius: 0
+	                    }
+	                },
+	                scales: {
+	                    xAxes: [{
+	                        type: 'time',
+	                        time: {
+	                            unit: 'day'
+	                        },
+	                    }]
+	                }
+	            }
+
+
 	})
 }
 
