@@ -110,11 +110,16 @@ body {
     
 }
 
+input[type="number"],
 input[type="date"] {
     height: 2rem;
-
 }
 
+input[type="number"]{
+    width: 100px;
+    text-align: center;
+}
+   
 #startDate, #endDate {
     width: 200px;
 }
@@ -261,10 +266,12 @@ form .error {
 
 #balanceUSD {
         color: white;
-        margin: 20px 0px 10px 20px;;
+        margin: 20px 0px 10px 20px;
+        text-align: center;
 }
 
 #balanceSGD {
         color: white;
         margin: 20px 0px 10px 20px;
+        text-align: center;
 }

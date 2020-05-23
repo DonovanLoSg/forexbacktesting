@@ -81,8 +81,8 @@ let ratesArray = [];
 function drawChart(ratesTable) {
     
     // breaking the 2D array augument into different Arrays.
-    let shortTerm = 7;
-    let longTerm = 14;
+    let shortTerm = $("#shortTermAvg").val();
+    let longTerm = $("#longTermAvg").val();
     let shortTermMovAvgLabel = "7 days moving average";
     let longTermMovAvgLabel = "14 days moving average";
     datesArray.length = 0; // empty datesArray
@@ -109,21 +109,21 @@ function drawChart(ratesTable) {
             datasets: [{
                 data: ratesArray,
                 label: "US$1 = S$",
-                borderColor: 'rgb(255, 0, 0)',
+                borderColor: 'rgba(255, 0, 0)',
                 fill: true,
                 pointRadius: 3,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                backgroundColor: 'rgba(75, 192, 192, 0.3)',
             }, {
                 data: shortTermMovAvg,
                 label: shortTermMovAvgLabel,
-                borderColor: 'rgb(0, 255, 0)',
+                borderColor: 'rgba(0, 0, 255)',
                 fill: false,
                 pointRadius: 0,
                 pointDot: false,
             }, {
                 data: longTermMovAvg,
                 label: longTermMovAvgLabel,
-                borderColor: "#rgb(0, 0, 255)",
+                borderColor: 'rgba(0, 255, 0)',
                 fill: false,
                 pointRadius: 0,
                 pointDot: false,
@@ -291,12 +291,20 @@ $(document).ready(function () {
     $("#startNew").click(function(){
         location.reload();
     })
+    $("#shortTermAvg").val(7);
+    $("#longTermAvg").val(14);
 
-    // event handler for two date pickers controlling the chart
+    // event handler for two date pickers and moving average fields controlling the chart
     $("#startDate").change(function(){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     });
     $("#endDAte").change(function(){
+        downloadFromAPI($("#startDate").val(), $("#endDate").val());
+    })
+    $("#shortTermAvg").change(function(){
+        downloadFromAPI($("#startDate").val(), $("#endDate").val());
+    })
+    $("#longTermAvg").change(function(){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
 
