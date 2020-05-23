@@ -209,7 +209,33 @@ function downloadFromAPI(startDate, endDate) {
 
 // }
 
+function compare (a,b){
+    if (a.date < b.date){
+        return -1;
+    } else if (b.date > a.date) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
+
+function sortTransactionRecord(){
+    transactionRecord.sort(compare);
+}
+
+function printTransactionRecord(){
+    var totalUSD = 0;
+    var totalSGD = 0;
+    for (let i = 0; i < transactionRecord.length; i++){ 
+        $("#transaction-table").append(transactionRecord[i].date + ": "+transactionRecord[i].desp+"<br>");
+        totalUSD = totalUSD + transactionRecord[i].changeInUSD;  
+        totalSGD = totalSGD + transactionRecord[i].changeInSGD;
+    };
+    $("#balanceUSD").text("Balance (USD) : "+totalUSD.toFixed(4));
+    $("#balanceSGD").text("Balance (SGD) : "+totalSGD.toFixed(4));
+    
+}
 
 
 function transact(transactDate, transactRate, transactAction, transactAmount) {
@@ -217,25 +243,25 @@ function transact(transactDate, transactRate, transactAction, transactAmount) {
 
     switch (transactAction) {
     case 'deposit':
-        console.log("You have deposited SGD " + transactAmount.toFix(4));
-        transactionRecord.push(transactDate, 'deposit', transactAmount, 0, 0, transactAmount, "You have deposited SGD" + transactAmount.toFix(4));
+        transactionRecord.push({date:transactDate, action:'deposit', amount:transactAmount, rate: 0, changeInUSD: 0, changeInSGD: transactAmount, desp: "You have deposited SGD" + transactAmount.toFixed(4)});
         break;
     case 'withdraw':
-        console.log("You have withdrawn SGD " + transactAmount.toFix(4));
-        transactionRecord.push(transactDate, 'withdraw', transactAmount, 0, 0, -transactAmount);
+        transactionRecord.push({date:transactDate, action:'withdrawal', amount:transactAmount, rate: 0, changeInUSD: 0, changeInSGD: -transactAmount, desp: "You have withdrawn SGD" + transactAmount.toFixed(4)});
         break;
     case 'buy':
-        console.log("You buy USD " + transactAmount.toFixed(4) + "with SGD " + (transactAmount * transactRate).toFixed(4));
-        transactionRecord.push(transactDate, 'buy', transactAmount, transactRate, +transactAmount, -transactAmount * transactRate);
+        transactionRecord.push({date:transactDate, action:'buy', amount:transactAmount, rate: transactRate, changeInUSD: transactAmount, changeInSGD: -transactAmount*transactRate, desp: "You bought USD" + transactAmount.toFixed(4)+" with SGD " + (transactAmount*transactRate).toFixed(4)});
         break;
     case 'sell':
-        console.log("You sell USD " + transactAmount.toFixed(4) + "for SGD " + (transactAmount * transactRate).toFixed(4));
-        transactionRecord.push(transactDate, 'sell', transactAmount, transactRate, -transactAmount, +transactAmount * transactRate);
+        transactionRecord.push({date:transactDate, action:'sell', amount:transactAmount, rate: transactRate, changeInUSD: -transactAmount, changeInSGD: transactAmount*transactRate, desp: "You sold USD" + transactAmount.toFixed(4)+" for SGD " + (transactAmount*transactRate).toFixed(4)});
         break;
     default:
         break;
     }
-    console.log('------');
+    sortTransactionRecord();
+    $("#transaction-table").text("");
+    printTransactionRecord();
+
+    console.log(transactionRecord);
 
 }
 
@@ -286,12 +312,12 @@ $(document).ready(function () {
         ttDate = $("txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("txAmount").val());
-
-        var isValid = $("#transaction-form").validate();
-        if (isValid) {
-            console.log('clicked buy button');
-            //     transact(ttDate, ttRate, ttAction, ttAmount);
-            //     $("#txAmount").val("");
+        if (ttAmount != 0){
+            var isValid = $("#transaction-form").validate();
+            if (isValid) {
+                transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#txAmount").val("");
+            };
         };
         return false;
     });
@@ -302,12 +328,12 @@ $(document).ready(function () {
         ttDate = $("txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("txAmount").val());
-
-        var isValid = $("#transaction-form").validate();
-        if (isValid) {
-            console.log('clicked sell button');
-            //     transact(ttDate, ttRate, ttAction, ttAmount);
-            //     $("#txAmount").val("");
+        if (ttAmount != 0){
+            var isValid = $("#transaction-form").validate();
+            if (isValid) {
+                transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#txAmount").val("");
+            };
         };
         return false;
     });
@@ -318,15 +344,15 @@ $(document).ready(function () {
     // event handlers for handling Deposit button   
     document.querySelector("input[name='depositBtn']").addEventListener("click", function() {
         ttAction = 'deposit';
-        ttDate = $("fdDate").val();
+        ttDate = $("#fdDate").val();
         ttRate = 0;
-        ttAmount = parseFloat($("fdAmount").val());
-
-        var isValid = $("#adjustment-form").validate();
-        if (isValid) {
-            console.log('clicked deposit button');
-            //     transact(ttDate, ttRate, ttAction, ttAmount);
-            //     $("#txAmount").val("");
+        ttAmount = parseFloat($("#fdAmount").val());
+        if (ttAmount != 0){
+            var isValid = $("#adjustment-form").validate();
+            if (isValid) {
+                transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#fdAmount").val("");
+            };
         };
         return false;
 
@@ -339,17 +365,18 @@ $(document).ready(function () {
     // event handlers for handling Withdraw button   
      document.querySelector("input[name='withdrawBtn']").addEventListener("click", function() {
         ttAction = 'withdraw';
-        ttDate = $("fdDate").val();
+        ttDate = $("#fdDate").val();
         ttRate = 0;
-        ttAmount = parseFloat($("fdAmount").val());
-        
-        var isValid = $("#adjustment-form").validate();
-        if (isValid) {
-            console.log('clicked withdraw button');
-            //     transact(ttDate, ttRate, ttAction, ttAmount);
-            //     $("#txAmount").val("");
+        ttAmount = parseFloat($("#fdAmount").val());
+        if (ttAmount != 0){
+            var isValid = $("#adjustment-form").validate();
+            if (isValid) {
+                transact(ttDate, ttRate, ttAction, ttAmount);
+                $("#fdAmount").val("");
+            };
         };
         return false;
+        
     })
 
     // jQuery validator for transaction entry form
@@ -436,7 +463,12 @@ $(document).ready(function () {
     $.validator.addMethod('sufficientToWithdraw', function (value, action) {
         console.log(value, action);
         if (action == 'withdraw') {
-            return Number(value) < balanceSGD;
+            if (Number(value) <= balanceSGD){
+                return true
+            } else
+                return false;
+        } else {
+            return true;
         }
     }, 'Insufficient SGD fund balance.');
 
