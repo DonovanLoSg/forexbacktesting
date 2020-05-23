@@ -288,6 +288,9 @@ $(document).ready(function () {
     
     resetDatePicker();
     downloadFromAPI($("#startDate").val(), $("#endDate").val());
+    $("#startNew").click(function(){
+        location.reload();
+    })
 
     // event handler for two date pickers controlling the chart
     $("#startDate").change(function(){
