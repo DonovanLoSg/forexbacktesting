@@ -314,7 +314,7 @@ $(document).ready(function () {
         ttAction = 'buy';
         ttDate = $("txDate").val();
         ttRate = parseFloat($("#txRate").val());
-        ttAmount = parseFloat($("txAmount").val());
+        ttAmount = parseFloat($("#txAmount").val());
         if (ttAmount != 0){
             var isValid = $("#transaction-form").validate();
             if (isValid) {
@@ -330,7 +330,7 @@ $(document).ready(function () {
         ttAction = 'sell';
         ttDate = $("txDate").val();
         ttRate = parseFloat($("#txRate").val());
-        ttAmount = parseFloat($("txAmount").val());
+        ttAmount = parseFloat($("#txAmount").val());
         if (ttAmount != 0){
             var isValid = $("#transaction-form").validate();
             if (isValid) {
