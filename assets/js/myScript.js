@@ -312,9 +312,10 @@ $(document).ready(function () {
     // event handlers for handling Buy button
     document.querySelector("input[name='buyBtn']").addEventListener("click", function() {
         ttAction = 'buy';
-        ttDate = $("txDate").val();
+        ttDate = $("#txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("#txAmount").val());
+        console.log(parseFloat($("#txAmount").val()));
         if (ttAmount != 0){
             var isValid = $("#transaction-form").validate();
             if (isValid) {
@@ -328,7 +329,7 @@ $(document).ready(function () {
     // event handlers for handling Sell button
     document.querySelector("input[name='sellBtn']").addEventListener("click", function() {
         ttAction = 'sell';
-        ttDate = $("txDate").val();
+        ttDate = $("#txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("#txAmount").val());
         if (ttAmount != 0){
