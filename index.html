@@ -72,9 +72,7 @@
 <body>
 
 <!-- ==========================================================
-
 PAGE HEADER
-
 ========================================================== -->
 
     <header>
@@ -119,9 +117,7 @@ PAGE HEADER
     </header>
 
 <!-- ==========================================================
-
 MAIN
-
 ========================================================== -->
 
     <main>
@@ -164,8 +160,10 @@ MAIN
                                 <input type="text" id="txRate" name="txRate" readonly  />
                                 <label for="txAmount">Amount (USD):</label>
                                 <input type="text" id="txAmount" name="txAmount" /><br><br>
-                                <input type = "button" name = "buyBtn" value = "Buy" />
-                                <input type = "button" name = "sellBtn" value = "Sell" />
+                                <div class="btnBox">
+                                    <input type = "button" id="buyBtn" name = "buyBtn" value = "Buy" class="btn btn-primary"> 
+                                    <input type = "button" id="sellBtn" name = "sellBtn" value = "Sell" class="btn btn-primary">
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -177,8 +175,10 @@ MAIN
                                 <input type="date" id="fdDate" name="fdDate"  value="" min="1988-01-08" max="">
                                 <label for="fdAmount">Amount (SGD):</label>
                                 <input type="text" id="fdAmount" name="fdAmount" /><br><br>
-                                <input type = "button" name = "depositBtn" value = "Deposit" />
-                                <input type = "button" name = "withdrawBtn" value = "Withdrawal" />
+                                <div class="btnBox">
+                                    <input type = "button" id="depositBtn" name = "depositBtn" value = "Deposit" class="btn btn-primary">
+                                    <input type = "button" id="withdrawBtn" name = "withdrawBtn" value = "Withdrawal" class="btn btn-primary"> 
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -210,9 +210,7 @@ MAIN
 
 
 <!-- ==========================================================
-
 PAGE FOOTER
-
 ========================================================== -->
 
     <footer>
@@ -243,4 +241,3 @@ PAGE FOOTER
 </body>
 
 </html>
-

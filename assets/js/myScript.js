@@ -315,8 +315,7 @@ $(document).ready(function () {
         ttDate = $("#txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("#txAmount").val());
-        console.log(parseFloat($("#txAmount").val()));
-        if (ttAmount != 0){
+        if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#transaction-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);
@@ -332,7 +331,7 @@ $(document).ready(function () {
         ttDate = $("#txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("#txAmount").val());
-        if (ttAmount != 0){
+        if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#transaction-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);
@@ -351,7 +350,7 @@ $(document).ready(function () {
         ttDate = $("#fdDate").val();
         ttRate = 0;
         ttAmount = parseFloat($("#fdAmount").val());
-        if (ttAmount != 0){
+         if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#adjustment-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);
@@ -372,7 +371,7 @@ $(document).ready(function () {
         ttDate = $("#fdDate").val();
         ttRate = 0;
         ttAmount = parseFloat($("#fdAmount").val());
-        if (ttAmount != 0){
+        if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#adjustment-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);

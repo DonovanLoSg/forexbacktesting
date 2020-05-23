@@ -34,9 +34,9 @@ body {
 
 #pageTitle {
     display: inline-block;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
     vertical-align: middle;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding-left: 1rem;
 }
 
@@ -88,7 +88,13 @@ body {
 	text-decoration:none;
 }
 
+#axisControlLeft{
+    float: left;
+}
 
+#axisControlRight{
+    float: right;
+}
 
 
 #dateRange {
@@ -148,12 +154,13 @@ input[type="date"] {
 #transaction-form-panel {
     background-color: #dff2bd;
     margin: 20px 0px 10px 20px;
-
+    height: auto;
 }
 
 #transaction-form {
    margin-right: 10px;
     margin-top:20px;
+    padding-bottom: 20px
 }
 
 #adjustment-form-panel{
@@ -166,6 +173,7 @@ input[type="date"] {
 #adjustment-form{
     margin-right: 10px;
     margin-top:20px;
+    padding-bottom: 20px
         
 }
 
@@ -224,6 +232,19 @@ form .error {
     background:#eeeeee;
     font-weight: bold;
 }
+
+.btnBox {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnBox>input {
+    line-height: 1rem;
+    height: 2rem;
+    width: 8rem;
+    
+}
+
 
 #loadingMessage {
    
