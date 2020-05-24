@@ -180,6 +180,17 @@ function drawChart(ratesTable) {
         }
     })
 
+    // ========
+
+
+
+
+
+
+
+
+
+
 
 };
 
