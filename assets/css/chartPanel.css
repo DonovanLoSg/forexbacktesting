@@ -1,0 +1,59 @@
+/* CHART PANEL */
+/*
+***
+* Refer to commonStyle.css for CONTENT PAGE
+***
+*/
+/* chart panel appears at the center. */
+
+
+/* it contain the generated chart */
+
+#canvas-panel {
+    background: rgb(255, 255, 255); /* white */
+    width: 98%;
+    height: 100%;
+    border: 3px solid #008040;
+    margin: 20px 10px 0px 20px;
+    font-size: 1rem;
+    line-height: 0.5rem;
+}
+
+.chart-container {
+    position: relative;
+    width: 98%;
+    height: 60vh;
+}
+
+#chart {
+    background: rgb(255, 255, 255); /* white */
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+#chartjs-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7); /* black */
+    opacity: 1;
+    transition: all 0.1s ease;
+    transform: translate(-50%, 0);
+    border-radius: 3px;
+    color: rgb(255, 255, 255); /* white */
+    pointer-events: none;
+}
+
+.chartjs-tooltip-key {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+}
+
+#loadingMessage {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    position: absolute  ;
+    margin-top: 100px;
+}

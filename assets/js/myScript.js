@@ -240,7 +240,7 @@ function printTransactionRecord(){
     var totalUSD = 0;
     var totalSGD = 0;
     for (let i = 0; i < transactionRecord.length; i++){ 
-        $("#transaction-table").append(transactionRecord[i].date + ": "+transactionRecord[i].desp+"<br>");
+        $("#transaction-records").append(transactionRecord[i].date + ": "+transactionRecord[i].desp+"<br>");
         totalUSD = totalUSD + transactionRecord[i].changeInUSD;  
         totalSGD = totalSGD + transactionRecord[i].changeInSGD;
     };
@@ -268,7 +268,7 @@ function transact(transactDate, transactRate, transactAction, transactAmount) {
         break;
     }
     sortTransactionRecord();
-    $("#transaction-table").text("");
+    $("#transaction-records").text("");
     printTransactionRecord();
 
     

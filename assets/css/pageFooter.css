@@ -1,0 +1,13 @@
+/* PAGE FOOTER */
+/*
+***
+* Refer to commonStyle.css for CONTENT PAGE
+***
+*/
+/* Footer Panel appears at the bottom of all pages in the site. */
+
+#footer-panel {
+    margin: 20px 10px 10px 20px;
+    width: 98%;
+    color: rgb(255, 255, 255);
+}

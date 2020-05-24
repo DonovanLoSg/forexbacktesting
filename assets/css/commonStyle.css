@@ -1,0 +1,77 @@
+/*
+***
+* CSS TABLE OF CONTENTS
+* 
+* External Libraries
+* 1 - reeset.css  - CSS Reset (source: https://perishablepress.com/a-killer-collection-of-global-css-reset-styles/)
+* 2 - bootstrap.min.css - BootStrap 4 (source: https://getbootstrap.com/docs/4.4/getting-started/download/)
+* 3 - font-awesome.css - Font Awesome (source: https://fontawesome.com/v4.7.0/get-started/)
+* 
+* Local CSS Files
+* 1 - commonStyle.css - Common CSS styles
+* 2 - pageHeader.css - Page Header 
+        (including Logo, Site Name and Navigation)
+* 3 - commandPanel.css - CSS targeting at Command Panel in the <main> section 
+        (including New Scenario button and User input for customizing Chart)
+* 4 - chartPanel.css - CSS targeting at Chart Panel in the <main> section
+* 5 - transactionPanel.css - CSS targeting at Transaction Panel in <main> section
+        (including Transaction Entry Form, Fund Adjustment Form, Transaction Recording and Fund Balances)
+* 6 - pageFooter.css - Page Footer
+***
+*/
+
+
+/* COMMON CSS */
+
+body {
+    font-family: "Open Sans", Verdana, san-serif;
+}
+
+.panel {
+    padding: 10px;
+    border: 3px solid rgb(0, 128, 64); /* fun green */
+    border-radius: 25px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* black, black */
+}
+
+.bg-green {
+    background: #008080; /* teal */
+}
+
+form label,
+form input,
+form button {
+    margin-bottom: 3px;
+    width: 100%
+}
+
+form input {
+    height: 25px;
+    line-height: 25px;
+    background: rgb(255, 255, 255); /* white */
+    color: rgb(0, 0, 0); /* black */
+    padding: 0 6px;
+}
+
+form button {
+    height: 30px;
+    line-height: 30px;
+    background: rgb(230, 126, 34); /* zest */
+    color:rgb(255, 255, 255); /* white */
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+form .error {
+    color: rgb(255, 0, 0); .* red */
+}
+
+input[type="date"] {
+    height: 2rem;
+}
+
+input[type="number"] {
+    width: 100px;
+    height: 2rem;
+    text-align: center;
+}

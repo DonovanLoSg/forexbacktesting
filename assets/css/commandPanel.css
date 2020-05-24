@@ -1,0 +1,77 @@
+/* COMMAND PANEL */
+/*
+***
+* Refer to commonStyle.css for CONTENT PAGE
+***
+*/
+/* header panel appears on top of the page,  */
+
+
+/* it includes logo, site name and navigation menu */
+
+#command-panel {
+    width: 98%;
+    margin: 20px;
+    font-size: 1rem;
+    line-height: 0.7rem;
+}
+
+
+/* Start a new scenario button */
+
+.myButton {
+    display: inline-block;
+    padding: 20px 40px 20px 30px;
+    margin-left: -10px;
+    border: 3px solid rgb(0, 0, 139); /* darkblue; */
+    border-radius: 28px;
+    box-shadow: 8px 8px 10px 0px rgb(124, 185, 232); /* areo */
+    background-color: rgb(56, 115, 217); /* royal blue */
+    background: linear-gradient(to bottom, #rgb(56, 115, 217) 5%, #0537ff 100%); /* royal blue, canary */
+    font-family: Arial;
+    font-size: 20px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #rgb(3, 3, 5); /* cinder color */
+    color: rgb(255, 255, 255); /* white */
+    cursor: pointer;
+}
+
+.myButton:link {
+    color: rgb(255, 255, 255); /* white */
+    text-decoration: none;
+}
+
+.myButton:visited {
+    color: rgb(255, 255, 255); /* white */
+    text-decoration: none;
+}
+
+.myButton:hover {
+    background: linear-gradient(to bottom, #0537ff 5%, #3873d9 100%); /* canary, royal blue */
+    background-color: rgb(255, 255, 255); /* white */
+    color: rgb(255, 255, 255); /* white */
+    text-decoration: none;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+    color:  rgb(255, 255, 255); /* white */
+    text-decoration: none;
+}
+
+#dateRange {
+    margin-top: 5px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding: 8px 25px;
+    border: 3px solid rgb(0, 128, 64); /* fun green */
+    line-height: 2rem;
+    text-align: center;
+    background-color: rgb(223, 242, 189); /* tusk */
+}
+
+#startDate,
+#endDate {
+    width: 200px;
+}

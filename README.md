@@ -167,9 +167,17 @@ A CSS Reset style sheet from Killer Collection of CSS Resets (https://perishable
 Code Institues templates (https://github.com/Code-Institute-Org/gitpod-full-template) to start the coding. 
 The template used for Readme.md is also from Code Institute (https://github.com/Code-Institute-Solutions/readme-template/blob/master/README.md)
 
-For codes generating,
+For codes generating
 * CSS Button Generator (http://www.bestcssbuttongenerator.com/)
 
+For codes formatting
+* HTML Codes Formatter (https://www.freeformatter.com/html-formatter.html)
+* CSS Beautifier (https://www.freeformatter.com/css-beautifier.html)
+
+
+For codes validation
+* W3C Markup Validation Service (https://validator.w3.org/)
+* W3C CSS Validation Service (https://jigsaw.w3.org/css-validator/)
 
 
 
