@@ -83,8 +83,8 @@ function drawChart(ratesTable) {
     // breaking the 2D array augument into different Arrays.
     let shortTerm = $("#shortTermAvg").val();
     let longTerm = $("#longTermAvg").val();
-    let shortTermMovAvgLabel = "7 days moving average";
-    let longTermMovAvgLabel = "14 days moving average";
+    let shortTermMovAvgLabel = shortTerm + " days moving average";
+    let longTermMovAvgLabel = longTerm + " days moving average";
     datesArray.length = 0; // empty datesArray
     ratesArray.length = 0; // empty ratesArray
     var record;
@@ -167,7 +167,20 @@ function drawChart(ratesTable) {
             }
         }
     })
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 // retreive exchange rates between the stat date and end date.
 // After retrieval, it will call teh draw chart function
@@ -316,6 +329,9 @@ $(document).ready(function () {
         fetchRate($("#txDate").val());
 
     });
+
+    
+
 
     // event handlers for handling Buy button
     document.querySelector("input[name='buyBtn']").addEventListener("click", function() {
