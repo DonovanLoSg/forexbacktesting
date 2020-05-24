@@ -15,27 +15,23 @@ function resetDatePicker() {
 // function to retrieve the exchange rates with the date provided
 // function is called when there is a change of value
 // in the date pickers within the transaction entry form
-
 function fetchRate(selectedDate) {
-    axios.get("apiURL", {
-            params: {
-                "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
-                "limit": "1",
-                "fields": "end_of_day,usd_sgd",
-                "filters[end_of_day]": selectedDate,
-            }
-        })
-        .then(function (response) {
-            if (response.data.result.records.length == 0) $("#txRate").val("");
-            else {
-                $("#txRate").val(response.data.result.records[0].usd_sgd)
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-};
-
+    let apiURL =
+        "https://eservices.mas.gov.sg/api/action/datastore/search.json";
+    axios.get(apiURL, {
+        params: {
+            "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
+            "limit": "1",
+            "fields": "end_of_day,usd_sgd",
+            "filters[end_of_day]": selectedDate,
+        }}).then(function (response) {
+        if (response.data.result.records.length == 0) {
+            $("#txRate").val("");
+        } else {
+            $("#txRate").val(response.data.result.records[0].usd_sgd);
+        }
+    })
+}
 
 // function to retrieve the last transaction's exchange rate available.
 // the info is used to populate the transaction entry form when intially loaded.
@@ -46,10 +42,10 @@ function fetchLastRates() {
         "https://eservices.mas.gov.sg/api/action/datastore/search.json";
     axios.get(apiURL, {
         params: {
-            "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
+            "'resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
             "limit": "1",
             "fields": "end_of_day,usd_sgd",
-            "sort": "end_of_day desc",
+            "'sort': 'end_of_day desc",
         }
     }).then(function (response) {
         $("#txDate").val(response.data.result.records[0].end_of_day);
@@ -90,7 +86,6 @@ let datesArray = [];
 let ratesArray = [];
 let datesParsedArray = [];
 let ratesTable = {};
-
 function drawChart(ratesTable) {
 
     // breaking the 2D array augument into different Arrays.
@@ -102,10 +97,10 @@ function drawChart(ratesTable) {
     ratesArray.length = 0; // empty ratesArray
     datesParsedArray.length = 0;
     var record;
-    for (record of ratesTable) {
+    for (record of ratesTable){
         datesArray.push(record["end_of_day"]);
-        ratesArray.push(Math.round(parseFloat(record["usd_sgd"]) *
-            10000) / 10000);
+        ratesArray.push(Math.round(parseFloat(record["usd_sgd"])
+            * 10000) / 10000);
     };
     let shortTermMovAvg = calMovingAvg(shortTerm, ratesArray);
     let longTermMovAvg = calMovingAvg(longTerm, ratesArray);
@@ -159,12 +154,12 @@ function drawChart(ratesTable) {
                 position: "nearest",
                 callbacks: {
                     footer: function (tooltipItem) {
-                        // resetting the date picker
-                        //  in the transacton entry form
+                        // resetting the date picker in 
+                        // the transacton entry form
                         $("#txDate").val(tooltipItem[0].xLabel)
-                        // resetting the date picker
-                        // in the transacton entry form
-                        fetchRate(tooltipItem[0].xLabel);
+                        // resetting the date picker in the transacton 
+                        // entry form
+                         fetchRate(tooltipItem[0].xLabel);
                     }
 
                 },
@@ -176,9 +171,9 @@ function drawChart(ratesTable) {
             },
             scales: {
                 xAxes: [{
-                    type: "time",
+                    type: 'time',
                     time: {
-                        unit: "day"
+                        unit: 'day'
                     }
                 }]
             }
@@ -190,7 +185,15 @@ function drawChart(ratesTable) {
 
 
 
+
+
+
+
+
+
+
 };
+
 
 
 
@@ -199,31 +202,32 @@ function drawChart(ratesTable) {
 // After retrieval, it will call teh draw chart function
 
 function downloadFromAPI(startDate, endDate) {
-
+   
     // using loading image
     $("#loadingMessage").show();
 
     // consuming API
-    let apiURL =
-        "https://eservices.mas.gov.sg/api/action/datastore/search.json";
+    let apiURL = 'https://eservices.mas.gov.sg/api/action/datastore/search.json';
     axios.get(apiURL, {
         params: {
-            "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
-            "limit": "10000",
-            "fields": "end_of_day,usd_sgd",
-            "between[end_of_day]": startDate + "," + endDate,
-            "sort": "end_of_day asc"
+            'resource_id': '95932927-c8bc-4e7a-b484-68a66a24edfe',
+            'limit': '10000',
+            'fields': 'end_of_day,usd_sgd',
+            'between[end_of_day]': startDate + ',' + endDate,
+            'sort': 'end_of_day asc'
         }
     }).then(function (response) {
-        ratesTable = response.data.result["records"];
+        ratesTable = response.data.result['records'];
         $("#loadingMessage").hide();
         drawChart(ratesTable);
+       
+       
     })
 }
 
 
-function compare(a, b) {
-    if (a.date < b.date) {
+function compare (a,b){
+    if (a.date < b.date){
         return -1;
     } else if (b.date > a.date) {
         return 1;
@@ -233,72 +237,37 @@ function compare(a, b) {
 }
 
 
-function sortTransactionRecord() {
+function sortTransactionRecord(){
     transactionRecord.sort(compare);
 }
 
-function printTransactionRecord() {
+function printTransactionRecord(){
     var totalUSD = 0;
     var totalSGD = 0;
-    for (let i = 0; i < transactionRecord.length; i++) {
-        $("#transaction-records").append(transactionRecord[i].date +
-            ": " + transactionRecord[i].desp + "<br>");
-        totalUSD = totalUSD + transactionRecord[i].changeInUSD;
+    for (let i = 0; i < transactionRecord.length; i++){
+        $("#transaction-records").append(transactionRecord[i].date + ": "+transactionRecord[i].desp+"<br>");
+        totalUSD = totalUSD + transactionRecord[i].changeInUSD; 
         totalSGD = totalSGD + transactionRecord[i].changeInSGD;
     };
-    $("#balanceUSD").text("Balance (USD) : " + totalUSD.toFixed(4));
-    $("#balanceSGD").text("Balance (SGD) : " + totalSGD.toFixed(4));
-
+    $("#balanceUSD").text("Balance (USD) : "+totalUSD.toFixed(4));
+    $("#balanceSGD").text("Balance (SGD) : "+totalSGD.toFixed(4));
+   
 }
 
 
 function transact(transactDate, transactRate, transactAction, transactAmount) {
     switch (transactAction) {
-    case "deposit":
-        transactionRecord.push({
-            date: transactDate,
-            action: "'deposit",
-            amount: transactAmount,
-            rate: 0,
-            changeInUSD: 0,
-            changeInSGD: transactAmount,
-            desp: "You have deposited SGD" + transactAmount.toFixed(4)
-        });
+    case 'deposit':
+        transactionRecord.push({date:transactDate, action:'deposit', amount:transactAmount, rate: 0, changeInUSD: 0, changeInSGD: transactAmount, desp: "You have deposited SGD" + transactAmount.toFixed(4)});
         break;
-    case "withdraw":
-        transactionRecord.push({
-            date: transactDate,
-            action: "withdrawal",
-            amount: transactAmount,
-            rate: 0,
-            changeInUSD: 0,
-            changeInSGD: -transactAmount,
-            desp: "You have withdrawn SGD" + transactAmount.toFixed(4)
-        });
+    case 'withdraw':
+        transactionRecord.push({date:transactDate, action:'withdrawal', amount:transactAmount, rate: 0, changeInUSD: 0, changeInSGD: -transactAmount, desp: "You have withdrawn SGD" + transactAmount.toFixed(4)});
         break;
-    case "buy":
-        transactionRecord.push({
-            date: transactDate,
-            action: "'buy",
-            amount: transactAmount,
-            rate: transactRate,
-            changeInUSD: transactAmount,
-            changeInSGD: -transactAmount * transactRate,
-            desp: "You bought USD" + transactAmount.toFixed(4) + " with SGD " +
-                (transactAmount * transactRate).toFixed(4)
-        });
+    case 'buy':
+        transactionRecord.push({date:transactDate, action:'buy', amount:transactAmount, rate: transactRate, changeInUSD: transactAmount, changeInSGD: -transactAmount*transactRate, desp: "You bought USD" + transactAmount.toFixed(4)+" with SGD " + (transactAmount*transactRate).toFixed(4)});
         break;
-    case "sell":
-        transactionRecord.push({
-            date: transactDate,
-            action: "sell",
-            amount: transactAmount,
-            rate: transactRate,
-            changeInUSD: -transactAmount,
-            changeInSGD: transactAmount * transactRate,
-            desp: "You sold USD" + transactAmount.toFixed(4) + " for SGD " +
-                (transactAmount * transactRate).toFixed(4)
-        });
+    case 'sell':
+        transactionRecord.push({date:transactDate, action:'sell', amount:transactAmount, rate: transactRate, changeInUSD: -transactAmount, changeInSGD: transactAmount*transactRate, desp: "You sold USD" + transactAmount.toFixed(4)+" for SGD " + (transactAmount*transactRate).toFixed(4)});
         break;
     default:
         break;
@@ -307,7 +276,7 @@ function transact(transactDate, transactRate, transactAction, transactAmount) {
     $("#transaction-records").text("");
     printTransactionRecord();
 
-
+   
 
 }
 
@@ -322,37 +291,36 @@ var balanceUSD = 0;
 var balanceSGD = 0;
 
 
-var ttAction = "";
+var ttAction = '';
 var ttAmount = 0.0;
 var ttRate = 0;
-var ttDate = "";
+var ttDate = '';
 
 
 $(function () {
 
     // Initializing
-
+   
     resetDatePicker();
     downloadFromAPI($("#startDate").val(), $("#endDate").val());
-    $("#startNew").click(function () {
+    $("#startNew").click(function(){
         location.reload();
     })
 
     $("#shortTermAvg").val(7);
     $("#longTermAvg").val(14);
 
-    // event handler for two date pickers and
-    // moving average fields controlling the chart
-    $("#startDate").change(function () {
+    // event handler for two date pickers and moving average fields controlling the chart
+    $("#startDate").change(function(){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     });
-    $("#endDAte").change(function () {
+    $("#endDAte").change(function(){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
-    $("#shortTermAvg").change(function () {
+    $("#shortTermAvg").change(function(){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
-    $("#longTermAvg").change(function () {
+    $("#longTermAvg").change(function(){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
 
@@ -360,21 +328,21 @@ $(function () {
     fetchLastRates();
 
     // event handlers for tansaction entry form
-    $("#txDate").change(function () {
+    $("#txDate").change(function(){
         fetchRate($("#txDate").val());
 
     });
 
-
+   
 
 
     // event handlers for handling Buy button
-    $("input[name='buyBtn']").click(function () {
-        ttAction = "buy";
+    $("input[name='buyBtn']").click(function(){
+        ttAction = 'buy';
         ttDate = $("#txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("#txAmount").val());
-        if (isNaN(ttAmount) == false && ttAmount > 0) {
+        if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#transaction-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);
@@ -385,12 +353,12 @@ $(function () {
     });
 
     // event handlers for handling Sell button
-    $("input[name='sellBtn']").click(function () {
-        ttAction = "sell";
+    $("input[name='sellBtn']").click(function(){
+        ttAction = 'sell';
         ttDate = $("#txDate").val();
         ttRate = parseFloat($("#txRate").val());
         ttAmount = parseFloat($("#txAmount").val());
-        if (isNaN(ttAmount) == false && ttAmount > 0) {
+        if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#transaction-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);
@@ -402,14 +370,14 @@ $(function () {
 
 
 
-
-    // event handlers for handling Deposit button
-    $("input[name='depositBtn']").click(function () {
-        ttAction = "deposit";
+       
+    // event handlers for handling Deposit button  
+    $("input[name='depositBtn']").click(function(){
+        ttAction = 'deposit';
         ttDate = $("#fdDate").val();
         ttRate = 0;
         ttAmount = parseFloat($("#fdAmount").val());
-        if (isNaN(ttAmount) == false && ttAmount > 0) {
+         if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#adjustment-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);
@@ -419,14 +387,18 @@ $(function () {
         return false;
 
     });
-
-    // event handlers for handling Withdraw button
-    $("input[name='withdrawBtn']").click(function () {
-        ttAction = "withdraw";
+   
+   
+   
+   
+       
+    // event handlers for handling Withdraw button  
+    $("input[name='withdrawBtn']").click(function(){
+        ttAction = 'withdraw';
         ttDate = $("#fdDate").val();
         ttRate = 0;
         ttAmount = parseFloat($("#fdAmount").val());
-        if (isNaN(ttAmount) == false && ttAmount > 0) {
+        if (isNaN(ttAmount) == false && ttAmount > 0){
             var isValid = $("#adjustment-form").validate();
             if (isValid) {
                 transact(ttDate, ttRate, ttAction, ttAmount);
@@ -434,6 +406,7 @@ $(function () {
             };
         };
         return false;
+       
     })
 
     // jQuery validator for transaction entry form
@@ -444,6 +417,17 @@ $(function () {
                 required: true,
                 number: true,
                 positiveNumber: true,
+                // sufficientSGD: {
+                //     required: true,
+                //     rates: ttRate,
+                //     action: ttAction,
+                //     amount: ttAmount
+                // },
+                // sufficientUSD: {
+                //     required: true,
+                //     action: ttAction,
+                //     amount: ttAmount
+                // }
             },
             txDate: {
                 required: true,
@@ -457,6 +441,8 @@ $(function () {
                 required: "Enter transaction amount.",
                 number: "Enter a valid number.",
                 positiveNumber: "Enter a positive value.",
+                // sufficientSGD: "Insufficient SGD fund balance.",
+                // sufficientUSD: "Insufficient USD fund balance."
             },
             txDate: {
                 required: "Select a transaction date.",
@@ -473,19 +459,25 @@ $(function () {
     // jQuery validator for fund adjustment form
     $("#adjustment-form").validate({
         rules: {
-            fdDate: "required",
+            fdDate: 'required',
             fdAmount: {
                 required: true,
                 number: true,
                 positiveNumber: true,
+                // sufficientToWithdraw: {
+                //     required: true,
+                //     action: ttAction,
+                //     amount: ttAmount
+                // },
             }
         },
         messages: {
-            fdDate: "This field is required",
+            fdDate: 'This field is required',
             fdAmount: {
-                required: "Enter the transaction amount.",
-                number: "Enter a valid transaction amount.",
-                positiveNumber: "Enter a positive value.",
+                required: 'Enter the transaction amount.',
+                number: 'Enter a valid transaction amount.',
+                positiveNumber: 'Enter a positive value.',
+                // sufficientToWithdraw: 'Insufficient SGD fund.'
             },
         },
         submitHandler: function () {
@@ -494,7 +486,39 @@ $(function () {
     });
 
     // jQuery validator's methods
-    $.validator.addMethod("positiveNumber", function (value) {
-        return Number(value) > 0
-    }, "Enter a positive number.");
+    $.validator.addMethod('positiveNumber', function (value) {
+        return Number(value) > 0;
+    }, 'Enter a positive number.');
+
+    $.validator.addMethod('sufficientToWithdraw', function (value, action) {
+   
+        if (action == 'withdraw') {
+            if (Number(value) <= balanceSGD){
+                return true
+            } else
+                return false;
+        } else {
+            return true;
+        }
+    }, 'Insufficient SGD fund balance.');
+
+    $.validator.addMethod('sufficientSGD', function (value, rates, action) {
+       
+        if (action == "buy") {
+            if (Number(value) * Number(rates) <= balanceSGD) {
+                return true
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }, 'Insufficient SGD fund balance.');
+
+    $.validator.addMethod('sufficientUSD', function (value, action) {
+        if (action == "sell") {
+            return (Number(value) < balanceUSD)
+        } else return true;
+    }, 'Insufficient USD fund balance.');
+
 });
