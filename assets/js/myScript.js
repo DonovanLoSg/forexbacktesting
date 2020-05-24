@@ -73,12 +73,19 @@ function calMovingAvg(avgNumber, numArray) {
     return movAverageArray
 }
 
+// Create a new date from a string, return as a timestamp.
+function timestamp(str) {
+    return new Date(str).getTime();
+}
 
 // a function that draw teh chart with exchange rates information provided by MAS API.
 // this function is called when the page is loaded or the selected date range changes.
 let datesArray = [];
 let ratesArray = [];
+let datesParsedArray = [];
+let ratesTable = {};
 function drawChart(ratesTable) {
+
     
     // breaking the 2D array augument into different Arrays.
     let shortTerm = $("#shortTermAvg").val();
@@ -87,6 +94,7 @@ function drawChart(ratesTable) {
     let longTermMovAvgLabel = longTerm + " days moving average";
     datesArray.length = 0; // empty datesArray
     ratesArray.length = 0; // empty ratesArray
+    datesParsedArray.length = 0;
     var record;
     for (record of ratesTable) {
         datesArray.push(record["end_of_day"]);
@@ -94,6 +102,10 @@ function drawChart(ratesTable) {
     }
     let shortTermMovAvg = calMovingAvg(shortTerm, ratesArray);
     let longTermMovAvg = calMovingAvg(longTerm, ratesArray);
+    
+
+
+
 
     // intializing the variables of the charts
     Chart.defaults.maintainAspectRatio = 'false';
@@ -168,15 +180,8 @@ function drawChart(ratesTable) {
         }
     })
 
+
 };
-
-
-
-
-
-
-
-
 
 
 
@@ -184,6 +189,7 @@ function drawChart(ratesTable) {
 
 // retreive exchange rates between the stat date and end date.
 // After retrieval, it will call teh draw chart function
+
 function downloadFromAPI(startDate, endDate) {
     
     // using loading image
@@ -200,27 +206,14 @@ function downloadFromAPI(startDate, endDate) {
             'sort': 'end_of_day asc'
         }
     }).then(function (response) {
-        var ratesTable = {};
         ratesTable = response.data.result['records'];
         $("#loadingMessage").hide();
         drawChart(ratesTable);
-        // ----------------------------------------------------------------- **
+        
+        
     })
 }
 
-// function populateTable(transactionTable) {
-//     console.table(transactionTable);
-// }
-
-// function clickHandler(evt) {
-//     var firstPoint = myChart.getElementAtEvent(evt)[0];
-
-// if (firstPoint) {
-//     var label = myChart.data.labels[firstPoint._index];
-//     var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
-// }
-
-// }
 
 function compare (a,b){
     if (a.date < b.date){
@@ -252,8 +245,6 @@ function printTransactionRecord(){
 
 
 function transact(transactDate, transactRate, transactAction, transactAmount) {
-    console.log(transactDate);
-
     switch (transactAction) {
     case 'deposit':
         transactionRecord.push({date:transactDate, action:'deposit', amount:transactAmount, rate: 0, changeInUSD: 0, changeInSGD: transactAmount, desp: "You have deposited SGD" + transactAmount.toFixed(4)});
@@ -274,7 +265,7 @@ function transact(transactDate, transactRate, transactAction, transactAmount) {
     $("#transaction-table").text("");
     printTransactionRecord();
 
-    console.log(transactionRecord);
+    
 
 }
 
@@ -304,6 +295,7 @@ $(document).ready(function () {
     $("#startNew").click(function(){
         location.reload();
     })
+
     $("#shortTermAvg").val(7);
     $("#longTermAvg").val(14);
 
@@ -488,7 +480,7 @@ $(document).ready(function () {
     }, 'Enter a positive number.');
 
     $.validator.addMethod('sufficientToWithdraw', function (value, action) {
-        console.log(value, action);
+    
         if (action == 'withdraw') {
             if (Number(value) <= balanceSGD){
                 return true
@@ -500,7 +492,7 @@ $(document).ready(function () {
     }, 'Insufficient SGD fund balance.');
 
     $.validator.addMethod('sufficientSGD', function (value, rates, action) {
-        console.log(action);
+        
         if (action == "buy") {
             if (Number(value) * Number(rates) <= balanceSGD) {
                 return true

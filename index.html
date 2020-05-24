@@ -30,7 +30,10 @@
     <link rel="stylesheet" type="text/css" href="assets/css/fonts/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="assets/css/lib/nouislider.min.css">
  	<link rel="stylesheet" type="text/css" href="assets/css/myStyle.css">
-    
+        <link rel="stylesheet" href="css/iThing.css" type="text/css" />
+
+
+
     <script src="assets/js/lib/jquery-3.5.1.min.js"></script>
     <script src="assets/js/lib/jquery.validate.min.js"></script>
     <script src="assets/js/lib/popper.min.js"></script>
@@ -39,7 +42,8 @@
     <script src="assets/js/lib/moment.min.js"></script>
     <script src="assets/js/lib/Chart.min.js"></script>
     <script src="assets/js/lib/nouislider.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQRangeSlider/5.7.2/jQRangeSlider.min.js"></script>
 
 
 	<style>
@@ -143,10 +147,19 @@ MAIN
         <div id="canvas-panel" class="row panel">
             <div class="container-fluid">
                 <div class="chart-container" style="">
-                <div id="loadingMessage"><img src="assets/img/common/loading.gif" alt="" srcset=""></div> 
-                <canvas id="chart"></canvas>
+                    <div id="loadingMessage"><img src="assets/img/common/loading.gif" alt="" srcset=""></div> 
+                    <canvas id="chart"></canvas>
+
+                </div>  
+                <div id="slider">x
+                
+<div style="margin: 4em" class="regular-slider"></div>
+
+                
+                
                 </div>
-                <div id="slider-date"></div>
+
+
             </div>
         </div>
 
