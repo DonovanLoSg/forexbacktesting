@@ -73,11 +73,6 @@ function calMovingAvg(avgNumber, numArray) {
     return movAverageArray
 }
 
-// Create a new date from a string, return as a timestamp.
-function timestamp(str) {
-    return new Date(str).getTime();
-}
-
 // a function that draw teh chart with exchange rates information provided by MAS API.
 // this function is called when the page is loaded or the selected date range changes.
 let datesArray = [];
@@ -96,10 +91,10 @@ function drawChart(ratesTable) {
     ratesArray.length = 0; // empty ratesArray
     datesParsedArray.length = 0;
     var record;
-    for (record of ratesTable) {
+    for (record of ratesTable){
         datesArray.push(record["end_of_day"]);
         ratesArray.push(Math.round(parseFloat(record["usd_sgd"]) * 10000) / 10000);
-    }
+    };
     let shortTermMovAvg = calMovingAvg(shortTerm, ratesArray);
     let longTermMovAvg = calMovingAvg(longTerm, ratesArray);
     
