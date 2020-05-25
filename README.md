@@ -1,4 +1,4 @@
-<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/logo/donovanlogo150x150.png" style="margin: 0;">
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/logo/donovanlogo150x150.png" style="margin: 0;">
 
 # FOREX Backtesting Project
 *Interactive Frontend Development Milestone Project*
@@ -58,7 +58,7 @@ Both the trainer and trainee are considered as the users of the application.
 
 ## Use Case Diagram
 
-<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/UseCaseDiagram.png" style="margin: 0;">
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/UseCaseDiagram.png" style="margin: 0;">
 
 <hr>
 
@@ -102,12 +102,12 @@ Both the trainer and trainee are considered as the users of the application.
 
 ### Wireframe
 
-<img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/wireframe.png" alt="wireframe for this app" style="margin: 0;">
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/wireframe.png" alt="wireframe for this app" style="margin: 0;">
 
 ### Sitemap
 
-<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap.png" alt="sitemap for this app" target="_blank"><img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a>
-<a href="http://currency-exchange-backtesting.donovanlo.sg/assets/img/readme/sitemap.png" target="_blank">Click to Enlarge</a>
+<a href="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap.png" alt="sitemap for this app" target="_blank"><img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a>
+<a href="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap.png" target="_blank">Click to Enlarge</a>
 
 
 

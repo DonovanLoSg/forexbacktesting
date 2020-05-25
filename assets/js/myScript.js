@@ -173,11 +173,8 @@ function drawChart(ratesTable) {
                         //  in the transacton entry form
                         $("#txDate").val(tooltipItem[0].xLabel);
                         let changedDate = $("#txDate").val();
-                        let changedRate = fetchRate(changedDate);
+                        fetchRate(changedDate);
 
-
-                        // let rateSelected = fetchRate(#txDate.val());
-                        // $("#txRate").val(parseFloat(rateSelected).toFixed(4));
                         }
                     }
 
@@ -367,7 +364,7 @@ $(function () {
     // event handlers for tansaction entry form
     $("#txDate").change(function () {
         let changedDate = $("#txDate").val();
-        let changedRate = fetchRate(changedDate);
+        fetchRate(changedDate);
     })
 
 
