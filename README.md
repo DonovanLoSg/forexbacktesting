@@ -135,7 +135,7 @@ Data consumed from this endpoints includes dates and USD-SGD daily exchange rate
 
 ## Interface Design
 
-:
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/interface.png" style="margin: 0;" alt="List of user tasks and corresponding interface elemnts to enable them. ">
 
 ## Information Design
 
