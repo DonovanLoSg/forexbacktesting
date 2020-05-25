@@ -20,7 +20,7 @@ Backtesting is a type of retrodiction, and a special type of cross-validation ap
 Explanation:
 **Moving averages** are the most basic technical strategy. 
 The goal is to identify the trend's direction to capitalize on it. 
-Traders believe when a short term average cross over a long term average, 
+Traders believe when a short-term average cross over a long-term average, 
 it shows the direction of the trend.
 An upward trend is a buy signal and a downward trend is a sell signal.
 ```
@@ -56,8 +56,8 @@ Both the trainer and trainee are considered as the users of the application.
 
 ## User Stories
 
-* As a user, I want to selected time period to view that period's historical currency exchange rates, so that it can relfect realistic market condition. 
-* As a user, I want to view the short term and long term moving average, so that I can identify the point where I should apply the moving average strategy to buy or sell.
+* As a user, I want to selected time period to view that period's historical currency exchange rates, so that it can reflect realistic market condition. 
+* As a user, I want to view the short-term and long-term moving average, so that I can identify the point where I should apply the moving average strategy to buy or sell.
 * As a user, I want to simulate transactions (buying and selling), so that I know the outcome (profits or losses) after I apply the strategy.
 
 ## Use Case Diagram
@@ -81,8 +81,8 @@ Both the trainer and trainee are considered as the users of the application.
 1. Draw charts with the restructured information.
 1. Reset the chart and empty the transaction table when "Start a New Scenario" button is clicked.
 1. Allow user to select the starting date and ending date of the data to be retrieved and displayed.
-1. Calculate the short term and long term moving average to add to the chart
-1. Move and Adjust the X-axis to allow ease of analyzing the chart
+1. Calculate the short-term and long-term moving average to add to the chart
+1. Move and Adjust the X-axis to allow ease of analysing the chart
 1. Populate the transaction entry with info from the point clicked on the chart
 1. Retrieve the rates from the re-structured data using an entered date
 1. Allow transaction to be entered with dates, rates and indication of buying/selling.
@@ -96,7 +96,7 @@ Both the trainer and trainee are considered as the users of the application.
 1. Currency exchange rates historical data has to be downloaded by consuming MAS's API.
 1. Fields to be retrieved are the date and the USD to SGD exchange rates.
 1. The response data need to be restructure for charting purposes as well as rates look up during transaction entries.
-1. Short term moving average and long term moving average are calculated from the restructured data.
+1. short-term moving average and ;pmg-term moving average are calculated from the restructured data.
 1. A responsive chart with the exchange rates and moving average is to be display to the user.
 
 <hr>
@@ -118,13 +118,13 @@ Both the trainer and trainee are considered as the users of the application.
 
 #### Data Source
 
-The chart is generated from data publised by Monentary Authority of Singapore through API.
+The chart is generated from data published by Monetary  Authority of Singapore through API.
 
 Source: https://secure.mas.gov.sg/api/APIDescPage.aspx?resource_id=95932927-c8bc-4e7a-b484-68a66a24edfe
 
-Data consumed from this endpoints includes dates and USD-SGD daily exchange rates.
+Data consumed from this endpoint includes dates and USD-SGD daily exchange rates.
 
-### Interaction Deisgn
+### Interaction Design
 
 1. Match user experience and expectations
 
@@ -163,7 +163,7 @@ Data consumed from this endpoints includes dates and USD-SGD daily exchange rate
 1.  Learnability
 
     The application is design to be easily learnt without much effort. 
-    In rare event the user does not know where to start, he can alway go to About page and How Tos page to laern more.
+    In rare event the user does not know where to start, he can always go to About page and How Tos page to learn more.
 
 1.  Error prevention, detection and recovery
 
@@ -171,12 +171,12 @@ Data consumed from this endpoints includes dates and USD-SGD daily exchange rate
     reducing chance of invalid values entered.
     The user does not even need to enter the extra rate as it is retrieve based on the date of transaction.
 
-    For convience, if the user is interest in a certain point on the chart, 
+    For convenience, if the user is interest in a certain point on the chart, 
     the information will be transfer to the Transaction Entry Form.
 
     The users will be alerted if an invalid value is entered.
 
-    Even when invalid valus are entered, it will not crash the system. 
+    Even when invalid values are entered, it will not crash the system. 
     It just wait for the next command without doing anything.
 
 1.  Responsiveness
@@ -192,7 +192,7 @@ Data consumed from this endpoints includes dates and USD-SGD daily exchange rate
 
 <hr>
 
-# Developing Page Structure and Orgaize Interactions (Skeleton)
+# Developing Page Structure and Organise Interactions (Skeleton)
 
 ## Navigation Design
 
@@ -223,7 +223,7 @@ Footer will include a disclaimer.
 
 The main content section will display content related to the page.
 
-For the home page, it is the application wwhcih consist of different panels.
+For the home page, it is the application which consist of different panels.
 
 <img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/interface.png" style="margin: 0;" alt="List of user tasks and corresponding interface elemnts to enable them. ">
 
@@ -237,20 +237,20 @@ The numeric data are presented in a line chart to display trends over a period o
 
 It is easier to recognise which direction the rates are going compare to a series of numbers.
 
-### Short Term and Long Term Moving Average 
+### short-term and ;pmg-term Moving Average 
 
 A simple moving average (SMA) is an arithmetic moving average calculated by adding recent prices and then dividing that by the number of time periods in the calculation average. For example, one could add the closing price of the security for a number of time periods and then dividing this total by that same number of periods. Short-term averages respond quickly to changes in the price of the underlying, while long-term averages are slower to react. 
 (cite: Investopedia - investopedia.com/terms/s/sma.asp)
 
-Laying the moving average lines on top of the exchange rates trendline, it enalbles the usesrs to apply and test out their strategy.
+Laying the moving average lines on top of the exchange rates trendline, it enables the users to apply and test out their strategy.
 
 Moving averages are an important analytical tool used to identify current price trends and the potential for a change in an established trend. The simplest use of a SMA in analysis is using it to quickly identify if a security is in an uptrend or downtrend. Another popular, albeit slightly more complex, analytical use is to compare a pair of simple moving averages with each covering different time frames. If a shorter-term simple moving average is above a longer-term average, an uptrend is expected. On the other hand, if the long-term average is above a shorter-term average then a downtrend might be the expected outcome.
 
 ### Transactions
 
-What would be a better way to simulate a trading scenerio? 
+What would be a better way to simulate a trading scenario? 
 
-The system allows the users to enter the transactions base on their strategy, usign the real historial data.
+The system allows the users to enter the transactions base on their strategy, using the real historical  data.
 
 After completing all their transaction, the will be able to see whether they are making a profit or a loss.
 
@@ -262,7 +262,7 @@ After completing all their transaction, the will be able to see whether they are
 
 ### Colour
 
-The commmon colour for financial sector are gold, brown, blue and green.
+The common color for financial sector are gold, brown, blue and green.
 
 The main color I chosen for this site is green.
 
@@ -277,7 +277,7 @@ Does it works? You be the judge.
 
 There not really that much reading on this site. 
 
-But I have still chosen fonts that enhance readibilty.
+But I have still chosen fonts that enhance readability.
 
 They are Open Sans, Verdana and san-serif.
 
@@ -293,9 +293,9 @@ Fonts family used as the base is Open Sans (https://fonts.google.com/specimen/Op
 
 # Features
 
-- View historial currency exchange rates from Monetary Authority of Singapore
+- View historical currency exchange rates from Monetary Authority of Singapore
 - View chart within a user specified timeframe
-- View and customised short and long term moving average
+- View and customised short- and long-term moving average
 - Display or Hide the trendline and moving average
 - Click on a point of the chart to have its date and exchange rate populate the transaction entry form
 - Select a date on the transaction entry form and the exchange rate for the day will be automatically retrieved
@@ -316,9 +316,8 @@ I uses **Git** for Versioning Control System and **GitHub** for repositories.
 **Gitpod**, an online IDE, is my main coding platform. I do sometimes test out codes in **Repl.it**
 
 I use **Bootstrap 4**, including its compoents and utilities for layout. **NavBar** is used for the main navigation, **box-shadow* utilities are also applied.
-Using the **collapse** and **card** components of Bootstrap, the accordian on the About Page is created.
 
-The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **jQuery Validator**, **axios.js**, **moment.js**, **Chart.js**, **Flatpickr**, **noUiSlider**), taking advantages of **DOM**, **Ajax** and **JSON**.
+The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **jQuery Validator**, **axios.js**, **moment.js**, **Chart.js** ), taking advantages of **DOM**, **Ajax** and **JSON**.
 
 A CSS Reset style sheet from Killer Collection of CSS Resets (https://perishablepress.com/a-killer-collection-of-global-css-reset-styles/) is used in additional to
 Code Institues templates (https://github.com/Code-Institute-Org/gitpod-full-template) to start the coding. 
@@ -331,13 +330,15 @@ For codes generating
 For codes formatting
 * HTML Codes Formatter (https://www.freeformatter.com/html-formatter.html)
 * CSS Beautifier (https://www.freeformatter.com/css-beautifier.html)
-
+* Dirty Markup (https://www.10bestdesign.com/dirtymarkup/)
 
 For codes validation
 * W3C Markup Validation Service (https://validator.w3.org/)
 * W3C CSS Validation Service (https://jigsaw.w3.org/css-validator/)
+* JSLint (https://jslint.com/)
+* W3C Link Checker (https://validator.w3.org/checklink)
 
-For user flow diagram
+For user flow diagram and mindmaping
 * Xmind (https://www.xmind.net/)
 
 For fonts
@@ -356,6 +357,16 @@ For viewing JSON document
 For use case Diagram
 * Creately (https://creately.com/)
 
+For image editing
+* Pixlr (https://pixlr.com)
+* Paint.NET (https://www.getpaint.net)
+
+For placeholder before real content are inserted
+* Placeholder.com (http://placeholder.com)
+* PlaceIMG (http://placeimg.com)
+* Lorem Ipsum Generator (https://loremipsum.io/)
+* Lipsum Generator (https://www.lipsum.com/)
+
 For grammer and spell check
 * Grammer Checker - Online Editor (https://grammarchecker.io/) 
 * Reverso - (https://www.reverso.net/spell-checker/english-spelling-grammar/)
@@ -365,7 +376,46 @@ For grammer and spell check
 
 # Testing
 
-:
+## Functionality Testing
+
+### Link Testing
+
+Home Page
+
+About Page
+
+HowTos Page
+
+### Form Testing
+
+Command panel
+
+Transaction Entry Form
+
+Fund Adjustment Form
+
+### HTMK Testing
+
+### CSS Testing
+
+### Color Contrast Accessibility Testing
+
+## Usability Testing
+
+### Navigation Testing
+
+### Content Testing
+
+# Compatibility Testing
+
+## Browser Compatibility Testing
+
+## Mobile Compatibility Testing
+
+
+
+
+
 
 <hr>
 
