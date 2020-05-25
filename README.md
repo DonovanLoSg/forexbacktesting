@@ -5,6 +5,7 @@
 
 <hr>
 
+
 ## Context
 
 A trainer for a trading company need an interactive simulator to explain to the novice about backtesting and moving average strategy.
@@ -24,6 +25,7 @@ it shows the direction of the trend.
 An upward trend is a buy signal and a downward trend is a sell signal.
 ```
 
+
 ## Demo
 
 Deployed project: http://forexbacktesting.donovanlo.sg 
@@ -32,6 +34,7 @@ Source code: https://github.com/DonovanLoSg/forexbacktesting
 
 // TODO: pic
 
+
 ## Content
 
 // TODO: 
@@ -39,6 +42,7 @@ Source code: https://github.com/DonovanLoSg/forexbacktesting
 :
 
 <hr>
+
 
 # Defining the Project (Strategy)
 
@@ -61,6 +65,7 @@ Both the trainer and trainee are considered as the users of the application.
 <img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/UseCaseDiagram.png" style="margin: 0;">
 
 <hr>
+
 
 # Defining the Project (Scope)
 
@@ -120,6 +125,40 @@ Source: https://secure.mas.gov.sg/api/APIDescPage.aspx?resource_id=95932927-c8bc
 Data consumed from this endpoints includes dates and USD-SGD daily exchange rates.
 
 ### Interaction Deisgn
+
+The layout of the design has taken into account the user experience and expectation.
+Historical currency exchange rates are presented in the chat they are used seeing.
+
+Consistency of the layout helps the users to navigate through the pages easily.
+
+The layout are at it's minimal with any clattered bells and whistles. 
+Simple forms mirror those of the physical world, increasing sense of familiarity 
+It is simple to use and fulfil all the functions required by the objectives.
+
+The historical information can be easily retrieved by just filling in the relevant fields.
+Transactions can also be easily done using one of the two forms.
+The application helps to keep track of the transactions as well as the balance so 
+the user do not need to bother himself to remember or take notes.
+
+The applicaton provide a platform to engage the user to test out their investment strategy. 
+
+There is no monetary exchange and the users are welcomed to try as many rounds as they like without any risks.
+
+The application is design to be easily learnt without much effort. 
+In rare event the user does not know where to start, he can alway go to About page and How Tos page to laern more.
+
+Use of date pickers and numeric input fields restrict the type of input they can make, 
+reducing chance of invalid values entered.
+The user does not even need to enter the extra rate as it is retrieve based on the date of transaction.
+
+For convience, if the user is interest in a certain point on the chart, 
+the information will be transfer to the Transaction Entry Form.
+
+The users will be alerted if an invalid value is entered.
+
+Even when invalid valus are entered, it will not crash the system. 
+It just wait for the next command without doing anything.
+
 
 #### User Flow Diagram
 
