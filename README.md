@@ -126,58 +126,64 @@ Data consumed from this endpoints includes dates and USD-SGD daily exchange rate
 
 ### Interaction Deisgn
 
-1   Match user experience and expectations
+1. Match user experience and expectations
 
-The layout of the design has taken into account the user experience and expectation.
-Historical currency exchange rates are presented in the chat they are used seeing.
+    The layout of the design has taken into account the user experience and expectation.
+    Historical currency exchange rates are presented in the chat they are used seeing.
 
-1   Consistency
+1. Consistency
 
-Consistency of the layout helps the users to navigate through the pages easily.
-The forms and chart are contained in panels.
-The clickable buttons are blue and the panels with interactions are in green.
+    Consistency of the layout helps the users to navigate through the pages easily.
+    The forms and chart are contained in panels.
+    The clickable buttons are blue and the panels with interactions are in green.
 
-1   Functional minimalism
+1.  Functional minimalism
 
-The layout are at it's minimal with any clattered bells and whistles. 
-Simple forms mirror those of the physical world, increasing sense of familiarity 
-It is simple to use and fulfil all the functions required by the objectives.
+    The layout are at it's minimal with any clattered bells and whistles. 
+    Simple forms mirror those of the physical world, increasing sense of familiarity 
+    It is simple to use and fulfil all the functions required by the objectives.
 
-1   Cognitive loads
+1.  Cognitive loads
 
-The historical information can be easily retrieved by just filling in the relevant fields.
-Transactions can also be easily done using one of the two forms.
-The application helps to keep track of the transactions as well as the balance so 
-the user do not need to bother himself to remember or take notes.
+    The historical information can be easily retrieved by just filling in the relevant fields.
+    Transactions can also be easily done using one of the two forms.
+    The application helps to keep track of the transactions as well as the balance so 
+    the user do not need to bother himself to remember or take notes.
 
-1   Engagement
+1.  Engagement
 
-The application provide a platform to engage the user to test out their investment strategy. 
-Every actions performed is responded by the application.
-E.g. When the user key in a new value into the moving average, the chart will be updated instantly.
+    The application provide a platform to engage the user to test out their investment strategy. 
+    Every actions performed is responded by the application.
+    E.g. When the user key in a new value into the moving average, the chart will be updated instantly.
 
-1   Control, trust, and explorability
+1.  Control, trust, and explorability
 
-There is no monetary exchange and the users are welcomed to try as many rounds as they like without any risks.
+    There is no monetary exchange and the users are welcomed to try as many rounds as they like without any risks.
 
-1   Learnability
+1.  Learnability
 
-The application is design to be easily learnt without much effort. 
-In rare event the user does not know where to start, he can alway go to About page and How Tos page to laern more.
+    The application is design to be easily learnt without much effort. 
+    In rare event the user does not know where to start, he can alway go to About page and How Tos page to laern more.
 
-1   Error prevention, detection and recovery
+1.  Error prevention, detection and recovery
 
-Use of date pickers and numeric input fields restrict the type of input they can make, 
-reducing chance of invalid values entered.
-The user does not even need to enter the extra rate as it is retrieve based on the date of transaction.
+    Use of date pickers and numeric input fields restrict the type of input they can make, 
+    reducing chance of invalid values entered.
+    The user does not even need to enter the extra rate as it is retrieve based on the date of transaction.
 
-For convience, if the user is interest in a certain point on the chart, 
-the information will be transfer to the Transaction Entry Form.
+    For convience, if the user is interest in a certain point on the chart, 
+    the information will be transfer to the Transaction Entry Form.
 
-The users will be alerted if an invalid value is entered.
+    The users will be alerted if an invalid value is entered.
 
-Even when invalid valus are entered, it will not crash the system. 
-It just wait for the next command without doing anything.
+    Even when invalid valus are entered, it will not crash the system. 
+    It just wait for the next command without doing anything.
+
+1.  Responsiveness
+
+    The site is responsive. User can access the site through browsers on a PC or through smart mobile phone.
+    The content will arrange itself as not to disturb the users' experience. 
+
 
 
 #### User Flow Diagram
@@ -187,6 +193,23 @@ It just wait for the next command without doing anything.
 <hr>
 
 # Developing Page Structure and Orgaize Interactions (Skeleton)
+
+## Navigation Design
+
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/navigation.png" style="margin: 0;" alt="Navigation Map">
+
+Bootstrap component will be used to make the navigation responsive.
+
+### Logo
+Logo on every page, clicking on it will bring the visitor to the Home Page. [Bootstrap Component - Navbar]
+
+### Main Navigation
+Main Navigation is a fixed position menu at the top of every web page. The 3 pages (Home, Resume, Portfolio) are listed and they are hyperlinked to their respective pages. [Bootstrap Component - Navbar]
+
+### Collapsible Hamburger Mobile Menu
+The top navigation will be minimised into a hamburger menu when displayed in mobile screens or other small screens. Clicking on it will display the familiar 3 choices. [Bootstrap Component - Navbar]
+
+## Interface Design
 
 The site consist of three pages.
 
@@ -202,17 +225,34 @@ The main content section will display content related to the page.
 
 For the home page, it is the application wwhcih consist of different panels.
 
-## Navigation Design
-
-<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/navigation.png" style="margin: 0;" alt="Navigation Map">
-
-## Interface Design
-
 <img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/interface.png" style="margin: 0;" alt="List of user tasks and corresponding interface elemnts to enable them. ">
 
 ## Information Design
 
-:
+### Historical currency exchange rate 
+
+The purpose of the system is to allow the user to understand and be familiar with the concept of backtesting and using moving average strategy.
+
+The numeric data are presented in a line chart to display trends over a period of time.
+
+It is easier to recognise which direction the rates are going compare to a series of numbers.
+
+### Short Term and Long Term Moving Average 
+
+A simple moving average (SMA) is an arithmetic moving average calculated by adding recent prices and then dividing that by the number of time periods in the calculation average. For example, one could add the closing price of the security for a number of time periods and then dividing this total by that same number of periods. Short-term averages respond quickly to changes in the price of the underlying, while long-term averages are slower to react. 
+(cite: Investopedia - investopedia.com/terms/s/sma.asp)
+
+Laying the moving average lines on top of the exchange rates trendline, it enalbles the usesrs to apply and test out their strategy.
+
+Moving averages are an important analytical tool used to identify current price trends and the potential for a change in an established trend. The simplest use of a SMA in analysis is using it to quickly identify if a security is in an uptrend or downtrend. Another popular, albeit slightly more complex, analytical use is to compare a pair of simple moving averages with each covering different time frames. If a shorter-term simple moving average is above a longer-term average, an uptrend is expected. On the other hand, if the long-term average is above a shorter-term average then a downtrend might be the expected outcome.
+
+### Transactions
+
+What would be a better way to simulate a trading scenerio? 
+
+The system allows the users to enter the transactions base on their strategy, usign the real historial data.
+
+After completing all their transaction, the will be able to see whether they are making a profit or a loss.
 
 <hr>
 
@@ -220,6 +260,42 @@ For the home page, it is the application wwhcih consist of different panels.
 
 ## Visual Design
 
+### Colour
+
+The commmon colour for financial sector are gold, brown, blue and green.
+
+The main color I chosen for this site is green.
+
+This is written in the article "the psychology of color and your financial brand"
+https://www.prosperitycoaching.biz/a-psycology-of-color-and-your-brand/
+
+Green is the color of money. If you use green in your website design you may be giving off a subconscious feeling of wealth. Green is also a healing color and the color of nature. Harmony exists where green is prevalent. Green often makes one feel calm. There are many green color variations that are suitable for an investment firm, such as sage, teal, or evergreen.
+
+Does it works? You be the judge.
+
+### Fonts
+
+There not really that much reading on this site. 
+
+But I have still chosen fonts that enhance readibilty.
+
+They are Open Sans, Verdana and san-serif.
+
+Sans serif fonts are used as the base for the website and the logo as they give the image of being modern, approachable, and clean.
+
+The clean lines and sharp edges are able to render out more clearly on a screen which increases legibility for users.
+
+
+Fonts family used as the base is Open Sans (https://fonts.google.com/specimen/Open+Sans) Headings fonts is PT Sans (https://fonts.google.com/specimen/PT+Sans)
+
+For some decorative purpose PT Serif (https://fonts.google.com/specimen/PT+Serif) is used.
+
+Images
+Hero image selected is a photograph of me (I am the 'product' of this website). It aims to let the user knows how the person behind the keyboard looks like. This also reduce the necessity of recruiters' imagining how antique i may look.
+
+The background of the hero image is a combination of two pics, the connected dots ( https://www.pngwave.com/png-clip-art-ojanz) and the waves (https://www.pngwave.com/png-clip-art-cclln).
+
+"Infinity of the mind is created by connecting the dots and going with the flow."
 :
 
 <hr>
