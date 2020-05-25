@@ -34,3 +34,20 @@ main-panel {
 ul {
 	padding-left: 30px;
 }
+.responsive {
+	width: 100%;
+	height: auto;
+    
+}
+.responsive.parent {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#chartimg {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    border: 1px solid #000000; // black
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* black, black */
+}

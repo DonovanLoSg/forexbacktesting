@@ -12,6 +12,7 @@ div {
 .responsive {
 	width: 100%;
 	height: auto;
+
 }
 .responsive.parent {
 	padding-left: 30px;

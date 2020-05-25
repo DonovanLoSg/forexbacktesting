@@ -288,20 +288,22 @@ The clean lines and sharp edges are able to render out more clearly on a screen 
 
 Fonts family used as the base is Open Sans (https://fonts.google.com/specimen/Open+Sans).
 
-## Images
-
-
-
-
-
-
-:
 
 <hr>
 
 # Features
 
-:
+- View historial currency exchange rates from Monetary Authority of Singapore
+- View chart within a user specified timeframe
+- View and customised short and long term moving average
+- Display or Hide the trendline and moving average
+- Click on a point of the chart to have its date and exchange rate populate the transaction entry form
+- Select a date on the transaction entry form and the exchange rate for the day will be automatically retrieved
+- Conduct trading (buy / sell) USD
+- Deposit/Withdraw SGD
+- View the transactions records sorted ascendingly by date
+- View the balance of the funds instantly updated after every transaction
+
 
 <hr>
 
