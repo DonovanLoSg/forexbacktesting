@@ -117,7 +117,7 @@ Both the trainer and trainee are considered as the users of the application.
 
 ### Interaction Deisgn
 
-// TODO: User Flow Diagram
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/userflow.png" style="margin: 0;" alt="user flow diagram">
 
 <hr>
 
