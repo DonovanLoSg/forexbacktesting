@@ -109,13 +109,19 @@ Both the trainer and trainee are considered as the users of the application.
 <a href="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap.png" alt="sitemap for this app" target="_blank"><img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a>
 <a href="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap.png" target="_blank">Click to Enlarge</a>
 
-
-
-
-
 ### Content Inventory
 
+#### Data Source
+
+The chart is generated from data publised by Monentary Authority of Singapore through API.
+
+Source: https://secure.mas.gov.sg/api/APIDescPage.aspx?resource_id=95932927-c8bc-4e7a-b484-68a66a24edfe
+
+Data consumed from this endpoints includes dates and USD-SGD daily exchange rates.
+
 ### Interaction Deisgn
+
+#### User Flow Diagram
 
 <img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/userflow.png" style="margin: 0;" alt="user flow diagram">
 
