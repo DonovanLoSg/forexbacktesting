@@ -286,16 +286,15 @@ Sans serif fonts are used as the base for the website and the logo as they give 
 The clean lines and sharp edges are able to render out more clearly on a screen which increases legibility for users.
 
 
-Fonts family used as the base is Open Sans (https://fonts.google.com/specimen/Open+Sans) Headings fonts is PT Sans (https://fonts.google.com/specimen/PT+Sans)
+Fonts family used as the base is Open Sans (https://fonts.google.com/specimen/Open+Sans).
 
-For some decorative purpose PT Serif (https://fonts.google.com/specimen/PT+Serif) is used.
+## Images
 
-Images
-Hero image selected is a photograph of me (I am the 'product' of this website). It aims to let the user knows how the person behind the keyboard looks like. This also reduce the necessity of recruiters' imagining how antique i may look.
 
-The background of the hero image is a combination of two pics, the connected dots ( https://www.pngwave.com/png-clip-art-ojanz) and the waves (https://www.pngwave.com/png-clip-art-cclln).
 
-"Infinity of the mind is created by connecting the dots and going with the flow."
+
+
+
 :
 
 <hr>

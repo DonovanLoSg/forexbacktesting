@@ -348,7 +348,7 @@ $(function () {
     $("#startDate").change(function () {
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     });
-    $("#endDAte").change(function () {
+    $("#endDate").change(function () {
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
     $("#shortTermAvg").change(function () {
