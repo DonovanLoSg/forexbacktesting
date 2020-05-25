@@ -106,7 +106,7 @@ Both the trainer and trainee are considered as the users of the application.
 
 ### Sitemap
 
-<a href="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap.png" alt="sitemap for this app" target="_blank"><img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a>
+<a href="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap.png" alt="sitemap for this app" target="_blank"><img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap_small.png" style="margin: 0;"></a><br>
 <a href="http://forexbacktesting.donovanlo.sg/assets/img/readme/sitemap.png" target="_blank">Click to Enlarge</a>
 
 ### Content Inventory
@@ -131,7 +131,7 @@ Data consumed from this endpoints includes dates and USD-SGD daily exchange rate
 
 ## Navigation Design
 
-// TODO: Site map
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/navigation.png" style="margin: 0;" alt="Navigation Map">
 
 ## Interface Design
 
@@ -187,7 +187,8 @@ For codes validation
 * W3C Markup Validation Service (https://validator.w3.org/)
 * W3C CSS Validation Service (https://jigsaw.w3.org/css-validator/)
 
-
+For user flow diagram
+* Xmind (https://www.xmind.net/)
 
 For fonts
 * Font Awesome 4 (https://fontawesome.com/v4.7.0/)
@@ -197,6 +198,7 @@ For wireframe
 
 For sitemap
 * GlooMaps (https://www.gloomaps.com/)
+* Draw.io (https://www.draw.io/)
 
 For viewing JSON document
 * JSON Path Finder (https://jsonpathfinder.com/)
