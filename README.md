@@ -213,7 +213,41 @@ For grammer and spell check
 
 # Deployment
 
-:
+## Preparation
+
+Before the site goes 'live':
+
+## Content
+
+Ensured all the last changes are saved and committed.
+Did a Git Push
+Register a domain name
+Search and register a domain name at Vodien.com (https://www.vodien.com/)
+(for more info: https://www.vodien.com/domain-names/)
+
+Go to the domain name registered and select Manage DNS
+Add a CNAME entry for "forex-backtesting" and link it to my Git Hub Repository (donovanlosg.github.io)
+
+# Production
+
+Putting the site into production.
+
+## Git Pages
+
+At the Git Repository, I navigate to the 'Setting'
+I scrolled down to the Git Pages section.
+Select 'master branch'
+View and test the site at https://donovanlosg.github.io/donovanlo-sg/
+(for more info: https://help.github.com/en/github/working-with-github-pages/getting-started-with-github-pages)
+
+## Directing Internet Traffic
+
+At the Git Repository, I navigate to the 'Setting'
+I scrolled down to the Git Pages section.
+Enter the custom domain name 'forexbacktesting.donovanlo.sg'
+View and test the site at http://forexbacktesting.donovanlo.sg
+(for more info: https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site)
+
 
 <hr>
 
