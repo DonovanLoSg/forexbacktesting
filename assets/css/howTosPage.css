@@ -5,3 +5,8 @@
     font-size: 1rem;
 
 }
+
+.responsive {
+    width: 80%;
+    height: auto;
+}
