@@ -126,26 +126,46 @@ Data consumed from this endpoints includes dates and USD-SGD daily exchange rate
 
 ### Interaction Deisgn
 
+1. Match user experience and expectations
+
 The layout of the design has taken into account the user experience and expectation.
 Historical currency exchange rates are presented in the chat they are used seeing.
 
+1 Consistency
+
 Consistency of the layout helps the users to navigate through the pages easily.
+The forms and chart are contained in panels.
+The clickable buttons are blue and the panels with interactions are in green.
+
+1. Functional minimalism
 
 The layout are at it's minimal with any clattered bells and whistles. 
 Simple forms mirror those of the physical world, increasing sense of familiarity 
 It is simple to use and fulfil all the functions required by the objectives.
+
+1. Cognitive loads
 
 The historical information can be easily retrieved by just filling in the relevant fields.
 Transactions can also be easily done using one of the two forms.
 The application helps to keep track of the transactions as well as the balance so 
 the user do not need to bother himself to remember or take notes.
 
-The applicaton provide a platform to engage the user to test out their investment strategy. 
+1. Engagement
+
+The application provide a platform to engage the user to test out their investment strategy. 
+Every actions performed is responded by the application.
+E.g. When the user key in a new value into the moving average, the chart will be updated instantly.
+
+1. Control, trust, and explorability
 
 There is no monetary exchange and the users are welcomed to try as many rounds as they like without any risks.
 
+1. Learnability
+
 The application is design to be easily learnt without much effort. 
 In rare event the user does not know where to start, he can alway go to About page and How Tos page to laern more.
+
+1. Error prevention, detection and recovery
 
 Use of date pickers and numeric input fields restrict the type of input they can make, 
 reducing chance of invalid values entered.
