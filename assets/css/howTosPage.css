@@ -6,8 +6,10 @@
 
 }
 
+div {overflow: hidden}
+
 .responsive {
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
@@ -17,8 +19,19 @@
     
 }
 
+h4 {font-weight: bold}
+
 h5 {
     font-weight: bold;
     text-decoration: underline;
 }
 
+ol {padding-left: 30px}
+ol ul {padding-left: 30px}
+
+#instructions {margin-top: 20px; padding: 20px}
+#instructions li {margin-top: 20px; }
+
+#parts-description {padding: 20px}
+#parts-description h5 {text-align: center; margin-top: 20px;  padding: 10px}
+#parts-description p {text-align: left}
