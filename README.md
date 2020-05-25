@@ -26,9 +26,9 @@ An upward trend is a buy signal and a downward trend is a sell signal.
 
 ## Demo
 
-Deployed project: http://currency-exchange-backtesting.donovanlo.sg/
+Deployed project: http://forexbacktesting.donovanlo.sg 
 
-Source code: https://github.com/DonovanLoSg/currency-exchange-backtesting.donovanlo-sg
+Source code: https://github.com/DonovanLoSg/forexbacktesting 
 
 // TODO: pic
 
