@@ -352,10 +352,14 @@ $(function () {
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
     $("#shortTermAvg").change(function () {
-        downloadFromAPI($("#startDate").val(), $("#endDate").val());
+        if( $("#shortTermAvg").values > 1){
+            downloadFromAPI($("#startDate").val(), $("#endDate").val());
+        }
     })
     $("#longTermAvg").change(function () {
+        if( $("#longTermAvg").values > 1){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
+        }
     })
 
     // populating the date picker in the transaction entry form
