@@ -352,12 +352,12 @@ $(function () {
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
     $("#shortTermAvg").change(function () {
-        if( $("#shortTermAvg").values > 1){
+        if( $("#shortTermAvg").val() > 1){
             downloadFromAPI($("#startDate").val(), $("#endDate").val());
         }
     })
     $("#longTermAvg").change(function () {
-        if( $("#longTermAvg").values > 1){
+        if( $("#longTermAvg").val() > 1){
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
         }
     })
