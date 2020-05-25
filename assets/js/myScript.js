@@ -352,13 +352,17 @@ $(function () {
         downloadFromAPI($("#startDate").val(), $("#endDate").val());
     })
     $("#shortTermAvg").change(function () {
-        if( $("#shortTermAvg").val() > 1){
+        if( $("#shortTermAvg").val() >0 &&  $("#longTermAvg").val() > 0){
             downloadFromAPI($("#startDate").val(), $("#endDate").val());
+        } else {
+            alert("please enter a positive number both the moving average.")
         }
     })
     $("#longTermAvg").change(function () {
-        if( $("#longTermAvg").val() > 1){
-        downloadFromAPI($("#startDate").val(), $("#endDate").val());
+        if( $("#shortTermAvg").val() >0 &&  $("#longTermAvg").val() > 0){
+            downloadFromAPI($("#startDate").val(), $("#endDate").val());
+        } else {
+            alert("please enter positive numbers both the moving average.")
         }
     })
 
