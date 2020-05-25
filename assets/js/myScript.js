@@ -20,25 +20,20 @@ function resetDatePicker() {
 // in the date pickers within the transaction entry form
 
 function fetchRate(selectedDate) {
-   axios.get(apiURL, {
-            params: {
-                "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
-                "limit": "1",
-                "fields": "end_of_day,usd_sgd",
-                "filters%5Bend_of_day%5D": selectedDate
-            }
-        })
-        .then(function (response) {
-            if (response.data.result.records.length == 0) {
+    console.log("selectedDate = "+selectedDate);
+   axios.get("https://eservices.mas.gov.sg/api/action/datastore/search.json?resource_id=95932927-c8bc-4e7a-b484-68a66a24edfe&fields=end_of_day,usd_sgd&filters[end_of_day]="+selectedDate)
+        .then((response) => {
+            if (response.data.result.records.length == 0 ){
+                console.log("Records = "+response.data.result.records.length);
                 $("#txRate").val("");
+                return -1
             } else {
+                console.log("Data = "+response.data.result.records[0].usd_sgd);
                 $("#txRate").val(response.data.result.records[0].usd_sgd);
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
+                return response.data.result.records[0].usd_sgd;
+            }})
+        }
+
 
 
 // function to retrieve the last transaction's exchange rate available.
@@ -176,27 +171,30 @@ function drawChart(ratesTable) {
                     footer: function (tooltipItem) {
                         // resetting the date picker
                         //  in the transacton entry form
-                        $("#txDate").val(tooltipItem[0].xLabel)
-                        // resetting the date picker
-                        // in the transacton entry form
-                        fetchRate(tooltipItem[0].xLabel);
+                        $("#txDate").val(tooltipItem[0].xLabel);
+                        let changedDate = $("#txDate").val();
+                        let changedRate = fetchRate(changedDate);
+
+
+                        // let rateSelected = fetchRate(#txDate.val());
+                        // $("#txRate").val(parseFloat(rateSelected).toFixed(4));
+                        }
                     }
 
                 },
             },
-            elements: {
-                point: {
-                    radius: 3
+        elements: {
+            point: {
+                radius: 3
                 }
             },
-            scales: {
-                xAxes: [{
-                    type: "time",
-                    time: {
-                        unit: "day"
-                    }
-                }]
-            }
+        scales: {
+            xAxes: [{
+                type: "time",
+                time: {
+                    unit: "day"
+                }
+            }]
         }
     })
 };
@@ -368,9 +366,10 @@ $(function () {
 
     // event handlers for tansaction entry form
     $("#txDate").change(function () {
-        fetchRate($("#txDate").val());
+        let changedDate = $("#txDate").val();
+        let changedRate = fetchRate(changedDate);
+    })
 
-    });
 
 
 
@@ -379,7 +378,7 @@ $(function () {
     $("input[name='buyBtn']").click(function () {
         ttAction = "buy";
         ttDate = $("#txDate").val();
-        ttRate = parseFloat($("#txRate").val());
+        ttRate = $("#txRate").val();
         ttAmount = parseFloat($("#txAmount").val());
         if (isNaN(ttAmount) == false && ttAmount > 0) {
             var isValid = $("#transaction-form").validate();
@@ -395,7 +394,7 @@ $(function () {
     $("input[name='sellBtn']").click(function () {
         ttAction = "sell";
         ttDate = $("#txDate").val();
-        ttRate = parseFloat($("#txRate").val());
+        ttRate = $("#txRate").val();
         ttAmount = parseFloat($("#txAmount").val());
         if (isNaN(ttAmount) == false && ttAmount > 0) {
             var isValid = $("#transaction-form").validate();
