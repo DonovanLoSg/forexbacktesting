@@ -1,37 +1,60 @@
-#main-panel {
+/* HOW TOS PAGE CSS */
+/*
+***
+* Refer to commonStyle.css for CONTENT PAGE
+***
+*/
+/* This style sheet specially caters to How Tos Page */
 
-    width: 98%;
-    margin: 20px;
-    font-size: 1rem;
-
+div {
+	overflow: hidden
 }
-
-div {overflow: hidden}
-
 .responsive {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
-
 .responsive.parent {
-    padding-left : 30px;
-    padding-right : 30px;
-    
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
-h4 {font-weight: bold}
-
+h4 {
+	font-weight: bold
+}
 h5 {
-    font-weight: bold;
-    text-decoration: underline;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
-ol {padding-left: 30px}
-ol ul {padding-left: 30px}
 
-#instructions {margin-top: 20px; padding: 20px}
-#instructions li {margin-top: 20px; }
+#main-panel {
+	width: 98%;
+	margin: 20px;
+	font-size: 1rem;
+}
 
-#parts-description {padding: 20px}
-#parts-description h5 {text-align: center; margin-top: 20px;  padding: 10px}
-#parts-description p {text-align: left}
+
+ol {
+	padding-left: 30px
+}
+ol ul {
+	padding-left: 30px
+}
+#instructions {
+	margin-top: 20px;
+	padding: 20px
+}
+#instructions li {
+	margin-top: 20px;
+}
+#parts-description {
+	padding: 20px
+}
+#parts-description h5 {
+	text-align: center;
+	margin-top: 20px;
+	padding: 10px
+}
+#parts-description p {
+	text-align: left
+}
