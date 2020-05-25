@@ -28,12 +28,14 @@
 * 1 - commonStyle.css - Common CSS styles
 * 2 - pageHeader.css - Page Header 
         (including Logo, Site Name and Navigation)
-* 3 - commandPanel.css - CSS targeting at Command Panel in the <main> section 
+* 3 - commandPanel.css (Home) - CSS targeting at Command Panel in the <main> section 
         (including New Scenario button and User input for customizing Chart)
 * 4 - chartPanel.css - CSS targeting at Chart Panel in the <main> section
 * 5 - transactionPanel.css - CSS targeting at Transaction Panel in <main> section
         (including Transaction Entry Form, Fund Adjustment Form, Transaction Recording and Fund Balances)
 * 6 - pageFooter.css - Page Footer
+* 7 - howTosPage.css - Style sheet for How To Page
+* 8 - aboutPage.css - Style sheet for About Page
 ***
 */
 

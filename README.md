@@ -1,6 +1,6 @@
 <img src="http://currency-exchange-backtesting.donovanlo.sg/assets/img/logo/donovanlogo150x150.png" style="margin: 0;">
 
-# Currency Exchange Backtesting Project
+# FOREX Backtesting Project
 *Interactive Frontend Development Milestone Project*
 
 <hr>
@@ -160,6 +160,7 @@ I uses **Git** for Versioning Control System and **GitHub** for repositories.
 **Gitpod**, an online IDE, is my main coding platform. I do sometimes test out codes in **Repl.it**
 
 I use **Bootstrap 4**, including its compoents and utilities for layout. **NavBar** is used for the main navigation, **box-shadow* utilities are also applied.
+Using the **collapse** and **card** components of Bootstrap, the accordian on the About Page is created.
 
 The interativity is enabled by **Javascript** and it's libraries (**jQuery.js**, **jQuery Validator**, **axios.js**, **moment.js**, **Chart.js**, **Flatpickr**, **noUiSlider**), taking advantages of **DOM**, **Ajax** and **JSON**.
 
@@ -169,6 +170,7 @@ The template used for Readme.md is also from Code Institute (https://github.com/
 
 For codes generating
 * CSS Button Generator (http://www.bestcssbuttongenerator.com/)
+* Embed Responsively (https://embedresponsively.com/)
 
 For codes formatting
 * HTML Codes Formatter (https://www.freeformatter.com/html-formatter.html)
