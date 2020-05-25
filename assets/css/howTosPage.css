@@ -10,3 +10,15 @@
     width: 80%;
     height: auto;
 }
+
+.responsive.parent {
+    padding-left : 30px;
+    padding-right : 30px;
+    
+}
+
+h5 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
