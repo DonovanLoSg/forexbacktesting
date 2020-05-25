@@ -2,6 +2,23 @@
 ***
 * CSS TABLE OF CONTENTS
 * 
+*
+* folder structure
+*   +-- assets/
+*         *-- css/
+*         :      +-- fonts/
+*         :      +-- lib/              *1,2,3
+*         :      +-- local css files
+*         +-- img/
+*         |    +-- common/
+*         |      +-- logo/ 
+*         |      +-- readme/ 
+*         |
+*         +-- js/
+*             +-- lib/
+*             +-- local js fieldset
+
+*
 * External Libraries
 * 1 - reeset.css  - CSS Reset (source: https://perishablepress.com/a-killer-collection-of-global-css-reset-styles/)
 * 2 - bootstrap.min.css - BootStrap 4 (source: https://getbootstrap.com/docs/4.4/getting-started/download/)

@@ -1,7 +1,10 @@
-// Initialize today variable
+// Initialize variable
 
 // formating the date to yyyy-mm-dd required by Chart.js
 const today = new Date().toISOString().substr(0, 10);
+
+
+let apiURL = "https://eservices.mas.gov.sg/api/action/datastore/search.json";
 
 // this is used to initialise or reset the date pickers on the page to default
 // default ending date is today and start date is one month ago
@@ -17,45 +20,51 @@ function resetDatePicker() {
 // in the date pickers within the transaction entry form
 
 function fetchRate(selectedDate) {
-    axios.get("apiURL", {
+   axios.get(apiURL, {
             params: {
                 "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
                 "limit": "1",
                 "fields": "end_of_day,usd_sgd",
-                "filters[end_of_day]": selectedDate,
+                "filters%5Bend_of_day%5D": selectedDate
             }
         })
         .then(function (response) {
-            if (response.data.result.records.length == 0) $("#txRate").val("");
-            else {
-                $("#txRate").val(response.data.result.records[0].usd_sgd)
+            if (response.data.result.records.length == 0) {
+                $("#txRate").val("");
+            } else {
+                $("#txRate").val(response.data.result.records[0].usd_sgd);
             }
         })
         .catch(function (error) {
             console.log(error);
         });
-};
+}
 
 
 // function to retrieve the last transaction's exchange rate available.
 // the info is used to populate the transaction entry form when intially loaded.
 // this is to avoid situation here there is no exchange rates
 // for today or when the info is not computed.
+
+
 function fetchLastRates() {
-    let apiURL =
-        "https://eservices.mas.gov.sg/api/action/datastore/search.json";
-    axios.get(apiURL, {
-        params: {
-            "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
-            "limit": "1",
-            "fields": "end_of_day,usd_sgd",
-            "sort": "end_of_day desc",
-        }
-    }).then(function (response) {
-        $("#txDate").val(response.data.result.records[0].end_of_day);
-        $("#txRate").val(response.data.result.records[0].usd_sgd);
-    })
+   axios.get(apiURL, {
+            params: {
+            "resource_id" : "95932927-c8bc-4e7a-b484-68a66a24edfe",
+            "limit" : "1",
+            "fields" : "end_of_day,usd_sgd",
+            "sort": "end_of_day desc"
+            }
+        })
+        .then(function (response) {
+            $("#txDate").val(response.data.result.records[0].end_of_day);
+            $("#txRate").val(response.data.result.records[0].usd_sgd);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
+
 
 // a function that returns an array of the moving average
 // of an Array provided between the number of days selected.
@@ -66,20 +75,25 @@ function calMovingAvg(avgNumber, numArray) {
     let sumOfNum = 0;
     let avgOfNum = 0;
     let movAverageArray = [];
-    for (let i in numArray) {
+    let i=0;
+    numArray.forEach(function(){
         numCount = 0;
         sumOfNum = 0;
         avgOfNum = 0;
-        for (var j = (i - avgNumber + 1); j <= i; j++) {
+        let j = (i - avgNumber + 1);
+
+        while (j<=i){
             if (j >= 0) {
                 numCount = numCount + 1;
                 sumOfNum = sumOfNum + numArray[j];
             }
+            j++;
         }
         avgOfNum = sumOfNum / numCount;
         movAverageArray.push(Math.round(avgOfNum * 10000) / 10000);
-    }
-    return movAverageArray
+        i ++;
+    });
+    return movAverageArray;
 }
 
 // a function that draw teh chart with exchange rates information
@@ -89,14 +103,14 @@ function calMovingAvg(avgNumber, numArray) {
 let datesArray = [];
 let ratesArray = [];
 let datesParsedArray = [];
-let ratesTable = {};
+let ratesTable = [];
 
 function drawChart(ratesTable) {
 
     // breaking the 2D array augument into different Arrays.
     let shortTerm = $("#shortTermAvg").val();
     let longTerm = $("#longTermAvg").val();
-    let shortTermMovAvgLabel = shortTerm + " days moving average";
+    let shortTermMovAvgLabel = shortTerm + " days moving average";
     let longTermMovAvgLabel = longTerm + " days moving average";
     datesArray.length = 0; // empty datesArray
     ratesArray.length = 0; // empty ratesArray
@@ -109,6 +123,7 @@ function drawChart(ratesTable) {
     };
     let shortTermMovAvg = calMovingAvg(shortTerm, ratesArray);
     let longTermMovAvg = calMovingAvg(longTerm, ratesArray);
+
 
     // intializing the variables of the charts
     Chart.defaults.maintainAspectRatio = "false";
@@ -184,19 +199,13 @@ function drawChart(ratesTable) {
             }
         }
     })
-
-    // ========
-
-
-
-
 };
 
 
 
 
 // retreive exchange rates between the stat date and end date.
-// After retrieval, it will call teh draw chart function
+// After retrieval, it will call the draw chart function
 
 function downloadFromAPI(startDate, endDate) {
 
@@ -204,8 +213,6 @@ function downloadFromAPI(startDate, endDate) {
     $("#loadingMessage").show();
 
     // consuming API
-    let apiURL =
-        "https://eservices.mas.gov.sg/api/action/datastore/search.json";
     axios.get(apiURL, {
         params: {
             "resource_id": "95932927-c8bc-4e7a-b484-68a66a24edfe",
@@ -221,7 +228,7 @@ function downloadFromAPI(startDate, endDate) {
     })
 }
 
-
+// Sorting of Transaction Records by dates
 function compare(a, b) {
     if (a.date < b.date) {
         return -1;
@@ -232,11 +239,11 @@ function compare(a, b) {
     }
 }
 
-
 function sortTransactionRecord() {
     transactionRecord.sort(compare);
 }
 
+// Display Transaction Records
 function printTransactionRecord() {
     var totalUSD = 0;
     var totalSGD = 0;
@@ -251,7 +258,7 @@ function printTransactionRecord() {
 
 }
 
-
+// Create an entry based on the actions and insert into the transaction records
 function transact(transactDate, transactRate, transactAction, transactAmount) {
     switch (transactAction) {
     case "deposit":
