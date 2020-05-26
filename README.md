@@ -96,7 +96,7 @@ Both the trainer and trainee are considered as the users of the application.
 1. Currency exchange rates historical data has to be downloaded by consuming MAS's API.
 1. Fields to be retrieved are the date and the USD to SGD exchange rates.
 1. The response data need to be restructure for charting purposes as well as rates look up during transaction entries.
-1. short-term moving average and ;pmg-term moving average are calculated from the restructured data.
+1. short-term moving average and long-term moving average are calculated from the restructured data.
 1. A responsive chart with the exchange rates and moving average is to be display to the user.
 
 <hr>
@@ -343,6 +343,8 @@ For codes validation
 * Typosaurus (https://typosaur.us/)
 * Alt Text Checker (https://www.seoptimer.com/alt-tag-checker0)
 
+For responsiveness checking
+* Responsive Design Checker (https://responsivedesignchecker.com/)
 
 For user flow diagram and mindmaping
 * Xmind (https://www.xmind.net/)
@@ -517,15 +519,40 @@ All three pages checked.
 
 # Compatibility Testing
 
+Useing Responsive Design Checker (https://responsivedesignchecker.com/)
 
+The site can be viewed and used in these devices and resolutions size. 
+(Some may have to pan aroudn quite a bit)
 
-## Browser Compatibility Testing
-
-## Mobile Compatibility Testing
-
-
-
-
+| Device                        | Resolution |
+|-------------------------------|:----------:|
+| 24" Desktop                   |  1920x1200 |
+| 23" Desktop                   |  1920x1080 |
+| 22" Desktop                   |  1680x1050 |
+| 20" Desktop                   |  1600x900  |
+| 19" Desktop                   |  1440x900  |
+| 15" Notebook                  |  1366x768  |
+| 13" Notebook                  |  1024x800  |
+| 10" Notebook                  |  1024x600  |
+| Apple iPad Mini               |  768x1024  |
+| Apple iPad Retina             |  768x1024  |
+| Apple iPad Pro                |  1366x1024 |
+| Amazon Kindle Fire            |  768x1024  |
+| Amazon Kindle Fire HD         |  768x1024  |
+| Asus Eee 1000                 |  768x1024  |
+| Nexus 7                       |   600x960  |
+| Nexus 9                       |  1024x768  |
+| Samsung Galaxy Tab 10         |  800x1280  |
+| Apple iPhone 3/4/4s           |   320x480  |
+| Apple iPhone 5/5s             |   320x568  |
+| Apple iPhone 6/6s/7           |   375x667  |
+| Apple iPhone 6s Plus / 7 Plus |   414x736  |
+| Samsung Galaxy S5/S6/S7       |   360x640  |
+| Sony Xperia Z2/Z3             |   360x640  |
+| Google Pixel                  |   411x731  |
+| Nexus 4                       |   384x640  |
+| Nexus 5                       |   411x731  |
+| Nexus 6                       |   411x731  |
 
 
 <hr>
@@ -567,9 +594,33 @@ Enter the custom domain name 'forexbacktesting.donovanlo.sg'
 View and test the site at http://forexbacktesting.donovanlo.sg
 (for more info: https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site)
 
-
 <hr>
 
 # Credits
 
-:
+## Codes
+
+- Bootstrap
+- Axios
+- Chart.js
+- jQuery
+- jQuery Validator
+- Moment.js
+- Popper.js
+- nodep-date-input-polyfill
+
+## Knowledge (Investment)
+
+- Tradeciety - https://www.tradeciety.com/moving-average-strategy-guide-5-moving-average-strategies/
+- https://youtu.be/NhFlqFVBmxc
+
+## Fonts
+
+The embedded font used in the websites are Open Sans. (https://fonts.google.com)
+
+# Acknowledgements
+Mr Paul Chor - Mentor
+Mr Malcolm - Mentor
+Mr Arif - Trent Global T.A.
+Ms Chia Ching Shyan - My classmate - For sharing of articles,  youtubes and notes
+Mr Jon Tan - My friend - For helping tedious with the testing.

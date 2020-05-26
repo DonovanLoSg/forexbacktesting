@@ -51,6 +51,7 @@ body {
     border: 3px solid rgb(0, 128, 64); /* fun green */
     border-radius: 25px;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* black, black */
+    overflow: hidden;
 }
 
 .bg-green {
