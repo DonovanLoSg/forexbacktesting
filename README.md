@@ -445,9 +445,16 @@ How-Tos
 ### CSS Testing
 Using W3C CSS Validation Service (https://jigsaw.w3.org/css-validator/)
 
-Home Page
+- aboutPage.css
+- chartPanel.css
+- chartPanel.css
+- commandPanel.css
+- howTosPage.css
+- pageFooter.css
+- pageHeader.css
+- transactionPanel.css
 
-
+Check and have all issues rectified.
 
 
 ### Color Contrast Accessibility Testing
