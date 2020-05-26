@@ -32,14 +32,70 @@ Deployed project: http://forexbacktesting.donovanlo.sg
 
 Source code: https://github.com/DonovanLoSg/forexbacktesting 
 
-// TODO: pic
-
+<img src="http://forexbacktesting.donovanlo.sg/assets/img/readme/chartpanel.png" style="margin: 0;">
 
 ## Content
 
-// TODO: 
+1.  Defining the Project (Strategy)
+    1.  Project Objectives
+    1.  User Stories
+    1.  User Case Diagram
+1.  Defining the Project (Scope)
+    1.  Functional Requirements
+    1.  Content Requirements
+1.  Developing the Site Structure and Organise Information (Structure)
+    1.  Information Architecture
+        1.  Wireframe
+        1.  Sitemap
+    1.  Content Inventory 
+        1.  Data Source
+    1.  Interaction Design
+        1.  User Flow Diagram
+1.  Developing Page Structure and Organise Interaction (Skeleton)
+    1.  Navigation Design
+        1.  Logo
+        1.  Main Navigation
+        1.  Collapsible Hamburger Mobile Menu
+    1.  Interface Design
+    1.  Information Design
+        1.  Historical currency exchange rate
+        1.  Short-term and long-term moving average
+        1.  Transactions
+1.  Designing Graphics User Interface (Surface)
+    1.  Visual Design
+        1.  Colour
+        1.  Fonts
+1.  Features
+1.  Technologies Used
+1.  Testing
+    1.  Functionality Testing  
+        1.  Link Testing
+        1.  Form Testing
+        1.  HTML Testing
+        1.  CSS Testing
+        1.  Color Contrast Accessibility Testing
+    1.  Usability Testing
+        1.  Navigation Testing
+            1. Manual Testing of Navigation
+        1.  Content Testing
+            1. Spell Checking
+            1.  Alt Text Checking
+    1. Compatibility Testing
+1.  Deployment
+    1.  Preparation
+    1.  Content
+1.  Production
+    1.  Git Pages
+    1.  Directing Internet Traffic
+1.  Credits
+    1.  Codes
+    1.  Knowledge (Investment)
+    1.  fonts
+1. Acknowledgements
 
-:
+
+
+
 
 <hr>
 
@@ -237,7 +293,7 @@ The numeric data are presented in a line chart to display trends over a period o
 
 It is easier to recognise which direction the rates are going compare to a series of numbers.
 
-### short-term and ;pmg-term Moving Average 
+### short-term and long-term Moving Average 
 
 A simple moving average (SMA) is an arithmetic moving average calculated by adding recent prices and then dividing that by the number of time periods in the calculation average. For example, one could add the closing price of the security for a number of time periods and then dividing this total by that same number of periods. Short-term averages respond quickly to changes in the price of the underlying, while long-term averages are slower to react. 
 (cite: Investopedia - investopedia.com/terms/s/sma.asp)
@@ -427,11 +483,9 @@ How-Tos Page
 
 ### Form Testing
 
-Command panel
+Manual User Testing are documented in this excel sheet:
 
-Transaction Entry Form
-
-Fund Adjustment Form
+https://github.com/DonovanLoSg/forexbacktesting/blob/0aa94e4c408bdd80f2ad14888914b315cc1c6626/assets/img/readme/testcases.xlsx?raw=true
 
 ### HTML Testing
 Using W3C Markup Validation Service (https://validator.w3.org/)
@@ -516,13 +570,6 @@ Using Alt Text Checker (https://www.seoptimer.com/alt-tag-checker)
 All three pages checked.
 
     You do not have any images missing ALT attributes on your page.
-
-#### User Testing
-
-Manual User Testing are documented in this excel sheet:
-
-https://github.com/DonovanLoSg/forexbacktesting/blob/0aa94e4c408bdd80f2ad14888914b315cc1c6626/assets/img/readme/testcases.xlsx?raw=true
-
 
 # Compatibility Testing
 
