@@ -337,6 +337,7 @@ For codes validation
 * W3C CSS Validation Service (https://jigsaw.w3.org/css-validator/)
 * JSLint (https://jslint.com/)
 * W3C Link Checker (https://validator.w3.org/checklink)
+* Color Contrast Accessibility Validator (https://color.a11y.com/Contrast/)
 
 For user flow diagram and mindmaping
 * Xmind (https://www.xmind.net/)
@@ -379,12 +380,43 @@ For grammer and spell check
 ## Functionality Testing
 
 ### Link Testing
+Using W3C Link Checker (https://validator.w3.org/checklink)
 
 Home Page
 
+    Links
+    Valid links!
+
+    Anchors
+    Found 33 anchors.
+
+    Valid anchors!
+
+    Checked 1 document in 22.76 seconds.
+
 About Page
 
+    Links
+    Valid links!
+
+    Anchors
+    Found 7 anchors.
+
+    Valid anchors!
+
+    Checked 1 document in 16.93 seconds.
+
 HowTos Page
+
+    Links
+    Valid links!
+
+    Anchors
+    Found 8 anchors.
+
+    Valid anchors!
+
+    Checked 1 document in 17.68 seconds.
 
 ### Form Testing
 
@@ -395,10 +427,37 @@ Transaction Entry Form
 Fund Adjustment Form
 
 ### HTMK Testing
+Using W3C Markup Validation Service (https://validator.w3.org/)
+
+Home Page
+
+    Warnings (4) · Hide all warnings · Show all warnings
+    The date input type is not supported in all browsers. Please be sure to test, and consider using a polyfill. (4)
+
+
 
 ### CSS Testing
 
 ### Color Contrast Accessibility Testing
+
+Using Color Contrast Accessibility Validator (https://color.a11y.com/Contrast/)
+
+Home Page
+
+    Congratulations!
+    No automated color contrast issues found on the webpage tested
+
+About Page
+
+    Congratulations!
+    No automated color contrast issues found on the webpage tested
+
+How Tos Page
+
+    Congratulations!
+    No automated color contrast issues found on the webpage tested
+
+
 
 ## Usability Testing
 
