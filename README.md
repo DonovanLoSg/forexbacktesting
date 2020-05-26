@@ -335,9 +335,11 @@ For codes formatting
 For codes validation
 * W3C Markup Validation Service (https://validator.w3.org/)
 * W3C CSS Validation Service (https://jigsaw.w3.org/css-validator/)
-* JSLint (https://jslint.com/)
 * W3C Link Checker (https://validator.w3.org/checklink)
+* W3C Spell Checker (https://www.w3.org/2002/01/spellchecker)
+* JSLint (https://jslint.com/)
 * Color Contrast Accessibility Validator (https://color.a11y.com/Contrast/)
+* Typosaurus (https://typosaur.us/)
 
 For user flow diagram and mindmaping
 * Xmind (https://www.xmind.net/)
@@ -479,6 +481,13 @@ How-Tos Page
 
 
 ## Usability Testing
+
+** Navigation TEsting
+
+*** Content Testing
+Spell Check Using W3C Spell Check (https://www.w3.org/2002/01/spellchecker)
+
+
 
 ### Navigation Testing
 
