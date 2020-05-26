@@ -326,6 +326,7 @@ The template used for Readme.md is also from Code Institute (https://github.com/
 For codes generating
 * CSS Button Generator (http://www.bestcssbuttongenerator.com/)
 * Embed Responsively (https://embedresponsively.com/)
+* Table Generator (https://www.tablesgenerator.com/)
 
 For codes formatting
 * HTML Codes Formatter (https://www.freeformatter.com/html-formatter.html)
@@ -340,6 +341,8 @@ For codes validation
 * JSLint (https://jslint.com/)
 * Color Contrast Accessibility Validator (https://color.a11y.com/Contrast/)
 * Typosaurus (https://typosaur.us/)
+* Alt Text Checker (https://www.seoptimer.com/alt-tag-checker0)
+
 
 For user flow diagram and mindmaping
 * Xmind (https://www.xmind.net/)
@@ -479,21 +482,42 @@ How-Tos Page
     No automated color contrast issues found on the webpage tested
 
 
-
 ## Usability Testing
-
-** Navigation TEsting
-
-*** Content Testing
-Spell Check Using W3C Spell Check (https://www.w3.org/2002/01/spellchecker)
-
-
 
 ### Navigation Testing
 
+#### Manual Testing of Navigation
+
+    | Test | Source | Link            | Destination | Result |
+    |------|--------|-----------------|-------------|--------|
+    | 1    | Home   | Navigation Menu | About       | Ok     |
+    | 2    | Home   | Navigation Menu | HowTos      | Ok     |
+    | 3    | About  | Logo            | Home        | Ok     |
+    | 4    | About  | Navigation Menu | Home        | Ok     |
+    | 5    | About  | Navigation Menu | HowTos      | Ok     |
+    | 6    | HowTos | Logo            | Home        | Ok     |
+    | 7    | HowTos | Navigation Menu | Home        | Ok     |
+    | 8    | HowTos | Navigation Menu | About       | Ok     |
+
 ### Content Testing
 
+#### Spell Checking
+
+Spell Check Using W3C Spell Check (https://www.w3.org/2002/01/spellchecker)
+
+All issues rectified.
+
+#### Alt Text Checking
+
+Using Alt Text Checker (https://www.seoptimer.com/alt-tag-checker)
+
+All three pages checked.
+
+    You do not have any images missing ALT attributes on your page.
+
 # Compatibility Testing
+
+
 
 ## Browser Compatibility Testing
 
