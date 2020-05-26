@@ -426,7 +426,7 @@ Transaction Entry Form
 
 Fund Adjustment Form
 
-### HTMK Testing
+### HTML Testing
 Using W3C Markup Validation Service (https://validator.w3.org/)
 
 Home Page
