@@ -521,7 +521,7 @@ All three pages checked.
 
 Manual User Testing are documented in this excel sheet:
 
-http://forexbacktesting.donovanlo.sg/assets/img/readme/testcases.xls
+https://github.com/DonovanLoSg/forexbacktesting/blob/0aa94e4c408bdd80f2ad14888914b315cc1c6626/assets/img/readme/testcases.xlsx?raw=true
 
 
 # Compatibility Testing
