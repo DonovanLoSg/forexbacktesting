@@ -82,7 +82,7 @@ form button {
 }
 
 form .error {
-    color: rgb(255, 0, 0); .* red */
+    color: rgb(255, 0, 0); /* red */
 }
 
 input[type="date"] {

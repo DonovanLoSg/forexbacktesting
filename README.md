@@ -406,7 +406,7 @@ About Page
 
     Checked 1 document in 16.93 seconds.
 
-HowTos Page
+How-Tos Page
 
     Links
     Valid links!
@@ -434,9 +434,21 @@ Home Page
     Warnings (4) · Hide all warnings · Show all warnings
     The date input type is not supported in all browsers. Please be sure to test, and consider using a polyfill. (4)
 
+About Page
 
+    Document checking completed. No errors or warnings to show.
+
+How-Tos
+
+    Document checking completed. No errors or warnings to show.
 
 ### CSS Testing
+Using W3C CSS Validation Service (https://jigsaw.w3.org/css-validator/)
+
+Home Page
+
+
+
 
 ### Color Contrast Accessibility Testing
 
@@ -452,7 +464,7 @@ About Page
     Congratulations!
     No automated color contrast issues found on the webpage tested
 
-How Tos Page
+How-Tos Page
 
     Congratulations!
     No automated color contrast issues found on the webpage tested
