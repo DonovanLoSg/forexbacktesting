@@ -27,7 +27,7 @@
     border-radius: 28px;
     box-shadow: 8px 8px 10px 0px rgb(124, 185, 232); /* areo */
     background-color: rgb(56, 115, 217); /* royal blue */
-    background: linear-gradient(to bottom, #rgba(56, 115, 217, 5%), #0537ff 100%); /* royal blue, canary */
+    background: linear-gradient(to bottom, rgb(56, 115, 2175) 5%,	rgb(5, 55, 255) 100%); /* royal blue, canary */
     font-family: Arial;
     font-size: 20px;
     text-decoration: none;
@@ -47,7 +47,7 @@
 }
 
 .myButton:hover {
-    background: linear-gradient(to bottom, #0537ff 5%, #3873d9 100%); /* canary, royal blue */
+    background: linear-gradient(to bottom, rgb(5, 55, 255) 5%, #	rgb(56, 115, 217) 100%); /* canary, royal blue */
     background-color: rgb(255, 255, 255); /* white */
     text-decoration: none;
 }
