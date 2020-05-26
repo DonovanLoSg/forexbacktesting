@@ -517,6 +517,13 @@ All three pages checked.
 
     You do not have any images missing ALT attributes on your page.
 
+#### User Testing
+
+Manual User Testing are documented in this excel sheet:
+
+http://forexbacktesting.donovanlo.sg/assets/img/readme/testcases.xls
+
+
 # Compatibility Testing
 
 Useing Responsive Design Checker (https://responsivedesignchecker.com/)
