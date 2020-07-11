@@ -576,7 +576,7 @@ All three pages checked.
 Useing Responsive Design Checker (https://responsivedesignchecker.com/)
 
 The site can be viewed and used in these devices and resolutions size. 
-(Some may have to pan aroudn quite a bit)
+(Some may have to pan around quite a bit)
 
 | Device                        | Resolution |
 |-------------------------------|:----------:|
@@ -673,8 +673,8 @@ View and test the site at http://forexbacktesting.donovanlo.sg
 The embedded font used in the websites are Open Sans. (https://fonts.google.com)
 
 # Acknowledgements
-Mr Paul Chor - Mentor
-Mr Malcolm - Mentor
-Mr Arif - Trent Global T.A.
-Ms Chia Ching Shyan - My classmate - For sharing of articles,  youtubes and notes
-Mr Jon Tan - My friend - For helping tedious with the testing.
+- Mr Paul Chor - Mentor
+- Mr Malcolm - Mentor
+- Mr Arif - Trent Global T.A.
+- Ms Chia Ching Shyan - My classmate - For sharing of articles,  youtubes and notes
+- Mr Jon Tan - My friend - For helping tedious with the testing.
